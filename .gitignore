@@ -9,6 +9,7 @@
 
 # gradle
 build
+!build/bundle
 .gradle
 
 *.DS_Store
