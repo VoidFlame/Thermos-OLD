@@ -22,6 +22,7 @@ public class CauldronConfig extends ConfigBase
 
     // Logging options
     public final BoolSetting dumpMaterials = new BoolSetting(this, "settings.dump-materials", false, "Dumps all materials with their corresponding id's");
+    public final BoolSetting hidePlayerList = new BoolSetting(this, "settings.hide-player-list", false, "Hides players from the server list ping");
     public final BoolSetting disableWarnings = new BoolSetting(this, "logging.disabled-warnings", false, "Disable warning messages to server admins");
     public final BoolSetting worldLeakDebug = new BoolSetting(this, "logging.world-leak-debug", false, "Log worlds that appear to be leaking (buggy)");
     public final BoolSetting connectionLogging = new BoolSetting(this, "logging.connection", false, "Log connections");
