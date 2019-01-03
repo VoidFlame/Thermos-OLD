@@ -1,6 +1,5 @@
 import groovy.json.JsonSlurper
 import thermos.CreateChangelog
-import thermos.InstallBundle
 import thermos.VersionParser
 
 buildscript {
@@ -216,12 +215,6 @@ task bundleStub(type: Jar) {
     ])
 }
 
-//task installBundle(type: InstallBundle, dependsOn: jar) {
-//    serverJar tasks.jar.archivePath
-//    bootstrapClasspath configurations.bootstrap
-//    bootstrapMain 'pw.prok.bootstrap.Main'
-//}
-
 task packageBundle(type: Zip) {
     classifier = 'bundle'
     from fileTree("libraries")
@@ -267,19 +260,20 @@ publishing {
 tasks.generateProjectCauldron << {
     def file = new File('eclipse/cauldron/build.gradle')
     file.append('''
-repositories {
-    clear()
-	maven {
-		name 'forge'	
-		url 'http://files.minecraftforge.net/maven'	
-	}
-	flatDir {
-		dirs '../../libraries/'
-	}
-    mavenCentral()
-}
-dependencies {
-''')
+		repositories {
+			clear()
+			maven {
+				name 'forge'	
+				url 'http://files.minecraftforge.net/maven'	
+			}
+			flatDir {
+				dirs '../../libraries/'
+			}
+			mavenCentral()
+		}
+		dependencies {
+	''')
+	
     configurations.libraries.resolvedConfiguration.resolvedArtifacts.collect { it.moduleVersion.id }.each { module ->
         if (['net.minecraft:server:', 'org.ow2.asm:asm-all'].findAll { (module as String).startsWith it }.size() > 0) {
             return
