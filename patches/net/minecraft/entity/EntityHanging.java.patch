@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/EntityHanging.java	2019-01-11 20:13:51.781142600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/EntityHanging.java	2019-01-11 20:13:26.273102500 -0500
+--- ../src-base/minecraft/net/minecraft/entity/EntityHanging.java
++++ ../src-work/minecraft/net/minecraft/entity/EntityHanging.java
 @@ -10,6 +10,14 @@
  import net.minecraft.util.MathHelper;
  import net.minecraft.world.World;

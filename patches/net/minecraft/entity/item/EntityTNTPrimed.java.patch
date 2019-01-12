@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityTNTPrimed.java	2019-01-11 20:13:53.322314500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityTNTPrimed.java	2019-01-11 20:13:27.482979800 -0500
+--- ../src-base/minecraft/net/minecraft/entity/item/EntityTNTPrimed.java
++++ ../src-work/minecraft/net/minecraft/entity/item/EntityTNTPrimed.java
 @@ -5,13 +5,22 @@
  import net.minecraft.entity.Entity;
  import net.minecraft.entity.EntityLivingBase;
@@ -7,11 +7,11 @@
 +import net.minecraft.util.MathHelper;
  import net.minecraft.world.World;
 +import thermos.thermite.ThermiteRandom;
-+
+ 
 +import java.util.Random;
 +
 +import org.bukkit.event.entity.ExplosionPrimeEvent; // CraftBukkit
- 
++
  public class EntityTNTPrimed extends Entity
  {
      public int fuse;
@@ -96,4 +96,3 @@
 +    }
 +    // Cauldron end
  }
-\ No newline at end of file

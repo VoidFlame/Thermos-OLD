@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/server/management/BanEntry.java	2019-01-11 20:13:52.964916900 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/server/management/BanEntry.java	2019-01-11 20:13:26.850510700 -0500
+--- ../src-base/minecraft/net/minecraft/server/management/BanEntry.java
++++ ../src-work/minecraft/net/minecraft/server/management/BanEntry.java
 @@ -76,4 +76,30 @@
          p_152641_1_.addProperty("expires", this.banEndDate == null ? "forever" : dateFormat.format(this.banEndDate));
          p_152641_1_.addProperty("reason", this.reason);
@@ -31,4 +31,3 @@
 +    }
 +    // CraftBukkit end
  }
-\ No newline at end of file

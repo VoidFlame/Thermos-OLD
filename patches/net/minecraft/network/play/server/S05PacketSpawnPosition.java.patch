@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/play/server/S05PacketSpawnPosition.java	2019-01-11 20:13:50.461903700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/play/server/S05PacketSpawnPosition.java	2019-01-11 20:13:22.421933300 -0500
+--- ../src-base/minecraft/net/minecraft/network/play/server/S05PacketSpawnPosition.java
++++ ../src-work/minecraft/net/minecraft/network/play/server/S05PacketSpawnPosition.java
 @@ -10,9 +10,9 @@
  
  public class S05PacketSpawnPosition extends Packet

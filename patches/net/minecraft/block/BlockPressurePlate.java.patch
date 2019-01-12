@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockPressurePlate.java	2019-01-11 20:13:51.527975700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockPressurePlate.java	2019-01-11 20:13:23.704723100 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockPressurePlate.java
++++ ../src-work/minecraft/net/minecraft/block/BlockPressurePlate.java
 @@ -8,6 +8,8 @@
  import net.minecraft.entity.player.EntityPlayer;
  import net.minecraft.world.World;
@@ -9,13 +9,13 @@
  public class BlockPressurePlate extends BlockBasePressurePlate
  {
      private BlockPressurePlate.Sensitivity field_150069_a;
-@@ -54,7 +56,33 @@
+@@ -54,8 +56,34 @@
  
              while (iterator.hasNext())
              {
 -                Entity entity = (Entity)iterator.next();
 +                Entity entity = (Entity) iterator.next();
-+
+ 
 +                // CraftBukkit start - Call interact event when turning on a pressure plate
 +                if (this.func_150060_c(p_150065_1_.getBlockMetadata(p_150065_2_, p_150065_3_, p_150065_4_)) == 0)
 +                {
@@ -41,6 +41,7 @@
 +                }
 +
 +                // CraftBukkit end
- 
++
                  if (!entity.doesEntityNotTriggerPressurePlate())
                  {
+                     return 15;

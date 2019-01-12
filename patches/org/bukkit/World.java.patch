@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/World.java	2019-01-11 20:13:52.567072600 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/World.java	2019-01-11 20:13:26.658374700 -0500
+--- ../src-base/minecraft/org/bukkit/World.java
++++ ../src-work/minecraft/org/bukkit/World.java
 @@ -17,6 +17,8 @@
  import org.bukkit.plugin.messaging.PluginMessageRecipient;
  import org.bukkit.util.Vector;
@@ -85,4 +85,3 @@
 +    
 +    public abstract WorldServer getWorldServer();
  }
-\ No newline at end of file

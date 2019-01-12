@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/play/client/C0DPacketCloseWindow.java	2019-01-11 20:13:53.133848200 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/play/client/C0DPacketCloseWindow.java	2019-01-11 20:13:26.937645800 -0500
+--- ../src-base/minecraft/net/minecraft/network/play/client/C0DPacketCloseWindow.java
++++ ../src-work/minecraft/net/minecraft/network/play/client/C0DPacketCloseWindow.java
 @@ -15,11 +15,12 @@
  
      public C0DPacketCloseWindow() {}

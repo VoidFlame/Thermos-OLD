@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraftforge/common/ForgeVersion.java	2019-01-11 20:13:52.326545900 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/ForgeVersion.java	2019-01-11 20:13:26.475246400 -0500
+--- ../src-base/minecraft/net/minecraftforge/common/ForgeVersion.java
++++ ../src-work/minecraft/net/minecraftforge/common/ForgeVersion.java
 @@ -25,7 +25,7 @@
      //This number is incremented every time a interface changes or new major feature is added, and reset every Minecraft version
      public static final int revisionVersion = 4;
@@ -9,10 +9,3 @@
  
      private static Status status = PENDING;
      private static String target = null;
-@@ -145,4 +145,4 @@
-             }
-         }.start();
-     }
--}
-+}
-\ No newline at end of file

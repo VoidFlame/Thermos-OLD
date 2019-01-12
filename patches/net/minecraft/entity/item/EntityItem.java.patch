@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityItem.java	2019-01-11 20:13:52.864733600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityItem.java	2019-01-11 20:13:26.786465200 -0500
+--- ../src-base/minecraft/net/minecraft/entity/item/EntityItem.java
++++ ../src-work/minecraft/net/minecraft/entity/item/EntityItem.java
 @@ -22,6 +22,11 @@
  import cpw.mods.fml.common.FMLCommonHandler;
  import cpw.mods.fml.common.eventhandler.Event.Result;
@@ -310,4 +310,3 @@
 +        return stack != null && stack.getItem() != null && stack.stackSize > 0;
 +    }
  }
-\ No newline at end of file

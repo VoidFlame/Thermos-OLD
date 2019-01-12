@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockLiquid.java	2019-01-11 20:13:52.629239000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockLiquid.java	2019-01-11 20:13:26.694400700 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockLiquid.java
++++ ../src-work/minecraft/net/minecraft/block/BlockLiquid.java
 @@ -509,7 +509,7 @@
                      {
                          p_149805_1_.setBlock(p_149805_2_, p_149805_3_, p_149805_4_, Blocks.obsidian);

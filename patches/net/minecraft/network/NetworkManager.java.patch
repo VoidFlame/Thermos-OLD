@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/NetworkManager.java	2019-01-11 20:13:50.702027500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/NetworkManager.java	2019-01-11 20:13:22.467976600 -0500
+--- ../src-base/minecraft/net/minecraft/network/NetworkManager.java
++++ ../src-work/minecraft/net/minecraft/network/NetworkManager.java
 @@ -25,6 +25,8 @@
  import java.net.InetAddress;
  import java.net.SocketAddress;

@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/ibxm/ScreamTracker3.java	2019-01-11 20:13:51.857529600 -0500
-+++ eclipse/Cauldron/src/main/java/ibxm/ScreamTracker3.java	2019-01-11 20:13:26.302123500 -0500
-@@ -485,4 +485,4 @@
- 		}
- 		return string;
- 	}
--}
-+}
-\ No newline at end of file

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/entity/Player.java	2019-01-11 20:13:52.708558300 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/entity/Player.java	2019-01-11 20:13:26.742433800 -0500
+--- ../src-base/minecraft/org/bukkit/entity/Player.java
++++ ../src-work/minecraft/org/bukkit/entity/Player.java
 @@ -2,19 +2,11 @@
  
  import java.net.InetSocketAddress;
@@ -112,4 +112,3 @@
 +    Spigot spigot();
 +    // Spigot end
  }
-\ No newline at end of file

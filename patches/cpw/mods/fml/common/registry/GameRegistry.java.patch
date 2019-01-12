@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/common/registry/GameRegistry.java	2019-01-11 20:13:52.353565000 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/registry/GameRegistry.java	2019-01-11 20:13:26.495259400 -0500
+--- ../src-base/minecraft/cpw/mods/fml/common/registry/GameRegistry.java
++++ ../src-work/minecraft/cpw/mods/fml/common/registry/GameRegistry.java
 @@ -24,6 +24,7 @@
  import java.util.Map;
  import java.util.Random;

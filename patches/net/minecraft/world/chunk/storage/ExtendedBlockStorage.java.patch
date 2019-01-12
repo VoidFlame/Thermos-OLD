@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/chunk/storage/ExtendedBlockStorage.java	2019-01-11 20:13:50.737080400 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/chunk/storage/ExtendedBlockStorage.java	2019-01-11 20:13:22.477978300 -0500
+--- ../src-base/minecraft/net/minecraft/world/chunk/storage/ExtendedBlockStorage.java
++++ ../src-work/minecraft/net/minecraft/world/chunk/storage/ExtendedBlockStorage.java
 @@ -31,6 +31,29 @@
          }
      }
@@ -149,7 +149,7 @@
          this.blockRefCount = 0;
          this.tickRefCount = 0;
  
-@@ -175,50 +302,111 @@
+@@ -175,51 +302,112 @@
          this.blockMSBArray = null;
      }
  
@@ -157,37 +157,37 @@
 +    
      public NibbleArray getBlockMSBArray()
      {
-+    	if(this.blockMSBArray != null)
-+    	{
-+    		this.blockMSBArray.forceToNonTrivialArray();
-+    	}    	
++        if(this.blockMSBArray != null)
++        {
++            this.blockMSBArray.forceToNonTrivialArray();
++        }        
          return this.blockMSBArray;
      }
  
      public NibbleArray getMetadataArray()
      {
-+    	if(blockMetadataArray != null)
-+    	{
-+    		this.blockMetadataArray.forceToNonTrivialArray();
-+    	}
++        if(blockMetadataArray != null)
++        {
++            this.blockMetadataArray.forceToNonTrivialArray();
++        }
          return this.blockMetadataArray;
      }
  
      public NibbleArray getBlocklightArray()
      {
-+    	if(blocklightArray != null)
-+    	{
-+    		this.blocklightArray.forceToNonTrivialArray();
-+    	}   
++        if(blocklightArray != null)
++        {
++            this.blocklightArray.forceToNonTrivialArray();
++        }   
          return this.blocklightArray;
      }
  
      public NibbleArray getSkylightArray()
      {
-+    	if(skylightArray != null)
-+    	{
-+    		this.skylightArray.forceToNonTrivialArray();
-+    	}       	
++        if(skylightArray != null)
++        {
++            this.skylightArray.forceToNonTrivialArray();
++        }           
          return this.skylightArray;
      }
  
@@ -236,8 +236,8 @@
      {
 -        this.skylightArray = p_76666_1_;
 +        this.skylightArray = this.validateNibbleArray(p_76666_1_); // CraftBukkit - Validate data
-+    }
-+
+     }
+ 
 +    // CraftBukkit start - Validate array lengths
 +    private NibbleArray validateNibbleArray(NibbleArray nibbleArray)
 +    {
@@ -261,8 +261,9 @@
 +        }
 +
 +        return byteArray;
-     }
++    }
 +    // CraftBukkit end
- 
++
      @SideOnly(Side.CLIENT)
      public NibbleArray createBlockMSBArray()
+     {

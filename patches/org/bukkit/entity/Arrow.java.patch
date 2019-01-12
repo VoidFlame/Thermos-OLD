@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/entity/Arrow.java	2019-01-11 20:13:53.131846000 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/entity/Arrow.java	2019-01-11 20:13:26.935643800 -0500
+--- ../src-base/minecraft/org/bukkit/entity/Arrow.java
++++ ../src-work/minecraft/org/bukkit/entity/Arrow.java
 @@ -39,4 +39,22 @@
       * @param critical whether or not it should be critical
       */
@@ -23,4 +23,3 @@
 +    Spigot spigot();
 +    // Spigot end
  }
-\ No newline at end of file

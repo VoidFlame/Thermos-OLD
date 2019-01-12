@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/ibxm/Channel.java	2019-01-11 20:13:52.980927900 -0500
-+++ eclipse/Cauldron/src/main/java/ibxm/Channel.java	2019-01-11 20:13:26.865521900 -0500
-@@ -942,4 +942,4 @@
- 		log_2_freq += ( key_add << IBXM.FP_SHIFT ) / 12;
- 		step = LogTable.raise_2( log_2_freq - log_2_sampling_rate );
- 	}
--}
-+}
-\ No newline at end of file

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/ItemBow.java	2019-01-11 20:13:52.954890700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemBow.java	2019-01-11 20:13:26.841503800 -0500
+--- ../src-base/minecraft/net/minecraft/item/ItemBow.java
++++ ../src-work/minecraft/net/minecraft/item/ItemBow.java
 @@ -84,6 +84,21 @@
                  entityarrow.setFire(100);
              }

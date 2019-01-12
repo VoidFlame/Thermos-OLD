@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/rcon/RConConsoleSource.java	2019-01-11 20:13:52.833436600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/rcon/RConConsoleSource.java	2019-01-11 20:13:26.775457100 -0500
+--- ../src-base/minecraft/net/minecraft/network/rcon/RConConsoleSource.java
++++ ../src-work/minecraft/net/minecraft/network/rcon/RConConsoleSource.java
 @@ -25,6 +25,13 @@
          return new ChatComponentText(this.getCommandSenderName());
      }

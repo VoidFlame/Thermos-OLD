@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/command/defaults/TimingsCommand.java	2019-01-11 20:13:52.919856000 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/command/defaults/TimingsCommand.java	2019-01-11 20:13:26.822492100 -0500
+--- ../src-base/minecraft/org/bukkit/command/defaults/TimingsCommand.java
++++ ../src-work/minecraft/org/bukkit/command/defaults/TimingsCommand.java
 @@ -19,23 +19,97 @@
  
  import com.google.common.collect.ImmutableList;
@@ -158,4 +158,3 @@
 +    }
 +    // Spigot end
  }
-\ No newline at end of file

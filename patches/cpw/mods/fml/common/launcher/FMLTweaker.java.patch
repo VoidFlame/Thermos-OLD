@@ -1,12 +1,12 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/common/launcher/FMLTweaker.java	2019-01-11 20:13:51.432909100 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/launcher/FMLTweaker.java	2019-01-11 20:13:23.595589300 -0500
+--- ../src-base/minecraft/cpw/mods/fml/common/launcher/FMLTweaker.java
++++ ../src-work/minecraft/cpw/mods/fml/common/launcher/FMLTweaker.java
 @@ -32,7 +32,9 @@
          System.setProperty("java.net.preferIPv4Stack", "true"); //Lets do this as early as possible. Vanilla does it in Main.main
          try
          {
 -            System.setSecurityManager(new FMLSecurityManager());
-+        	FMLSecurityManager sm = new FMLSecurityManager();
-+        	sm.defman = System.getSecurityManager();
++            FMLSecurityManager sm = new FMLSecurityManager();
++            sm.defman = System.getSecurityManager();
 +            System.setSecurityManager(sm);
          }
          catch (SecurityException se)

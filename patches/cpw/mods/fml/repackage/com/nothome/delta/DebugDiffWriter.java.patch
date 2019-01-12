@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/DebugDiffWriter.java	2019-01-11 20:13:53.083778400 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/DebugDiffWriter.java	2019-01-11 20:13:26.907624000 -0500
-@@ -75,4 +75,4 @@
-         System.err.println("CLOSE");
-     }
- 
--}
-+}
-\ No newline at end of file

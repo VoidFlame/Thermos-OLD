@@ -1,15 +1,16 @@
---- eclipse/Clean/src/main/java/org/bukkit/GameMode.java	2019-01-11 20:13:52.668431900 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/GameMode.java	2019-01-11 20:13:26.718418500 -0500
-@@ -11,6 +11,12 @@
+--- ../src-base/minecraft/org/bukkit/GameMode.java
++++ ../src-work/minecraft/org/bukkit/GameMode.java
+@@ -11,7 +11,13 @@
   * have
   */
  public enum GameMode {
 +    // Cauldron start - FakePlayers do not set their gametype and use the default
-+    /**
+     /**
 +     * Default mode
 +     */
 +    NOT_SET(-1),
 +    // Cauldron end
-     /**
++    /**
       * Creative mode may fly, build instantly, become invulnerable and create
       * free items.
+      */

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/command/defaults/TestForCommand.java	2019-01-11 20:13:52.873727400 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/command/defaults/TestForCommand.java	2019-01-11 20:13:26.789467900 -0500
+--- ../src-base/minecraft/org/bukkit/command/defaults/TestForCommand.java
++++ ../src-work/minecraft/org/bukkit/command/defaults/TestForCommand.java
 @@ -23,4 +23,16 @@
          sender.sendMessage(ChatColor.RED + "/testfor is only usable by commandblocks with analog output.");
          return true;
@@ -17,4 +17,3 @@
 +    }
 +    // Spigot End
  }
-\ No newline at end of file

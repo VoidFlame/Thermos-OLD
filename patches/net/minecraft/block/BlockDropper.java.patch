@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockDropper.java	2019-01-11 20:13:52.977925800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockDropper.java	2019-01-11 20:13:26.862519800 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockDropper.java
++++ ../src-work/minecraft/net/minecraft/block/BlockDropper.java
 @@ -13,6 +13,11 @@
  import net.minecraft.tileentity.TileEntityHopper;
  import net.minecraft.util.Facing;

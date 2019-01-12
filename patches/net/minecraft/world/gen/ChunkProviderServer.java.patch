@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/gen/ChunkProviderServer.java	2019-01-11 20:13:51.797169600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/gen/ChunkProviderServer.java	2019-01-11 20:13:26.281108700 -0500
+--- ../src-base/minecraft/net/minecraft/world/gen/ChunkProviderServer.java
++++ ../src-work/minecraft/net/minecraft/world/gen/ChunkProviderServer.java
 @@ -1,14 +1,22 @@
  package net.minecraft.world.gen;
  
@@ -163,10 +163,10 @@
      public void unloadAllChunks()
      {
 -        Iterator iterator = this.loadedChunks.iterator();
-+    	for(Chunk chunk : this.loadedChunkHashMap_KC.rawVanilla().values())
-+    	{
-+    		unloadChunksIfNotNearSpawn(chunk.xPosition, chunk.zPosition);
-+    	}
++        for(Chunk chunk : this.loadedChunkHashMap_KC.rawVanilla().values())
++        {
++            unloadChunksIfNotNearSpawn(chunk.xPosition, chunk.zPosition);
++        }
 +    }
  
 -        while (iterator.hasNext())
@@ -175,7 +175,7 @@
 -            this.unloadChunksIfNotNearSpawn(chunk.xPosition, chunk.zPosition);
 -        }
 +    public Chunk getChunkIfLoaded(int x, int z) {
-+    	return this.loadedChunkHashMap_KC.rawThermos().get(x,z); //Thermos replacement
++        return this.loadedChunkHashMap_KC.rawThermos().get(x,z); //Thermos replacement
      }
  
      public Chunk loadChunk(int p_73158_1_, int p_73158_2_)
@@ -303,17 +303,17 @@
 +        
 +        if (chunk == null)
 +        {
-+        	logger.error("Provided chunk is null for (" +p_73154_1_ + ", " + p_73154_2_+") !");
-+        	return null;
++            logger.error("Provided chunk is null for (" +p_73154_1_ + ", " + p_73154_2_+") !");
++            return null;
 +        }
 +        
 +        try
 +        {
-+        	worldObj.isProfilingWorld();
++            worldObj.isProfilingWorld();
 +        }
 +        catch (Throwable t)
 +        {
-+        	return chunk;
++            return chunk;
 +        }
 +        
 +        if ((p_73154_1_ != chunk.xPosition || p_73154_2_ != chunk.zPosition) && !worldObj.isProfilingWorld())
@@ -583,4 +583,3 @@
 +
 +    // Cauldron end
  }
-\ No newline at end of file

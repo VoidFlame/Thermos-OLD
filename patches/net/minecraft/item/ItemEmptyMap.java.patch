@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/ItemEmptyMap.java	2019-01-11 20:13:50.515266500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemEmptyMap.java	2019-01-11 20:13:22.428939600 -0500
+--- ../src-base/minecraft/net/minecraft/item/ItemEmptyMap.java
++++ ../src-work/minecraft/net/minecraft/item/ItemEmptyMap.java
 @@ -27,6 +27,7 @@
          mapdata.zCenter = (int)(Math.round(p_77659_3_.posZ / (double)i) * (long)i);
          mapdata.dimension = p_77659_2_.provider.dimensionId;

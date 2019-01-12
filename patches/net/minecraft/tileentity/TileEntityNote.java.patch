@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/tileentity/TileEntityNote.java	2019-01-11 20:13:52.679452500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/tileentity/TileEntityNote.java	2019-01-11 20:13:26.726423300 -0500
+--- ../src-base/minecraft/net/minecraft/tileentity/TileEntityNote.java
++++ ../src-work/minecraft/net/minecraft/tileentity/TileEntityNote.java
 @@ -68,7 +68,23 @@
                  b0 = 4;
              }
@@ -25,4 +25,3 @@
 +    }
 +    // Cauldron end
  }
-\ No newline at end of file

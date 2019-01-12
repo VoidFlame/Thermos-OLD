@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/server/ServerEula.java	2019-01-11 20:13:52.865721800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/server/ServerEula.java	2019-01-11 20:13:26.787466800 -0500
+--- ../src-base/minecraft/net/minecraft/server/ServerEula.java
++++ ../src-work/minecraft/net/minecraft/server/ServerEula.java
 @@ -26,6 +26,7 @@
  
      private boolean func_154347_a(File p_154347_1_)

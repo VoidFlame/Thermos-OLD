@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockCocoa.java	2019-01-11 20:13:51.548008100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockCocoa.java	2019-01-11 20:13:23.739742700 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockCocoa.java
++++ ../src-work/minecraft/net/minecraft/block/BlockCocoa.java
 @@ -51,7 +51,8 @@
              if (i1 < 2)
              {

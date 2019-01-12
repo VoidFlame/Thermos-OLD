@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockRedstoneTorch.java	2019-01-11 20:13:53.275228800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockRedstoneTorch.java	2019-01-11 20:13:27.438958100 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockRedstoneTorch.java
++++ ../src-work/minecraft/net/minecraft/block/BlockRedstoneTorch.java
 @@ -3,7 +3,7 @@
  import cpw.mods.fml.relauncher.Side;
  import cpw.mods.fml.relauncher.SideOnly;

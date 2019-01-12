@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/Material.java	2019-01-11 20:13:52.407641400 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/Material.java	2019-01-12 11:17:53.302958600 -0500
+--- ../src-base/minecraft/org/bukkit/Material.java
++++ ../src-work/minecraft/org/bukkit/Material.java
 @@ -3,6 +3,22 @@
  import java.lang.reflect.Constructor;
  import java.util.Map;
@@ -23,7 +23,7 @@
  import org.apache.commons.lang.Validate;
  import org.bukkit.map.MapView;
  import org.bukkit.material.Bed;
-@@ -418,14 +434,31 @@
+@@ -418,14 +434,30 @@
      private final int id;
      private final Constructor<? extends MaterialData> ctor;
      private static Material[] byId = new Material[383];
@@ -39,7 +39,6 @@
 +    private static Method fieldAccessorSet;
 +    private static boolean isSetup;
 +    private boolean isForgeBlock = false;
-+    private boolean vanilla = true;
 +    // Cauldron end
  
      private Material(final int id) {
@@ -56,7 +55,7 @@
      private Material(final int id, final int stack) {
          this(id, stack, MaterialData.class);
      }
-@@ -526,10 +559,17 @@
+@@ -526,10 +558,17 @@
       * @return true if this material is a block
       */
      public boolean isBlock() {
@@ -75,7 +74,7 @@
       * Checks if this Material is edible.
       *
       * @return true if this Material is edible.
-@@ -615,16 +655,208 @@
+@@ -615,16 +654,202 @@
          } catch (NumberFormatException ex) {}
  
          if (result == null) {
@@ -86,8 +85,8 @@
 +            String filtered = normalizeName(name);
              result = BY_NAME.get(filtered);
 +            // Cauldron end
-+        }
-+
+         }
+ 
 +        // Cauldron start - Try the ore dictionary
 +        if (result == null) {
 +            BukkitOreDictionary dict = net.minecraftforge.cauldron.api.Cauldron.getOreDictionary();
@@ -104,19 +103,14 @@
 +                    }
 +                }
 +            }
-         }
++        }
 +        // Cauldron end
- 
++
          return result;
      }
  
 +    /* ===============================  Cauldron START ============================= */
 +
-+    public boolean isVanilla()
-+    {
-+        return vanilla;
-+    }
-+    
 +    // use a normalize() function to ensure it is accessible after a round-trip
 +    public static String normalizeName(String name) {
 +        return name.toUpperCase().replaceAll("(:|\\s)", "_").replaceAll("\\W", "");
@@ -131,7 +125,6 @@
 +      if (byId[id] == null) {
 +        String materialName = normalizeName(name);
 +        Material material = (Material) EnumHelper.addEnum(Material.class, materialName, new Class[]{Integer.TYPE, Boolean.TYPE}, new Object[]{Integer.valueOf(id), isBlock});
-+        material.vanilla = false;
 +        byId[id] = material;
 +        BY_NAME.put(materialName, material);
 +        BY_NAME.put("X" + String.valueOf(id), material);

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraftforge/common/DimensionManager.java	2019-01-11 20:13:50.589475600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/DimensionManager.java	2019-01-11 20:13:22.442948700 -0500
+--- ../src-base/minecraft/net/minecraftforge/common/DimensionManager.java
++++ ../src-work/minecraft/net/minecraftforge/common/DimensionManager.java
 @@ -34,6 +34,15 @@
  import net.minecraft.world.storage.ISaveHandler;
  import net.minecraft.world.storage.SaveHandler;
@@ -63,13 +63,13 @@
 -            List<World> allWorlds = Lists.newArrayList(weakWorldMap.keySet());
 -            allWorlds.removeAll(worlds.values());
 -            for (ListIterator<World> li = allWorlds.listIterator(); li.hasNext(); )
--            {
++            if (check)
+             {
 -                World w = li.next();
 -                leakedWorlds.add(System.identityHashCode(w));
 -            }
 -            for (World w : allWorlds)
-+            if (check)
-             {
+-            {
 -                int leakCount = leakedWorlds.count(System.identityHashCode(w));
 -                if (leakCount == 5)
 +                List<World> allWorlds = Lists.newArrayList(weakWorldMap.keySet());
@@ -385,4 +385,3 @@
 +    }
 +    // Cauldron end
  }
-\ No newline at end of file

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/command/defaults/VersionCommand.java	2019-01-11 20:13:52.411644500 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/command/defaults/VersionCommand.java	2019-01-11 20:13:26.538289800 -0500
+--- ../src-base/minecraft/org/bukkit/command/defaults/VersionCommand.java
++++ ../src-work/minecraft/org/bukkit/command/defaults/VersionCommand.java
 @@ -29,43 +29,19 @@
          if (!testPermission(sender)) return true;
  
@@ -15,7 +15,9 @@
 -                }
 -
 -                name.append(arg);
--            }
++            if (true) {
++                sender.sendMessage("This server is not running any plugins.");
+             }
 -
 -            String pluginName = name.toString();
 -            Plugin exactPlugin = Bukkit.getPluginManager().getPlugin(pluginName);
@@ -36,15 +38,13 @@
 -            if (!found) {
 -                sender.sendMessage("This server is not running any plugin by that name.");
 -                sender.sendMessage("Use /plugins to get a list of plugins.");
-+            if (true) {
-+                sender.sendMessage("This server is not running any plugins.");
-             }
+-            }
          }
          return true;
      }
  
      private void describeToSender(Plugin plugin, CommandSender sender) {
-+	sender.sendMessage("Author: Fracica");
++    sender.sendMessage("Author: Fracica");
 +/*
          PluginDescriptionFile desc = plugin.getDescription();
          sender.sendMessage(ChatColor.GREEN + desc.getName() + ChatColor.WHITE + " version " + ChatColor.GREEN + desc.getVersion());
@@ -81,7 +81,7 @@
 -
 -        if (args.length == 1) {
              List<String> completions = new ArrayList<String>();
-+  		completions.add("None");return completions;
++          completions.add("None");return completions;
 +
 +/*        if (args.length == 1) {
              String toComplete = args[0].toLowerCase();
@@ -95,4 +95,3 @@
 +        return ImmutableList.of();*/
      }
  }
-\ No newline at end of file

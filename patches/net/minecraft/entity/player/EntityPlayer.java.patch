@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/player/EntityPlayer.java	2019-01-11 20:13:53.185077000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/player/EntityPlayer.java	2019-01-11 20:13:26.960662100 -0500
+--- ../src-base/minecraft/net/minecraft/entity/player/EntityPlayer.java
++++ ../src-work/minecraft/net/minecraft/entity/player/EntityPlayer.java
 @@ -92,6 +92,22 @@
  import net.minecraftforge.event.entity.player.PlayerFlyableFallEvent;
  import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
@@ -518,14 +518,14 @@
 -
 +        else if(this instanceof EntityPlayerMP)
 +        {
-+        	if(((EntityPlayerMP)p_71049_1_).keptInventory)
-+        	{
++            if(((EntityPlayerMP)p_71049_1_).keptInventory)
++            {
 +                this.inventory.copyInventory(p_71049_1_.inventory);
 +                this.experienceLevel = p_71049_1_.experienceLevel;
 +                this.experienceTotal = p_71049_1_.experienceTotal;
 +                this.experience = p_71049_1_.experience;
 +                this.setScore(p_71049_1_.getScore());
-+        	}
++            }
 +        }
          this.theInventoryEnderChest = p_71049_1_.theInventoryEnderChest;
  

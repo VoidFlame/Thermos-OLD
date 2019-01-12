@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/common/asm/transformers/SideTransformer.java	2019-01-11 20:13:52.865721800 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/asm/transformers/SideTransformer.java	2019-01-11 20:13:26.787466800 -0500
+--- ../src-base/minecraft/cpw/mods/fml/common/asm/transformers/SideTransformer.java
++++ ../src-work/minecraft/cpw/mods/fml/common/asm/transformers/SideTransformer.java
 @@ -32,6 +32,7 @@
  {
      private static String SIDE = FMLLaunchHandler.side().name();

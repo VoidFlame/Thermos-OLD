@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/EntityTrackerEntry.java	2019-01-11 20:13:51.933744200 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/EntityTrackerEntry.java	2019-01-11 20:13:26.330143300 -0500
+--- ../src-base/minecraft/net/minecraft/entity/EntityTrackerEntry.java
++++ ../src-work/minecraft/net/minecraft/entity/EntityTrackerEntry.java
 @@ -56,9 +56,15 @@
  import net.minecraft.world.storage.MapData;
  import org.apache.logging.log4j.LogManager;

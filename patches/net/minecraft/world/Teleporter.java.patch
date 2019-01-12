@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/Teleporter.java	2019-01-11 20:13:53.271228800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/Teleporter.java	2019-01-11 20:13:27.426943400 -0500
+--- ../src-base/minecraft/net/minecraft/world/Teleporter.java
++++ ../src-work/minecraft/net/minecraft/world/Teleporter.java
 @@ -12,6 +12,12 @@
  import net.minecraft.util.LongHashMap;
  import net.minecraft.util.MathHelper;
@@ -118,7 +118,9 @@
                  }
              }
 +        }
-+
+ 
+-            p_77185_1_.setLocationAndAngles((double)i, (double)j, (double)k, p_77185_1_.rotationYaw, 0.0F);
+-            p_77185_1_.motionX = p_77185_1_.motionY = p_77185_1_.motionZ = 0.0D;
 +        return new ChunkCoordinates(i, j, k);
 +    }
 +    // CraftBukkit end
@@ -127,13 +129,11 @@
 +    {
 +        // CraftBukkit start - Modularize portal search process and entity teleportation
 +        ChunkCoordinates found = this.findPortal(par1Entity.posX, par1Entity.posY, par1Entity.posZ, 128);
- 
--            p_77185_1_.setLocationAndAngles((double)i, (double)j, (double)k, p_77185_1_.rotationYaw, 0.0F);
--            p_77185_1_.motionX = p_77185_1_.motionY = p_77185_1_.motionZ = 0.0D;
++
 +        if (found == null)
 +        {
 +            return false;
-+        }
+         }
 +
 +        Location exit = new Location(this.worldServerInstance.getWorld(), found.posX, found.posY, found.posZ, par8, par1Entity.rotationPitch);
 +        Vector velocity = par1Entity.getBukkitEntity().getVelocity();
@@ -143,7 +143,7 @@
 +        if (par1Entity.motionX != velocity.getX() || par1Entity.motionY != velocity.getY() || par1Entity.motionZ != velocity.getZ())
 +        {
 +            par1Entity.getBukkitEntity().setVelocity(velocity);
-         }
++        }
 +
 +        return true;
      }
@@ -259,7 +259,7 @@
 +        int j = position.getBlockY();
 +        int k = position.getBlockZ();
 +        float f = position.getYaw();
-+
+ 
 +        if (this.worldServerInstance.getWorld().getEnvironment() == org.bukkit.World.Environment.THE_END)
 +        {
 +            // entity.setPositionRotation((double) i, (double) j, (double) k, entity.yaw, 0.0F);
@@ -278,7 +278,7 @@
 +            double d9 = (double) j + 0.5D;
 +            d4 = (double) k + 0.5D;
 +            int j2 = -1;
- 
++
              if (this.worldServerInstance.getBlock(i - 1, j, k) == Blocks.portal)
              {
 -                i4 = 2;
@@ -404,22 +404,20 @@
              else
              {
 -                p_77184_1_.motionX = p_77184_1_.motionY = p_77184_1_.motionZ = 0.0D;
--            }
--
--            p_77184_1_.setLocationAndAngles(d11, d6, d7, p_77184_1_.rotationYaw, p_77184_1_.rotationPitch);
--            return true;
 +                // entity.motX = entity.motY = entity.motZ = 0.0D;
 +                velocity.setX(0);
 +                velocity.setY(0);
 +                velocity.setZ(0);
-+            }
-+
+             }
+ 
+-            p_77184_1_.setLocationAndAngles(d11, d6, d7, p_77184_1_.rotationYaw, p_77184_1_.rotationPitch);
+-            return true;
 +            // entity.setPositionRotation(d8, d9, d4, entity.yaw, entity.pitch);
 +            position.setX(d8);
 +            position.setY(d9);
 +            position.setZ(d4);
 +            position.setYaw(f);
-+        }
+         }
 +
 +        EntityPortalExitEvent event = new EntityPortalExitEvent(entity.getBukkitEntity(), from, position, before, velocity);
 +        this.worldServerInstance.getServer().getPluginManager().callEvent(event);
@@ -433,7 +431,7 @@
 +            position.setYaw(from.getYaw());
 +            position.setPitch(from.getPitch());
 +            velocity.copy(before);
-         }
++        }
          else
          {
 -            return false;
@@ -446,18 +444,18 @@
          }
 +
 +        // CraftBukkit end
-+    }
-+
-+    public boolean makePortal(Entity par1Entity)
-+    {
-+        // CraftBukkit start - Allow for portal creation to be based on coordinates instead of entity
-+        return this.createPortal(par1Entity.posX, par1Entity.posY, par1Entity.posZ, 16);
      }
  
 -    public boolean makePortal(Entity p_85188_1_)
-+    public boolean createPortal(double x, double y, double z, int b0)
++    public boolean makePortal(Entity par1Entity)
      {
 -        byte b0 = 16;
++        // CraftBukkit start - Allow for portal creation to be based on coordinates instead of entity
++        return this.createPortal(par1Entity.posX, par1Entity.posY, par1Entity.posZ, 16);
++    }
++
++    public boolean createPortal(double x, double y, double z, int b0)
++    {
 +        if (this.worldServerInstance.getWorld().getEnvironment() == org.bukkit.World.Environment.THE_END)
 +        {
 +            this.createEndPortal(x, y, z);
@@ -838,4 +836,3 @@
          }
      }
  }
-\ No newline at end of file

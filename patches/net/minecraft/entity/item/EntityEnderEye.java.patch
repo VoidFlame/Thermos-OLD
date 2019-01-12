@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityEnderEye.java	2019-01-11 20:13:50.718069000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityEnderEye.java	2019-01-11 20:13:22.472974200 -0500
+--- ../src-base/minecraft/net/minecraft/entity/item/EntityEnderEye.java
++++ ../src-work/minecraft/net/minecraft/entity/item/EntityEnderEye.java
 @@ -117,7 +117,7 @@
          this.rotationYaw = this.prevRotationYaw + (this.rotationYaw - this.prevRotationYaw) * 0.2F;
  
@@ -21,4 +21,3 @@
 +    }
 +    // Cauldron end
  }
-\ No newline at end of file

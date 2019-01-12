@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/gen/structure/MapGenStronghold.java	2019-01-11 20:13:51.405888900 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/gen/structure/MapGenStronghold.java	2019-01-11 20:13:23.507447500 -0500
+--- ../src-base/minecraft/net/minecraft/world/gen/structure/MapGenStronghold.java
++++ ../src-work/minecraft/net/minecraft/world/gen/structure/MapGenStronghold.java
 @@ -92,7 +92,17 @@
                  double d1 = (1.25D * (double)l + random.nextDouble()) * this.field_82671_h * (double)l;
                  int j1 = (int)Math.round(Math.cos(d0) * d1);

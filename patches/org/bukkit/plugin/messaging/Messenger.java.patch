@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/plugin/messaging/Messenger.java	2019-01-11 20:13:53.290270700 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/plugin/messaging/Messenger.java	2019-01-11 20:13:27.453959600 -0500
+--- ../src-base/minecraft/org/bukkit/plugin/messaging/Messenger.java
++++ ../src-work/minecraft/org/bukkit/plugin/messaging/Messenger.java
 @@ -18,7 +18,7 @@
      /**
       * Represents the largest size that a Plugin Channel may be.

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityMinecart.java	2019-01-11 20:13:52.200361600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityMinecart.java	2019-01-11 20:13:26.397189600 -0500
+--- ../src-base/minecraft/net/minecraft/entity/item/EntityMinecart.java
++++ ../src-work/minecraft/net/minecraft/entity/item/EntityMinecart.java
 @@ -28,6 +28,15 @@
  import net.minecraftforge.event.entity.minecart.MinecartCollisionEvent;
  import net.minecraftforge.event.entity.minecart.MinecartUpdateEvent;

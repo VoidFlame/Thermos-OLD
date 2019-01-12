@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/common/FMLCommonHandler.java	2019-01-11 20:13:53.053473800 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/FMLCommonHandler.java	2019-01-11 20:29:47.226391100 -0500
+--- ../src-base/minecraft/cpw/mods/fml/common/FMLCommonHandler.java
++++ ../src-work/minecraft/cpw/mods/fml/common/FMLCommonHandler.java
 @@ -31,12 +31,17 @@
  import net.minecraft.network.INetHandler;
  import net.minecraft.network.NetworkManager;
@@ -18,7 +18,15 @@
  
  import com.google.common.base.Joiner;
  import com.google.common.base.Strings;
-@@ -385,10 +390,11 @@
+@@ -282,6 +287,7 @@
+     {
+         Loader.instance().serverStarted();
+         sidedDelegate.allowLogins();
++        thermos.updater.TVersionRetriever.init(MinecraftServer.getServer());
+     }
+ 
+     public void handleServerStopping()
+@@ -385,10 +391,11 @@
          {
              return;
          }
@@ -31,7 +39,7 @@
          handlerSet.add(handler);
          handlerToCheck = new WeakReference<SaveHandler>(handler); // for confirmBackupLevelDatUse
          Map<String,NBTBase> additionalProperties = Maps.newHashMap();
-@@ -496,7 +502,14 @@
+@@ -496,7 +503,14 @@
  
      public String getModName()
      {
@@ -47,7 +55,7 @@
          modNames.add("fml");
          if (!noForge)
          {
-@@ -540,8 +553,21 @@
+@@ -540,8 +554,21 @@
          bus().post(new InputEvent.KeyInputEvent());
      }
  

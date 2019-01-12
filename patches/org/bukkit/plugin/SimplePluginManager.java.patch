@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/plugin/SimplePluginManager.java	2019-01-11 20:13:52.208366100 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/plugin/SimplePluginManager.java	2019-01-11 20:13:26.405196100 -0500
+--- ../src-base/minecraft/org/bukkit/plugin/SimplePluginManager.java
++++ ../src-work/minecraft/org/bukkit/plugin/SimplePluginManager.java
 @@ -132,7 +132,9 @@
              try {
                  description = loader.getPluginDescription(file);

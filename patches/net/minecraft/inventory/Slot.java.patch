@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/inventory/Slot.java	2019-01-11 20:13:51.269715200 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/Slot.java	2019-01-11 20:13:23.206802600 -0500
+--- ../src-base/minecraft/net/minecraft/inventory/Slot.java
++++ ../src-work/minecraft/net/minecraft/inventory/Slot.java
 @@ -10,7 +10,7 @@
  
  public class Slot

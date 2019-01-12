@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/command/defaults/PluginsCommand.java	2019-01-11 20:13:51.429906100 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/command/defaults/PluginsCommand.java	2019-01-11 20:13:23.592587800 -0500
+--- ../src-base/minecraft/org/bukkit/command/defaults/PluginsCommand.java
++++ ../src-work/minecraft/org/bukkit/command/defaults/PluginsCommand.java
 @@ -40,4 +40,12 @@
  
          return "(" + plugins.length + "): " + pluginList.toString();
@@ -13,4 +13,3 @@
 +    }
 +    // Spigot End
  }
-\ No newline at end of file

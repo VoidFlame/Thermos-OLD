@@ -1,12 +1,12 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/relauncher/FMLSecurityManager.java	2019-01-11 20:13:52.254440300 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/relauncher/FMLSecurityManager.java	2019-01-11 20:13:26.439220100 -0500
+--- ../src-base/minecraft/cpw/mods/fml/relauncher/FMLSecurityManager.java
++++ ../src-work/minecraft/cpw/mods/fml/relauncher/FMLSecurityManager.java
 @@ -10,6 +10,9 @@
   *
   */
  public class FMLSecurityManager extends SecurityManager {
-+	
-+	public SecurityManager defman;
-+	
++    
++    public SecurityManager defman;
++    
      @Override
      public void checkPermission(Permission perm)
      {
@@ -16,7 +16,7 @@
          }
 +        else if ("register".equals(permName))// Allow the default security policy to be taken into consideration for "register"-ing
 +        {
-+        	defman.checkPermission(perm);
++            defman.checkPermission(perm);
 +        }
          return;
      }

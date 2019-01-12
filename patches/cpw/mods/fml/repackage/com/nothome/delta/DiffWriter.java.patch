@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/DiffWriter.java	2019-01-11 20:13:51.548008100 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/DiffWriter.java	2019-01-11 20:13:23.739742700 -0500
-@@ -54,4 +54,4 @@
-      */
-     @Override
-     public void close() throws IOException;
--}
-+}
-\ No newline at end of file

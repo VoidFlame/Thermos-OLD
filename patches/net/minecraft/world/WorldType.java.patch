@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/WorldType.java	2019-01-11 20:13:51.979846300 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/WorldType.java	2019-01-11 20:13:26.351157600 -0500
+--- ../src-base/minecraft/net/minecraft/world/WorldType.java
++++ ../src-work/minecraft/net/minecraft/world/WorldType.java
 @@ -19,6 +19,7 @@
  import net.minecraft.world.gen.layer.GenLayerZoom;
  import cpw.mods.fml.relauncher.Side;

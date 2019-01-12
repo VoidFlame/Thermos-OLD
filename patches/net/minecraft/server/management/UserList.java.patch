@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/server/management/UserList.java	2019-01-11 20:13:53.277230200 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/server/management/UserList.java	2019-01-11 20:13:27.440951000 -0500
+--- ../src-base/minecraft/net/minecraft/server/management/UserList.java
++++ ../src-work/minecraft/net/minecraft/server/management/UserList.java
 @@ -184,6 +184,12 @@
          return this.field_152696_d.size() < 1;
      }

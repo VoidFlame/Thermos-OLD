@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/chunk/NibbleArray.java	2019-01-11 20:13:52.423690400 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/chunk/NibbleArray.java	2019-01-11 20:13:26.548296600 -0500
+--- ../src-base/minecraft/net/minecraft/world/chunk/NibbleArray.java
++++ ../src-work/minecraft/net/minecraft/world/chunk/NibbleArray.java
 @@ -1,47 +1,215 @@
  package net.minecraft.world.chunk;
  
@@ -22,7 +22,10 @@
 +    private static final byte[][] TrivLen2k;
 +
 +    static
-+    {
+     {
+-        this.data = new byte[p_i1992_1_ >> 1];
+-        this.depthBits = p_i1992_2_;
+-        this.depthBitsPlusFour = p_i1992_2_ + 4;
 +        TrivLen2k = new byte[16][];
 +
 +        for (int i = 0; i < 16; i++)
@@ -30,11 +33,15 @@
 +            TrivLen2k[i] = new byte[LEN2K];
 +            Arrays.fill(TrivLen2k[i], (byte)(i | (i << 4)));
 +        }
-+    }
-+
+     }
+ 
+-    public NibbleArray(byte[] p_i1993_1_, int p_i1993_2_)
 +    // Try to convert array to trivial array
 +    public void detectAndProcessTrivialArray()
-+    {
+     {
+-        this.data = p_i1993_1_;
+-        this.depthBits = p_i1993_2_;
+-        this.depthBitsPlusFour = p_i1993_2_ + 4;
 +        trivialValue = (byte)(data[0] & 0xF);
 +        trivialByte = (byte)(trivialValue | (trivialValue << 4));
 +
@@ -49,11 +56,13 @@
 +        // All values matches, so array is trivial
 +        this.length = data.length;
 +        this.data = null;
-+    }
-+
+     }
+ 
+-    public int get(int p_76582_1_, int p_76582_2_, int p_76582_3_)
 +    // Force array to non-trivial state
 +    public void forceToNonTrivialArray()
-+    {
+     {
+-        int l = p_76582_2_ << this.depthBitsPlusFour | p_76582_3_ << this.depthBits | p_76582_1_;
 +        if (this.data == null)
 +        {
 +            this.data = new byte[this.length];
@@ -92,10 +101,7 @@
 +
 +    // Return byte encoding of array (whether trivial or non-trivial) - returns read-only array if trivial (do not modify!)
 +    public byte[] getValueArray()
-     {
--        this.data = new byte[p_i1992_1_ >> 1];
--        this.depthBits = p_i1992_2_;
--        this.depthBitsPlusFour = p_i1992_2_ + 4;
++    {
 +        if (this.data != null)
 +        {
 +            return this.data;
@@ -120,15 +126,11 @@
 +
 +            return rslt;
 +        }
-     }
- 
--    public NibbleArray(byte[] p_i1993_1_, int p_i1993_2_)
++    }
++
 +    // Copy byte representation of array to given offset in given byte array
 +    public int copyToByteArray(byte[] dest, int off)
-     {
--        this.data = p_i1993_1_;
--        this.depthBits = p_i1993_2_;
--        this.depthBitsPlusFour = p_i1993_2_ + 4;
++    {
 +        if (this.data == null)
 +        {
 +            Arrays.fill(dest, off, off + this.length, this.trivialByte);
@@ -139,13 +141,11 @@
 +            System.arraycopy(this.data, 0, dest, off, this.data.length);
 +            return off + this.data.length;
 +        }
-     }
- 
--    public int get(int p_76582_1_, int p_76582_2_, int p_76582_3_)
++    }
++
 +    // Resize array to given byte length
 +    public void resizeArray(int len)
-     {
--        int l = p_76582_2_ << this.depthBitsPlusFour | p_76582_3_ << this.depthBits | p_76582_1_;
++    {
 +        if (this.data == null)
 +        {
 +            this.length = len;
@@ -231,4 +231,3 @@
          }
      }
  }
-\ No newline at end of file

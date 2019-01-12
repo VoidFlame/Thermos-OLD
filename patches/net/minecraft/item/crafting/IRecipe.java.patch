@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/crafting/IRecipe.java	2019-01-11 20:13:52.636268500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/crafting/IRecipe.java	2019-01-11 20:13:26.699404000 -0500
+--- ../src-base/minecraft/net/minecraft/item/crafting/IRecipe.java
++++ ../src-work/minecraft/net/minecraft/item/crafting/IRecipe.java
 @@ -13,4 +13,6 @@
      int getRecipeSize();
  
@@ -7,4 +7,3 @@
 +
 +    org.bukkit.inventory.Recipe toBukkitRecipe(); // CraftBukkit
  }
-\ No newline at end of file

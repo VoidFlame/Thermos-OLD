@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraftforge/event/world/BlockEvent.java	2019-01-11 20:13:53.273227300 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraftforge/event/world/BlockEvent.java	2019-01-11 20:13:27.430945600 -0500
+--- ../src-base/minecraft/net/minecraftforge/event/world/BlockEvent.java
++++ ../src-work/minecraft/net/minecraftforge/event/world/BlockEvent.java
 @@ -16,6 +16,11 @@
  import net.minecraftforge.common.ForgeHooks;
  import net.minecraftforge.common.util.BlockSnapshot;

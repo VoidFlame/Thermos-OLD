@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/rcon/RConThreadClient.java	2019-01-11 20:13:53.097775700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/rcon/RConThreadClient.java	2019-01-11 20:13:26.918631800 -0500
+--- ../src-base/minecraft/net/minecraft/network/rcon/RConThreadClient.java
++++ ../src-work/minecraft/net/minecraft/network/rcon/RConThreadClient.java
 @@ -41,20 +41,21 @@
  
      public void run()

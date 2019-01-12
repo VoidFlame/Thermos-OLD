@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/gen/feature/WorldGeneratorBonusChest.java	2019-01-11 20:13:53.266222100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/gen/feature/WorldGeneratorBonusChest.java	2019-01-11 20:13:27.424942500 -0500
+--- ../src-base/minecraft/net/minecraft/world/gen/feature/WorldGeneratorBonusChest.java
++++ ../src-work/minecraft/net/minecraft/world/gen/feature/WorldGeneratorBonusChest.java
 @@ -50,7 +50,7 @@
                      p_76484_1_.setBlock(i1, j1, k1, Blocks.chest, 0, 2);
                      TileEntityChest tileentitychest = (TileEntityChest)p_76484_1_.getTileEntity(i1, j1, k1);

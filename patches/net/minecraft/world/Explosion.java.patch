@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/Explosion.java	2019-01-11 20:13:53.321314000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/Explosion.java	2019-01-11 20:13:27.481978500 -0500
+--- ../src-base/minecraft/net/minecraft/world/Explosion.java
++++ ../src-work/minecraft/net/minecraft/world/Explosion.java
 @@ -7,6 +7,7 @@
  import java.util.List;
  import java.util.Map;

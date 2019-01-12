@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/handshake/client/C00Handshake.java	2019-01-11 20:13:51.447918300 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/handshake/client/C00Handshake.java	2019-01-11 20:13:23.609600600 -0500
+--- ../src-base/minecraft/net/minecraft/network/handshake/client/C00Handshake.java
++++ ../src-work/minecraft/net/minecraft/network/handshake/client/C00Handshake.java
 @@ -12,8 +12,8 @@
  public class C00Handshake extends Packet
  {

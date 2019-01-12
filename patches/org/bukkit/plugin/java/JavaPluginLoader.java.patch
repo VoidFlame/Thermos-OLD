@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/plugin/java/JavaPluginLoader.java	2019-01-11 20:13:51.780142500 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/plugin/java/JavaPluginLoader.java	2019-01-11 20:13:26.272101800 -0500
+--- ../src-base/minecraft/org/bukkit/plugin/java/JavaPluginLoader.java
++++ ../src-work/minecraft/org/bukkit/plugin/java/JavaPluginLoader.java
 @@ -1,5 +1,15 @@
  package org.bukkit.plugin.java;
  
@@ -231,4 +231,3 @@
 +    }
 +    // Cauldron end
  }
-\ No newline at end of file

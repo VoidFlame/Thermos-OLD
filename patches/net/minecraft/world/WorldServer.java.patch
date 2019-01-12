@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/WorldServer.java	2019-01-11 20:13:52.831433100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/WorldServer.java	2019-01-11 20:13:26.773456000 -0500
+--- ../src-base/minecraft/net/minecraft/world/WorldServer.java
++++ ../src-work/minecraft/net/minecraft/world/WorldServer.java
 @@ -1,16 +1,22 @@
  package net.minecraft.world;
  
@@ -471,12 +471,12 @@
 +        if (CauldronCommand.debug)
          {
 -            throw new IllegalStateException("TickNextTick list out of synch");
-+        	if(System.currentTimeMillis() - last > 20000L)
-+        	{
-+        		System.out.println("[WARN - Robotia] TickNextTick list out of synch by " +Math.abs(this.pendingTickListEntriesTreeSet.size()-this.pendingTickListEntriesHashSet.size() ));
-+        		reevaluate(); last = System.currentTimeMillis();
-+        	}
-+            	//throw new IllegalStateException("TickNextTick list out of synch");
++            if(System.currentTimeMillis() - last > 20000L)
++            {
++                System.out.println("[WARN - Robotia] TickNextTick list out of synch by " +Math.abs(this.pendingTickListEntriesTreeSet.size()-this.pendingTickListEntriesHashSet.size() ));
++                reevaluate(); last = System.currentTimeMillis();
++            }
++                //throw new IllegalStateException("TickNextTick list out of synch");
          }
 -        else
 -        {
@@ -526,7 +526,7 @@
 +                        
 +                        if(i1 != 0) // Thermos - dump it if we're looking at this.pendingTickListEntriesThisTick
 +                        {
-+                        	this.pendingTickListEntriesTreeSet.remove(nextticklistentry);
++                            this.pendingTickListEntriesTreeSet.remove(nextticklistentry);
 +                        }
                          iterator.remove();
                      }
@@ -697,8 +697,8 @@
      {
 +        // CraftBukkit start
 +        Explosion explosion = super.newExplosion(p_72885_1_, p_72885_2_, p_72885_4_, p_72885_6_, p_72885_8_, p_72885_9_, p_72885_10_);
-+	if(explosion == null)return null;
-+	try{
++    if(explosion == null)return null;
++    try{
 +        if (explosion.wasCanceled)
 +        {
 +            return explosion;
@@ -829,4 +829,3 @@
 +
 +    
  }
-\ No newline at end of file

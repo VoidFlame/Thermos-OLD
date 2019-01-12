@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/network/play/server/S26PacketMapChunkBulk.java	2019-01-11 20:13:52.572076400 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/network/play/server/S26PacketMapChunkBulk.java	2019-01-11 20:13:26.662377500 -0500
+--- ../src-base/minecraft/net/minecraft/network/play/server/S26PacketMapChunkBulk.java
++++ ../src-work/minecraft/net/minecraft/network/play/server/S26PacketMapChunkBulk.java
 @@ -24,10 +24,18 @@
      private byte[][] field_149260_f;
      private int field_149261_g;

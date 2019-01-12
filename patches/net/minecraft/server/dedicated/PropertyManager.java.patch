@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/server/dedicated/PropertyManager.java	2019-01-11 20:13:52.711576100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/server/dedicated/PropertyManager.java	2019-01-11 20:13:26.743435600 -0500
+--- ../src-base/minecraft/net/minecraft/server/dedicated/PropertyManager.java
++++ ../src-work/minecraft/net/minecraft/server/dedicated/PropertyManager.java
 @@ -10,11 +10,13 @@
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;

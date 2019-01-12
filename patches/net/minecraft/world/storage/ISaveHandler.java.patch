@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/storage/ISaveHandler.java	2019-01-11 20:13:53.236158100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/storage/ISaveHandler.java	2019-01-11 20:13:27.329830900 -0500
+--- ../src-base/minecraft/net/minecraft/world/storage/ISaveHandler.java
++++ ../src-work/minecraft/net/minecraft/world/storage/ISaveHandler.java
 @@ -27,4 +27,6 @@
      File getMapFileFromName(String p_75758_1_);
  
@@ -7,4 +7,3 @@
 +
 +    java.util.UUID getUUID(); // CraftBukkit
  }
-\ No newline at end of file

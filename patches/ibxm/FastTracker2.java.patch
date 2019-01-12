@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/ibxm/FastTracker2.java	2019-01-11 20:13:51.869529900 -0500
-+++ eclipse/Cauldron/src/main/java/ibxm/FastTracker2.java	2019-01-11 20:13:26.306126100 -0500
-@@ -252,4 +252,4 @@
- 		}
- 		return string;
- 	}
--}
-+}
-\ No newline at end of file

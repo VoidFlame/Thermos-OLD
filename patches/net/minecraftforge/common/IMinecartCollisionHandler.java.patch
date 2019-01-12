@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/net/minecraftforge/common/IMinecartCollisionHandler.java	2019-01-11 20:13:52.587087000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/IMinecartCollisionHandler.java	2019-01-11 20:13:26.669382500 -0500
-@@ -46,4 +46,4 @@
-      * @return The bounding box or null.
-      */
-     public AxisAlignedBB getBoundingBox(EntityMinecart cart);
--}
-+}
-\ No newline at end of file

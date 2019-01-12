@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/inventory/InventoryMerchant.java	2019-01-11 20:13:53.272226900 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/InventoryMerchant.java	2019-01-11 20:13:27.428942800 -0500
+--- ../src-base/minecraft/net/minecraft/inventory/InventoryMerchant.java
++++ ../src-work/minecraft/net/minecraft/inventory/InventoryMerchant.java
 @@ -6,6 +6,12 @@
  import net.minecraft.village.MerchantRecipe;
  import net.minecraft.village.MerchantRecipeList;

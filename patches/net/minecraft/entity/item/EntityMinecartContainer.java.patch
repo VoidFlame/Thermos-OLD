@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityMinecartContainer.java	2019-01-11 20:13:51.347769500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityMinecartContainer.java	2019-01-11 20:13:23.375141000 -0500
+--- ../src-base/minecraft/net/minecraft/entity/item/EntityMinecartContainer.java
++++ ../src-work/minecraft/net/minecraft/entity/item/EntityMinecartContainer.java
 @@ -9,12 +9,61 @@
  import net.minecraft.util.DamageSource;
  import net.minecraft.world.World;

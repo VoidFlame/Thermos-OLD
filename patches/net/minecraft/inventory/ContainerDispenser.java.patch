@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerDispenser.java	2019-01-11 20:13:50.786174700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerDispenser.java	2019-01-11 20:13:22.676654600 -0500
+--- ../src-base/minecraft/net/minecraft/inventory/ContainerDispenser.java
++++ ../src-work/minecraft/net/minecraft/inventory/ContainerDispenser.java
 @@ -4,14 +4,28 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.tileentity.TileEntityDispenser;
@@ -63,4 +63,3 @@
 +    }
 +    // CraftBukkit end
  }
-\ No newline at end of file

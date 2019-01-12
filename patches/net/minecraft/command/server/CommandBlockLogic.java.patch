@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/command/server/CommandBlockLogic.java	2019-01-11 20:13:51.978845600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/command/server/CommandBlockLogic.java	2019-01-11 20:13:26.349156200 -0500
+--- ../src-base/minecraft/net/minecraft/command/server/CommandBlockLogic.java
++++ ../src-work/minecraft/net/minecraft/command/server/CommandBlockLogic.java
 @@ -9,18 +9,30 @@
  import net.minecraft.command.ICommandSender;
  import net.minecraft.nbt.NBTTagCompound;

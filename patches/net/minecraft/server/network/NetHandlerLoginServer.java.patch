@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/server/network/NetHandlerLoginServer.java	2019-01-11 20:13:51.969838100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/server/network/NetHandlerLoginServer.java	2019-01-11 20:13:26.342151800 -0500
+--- ../src-base/minecraft/net/minecraft/server/network/NetHandlerLoginServer.java
++++ ../src-work/minecraft/net/minecraft/server/network/NetHandlerLoginServer.java
 @@ -2,17 +2,17 @@
  
  import com.google.common.base.Charsets;

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/ItemStack.java	2019-01-11 20:13:52.520943100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemStack.java	2019-01-12 11:18:10.189669700 -0500
+--- ../src-base/minecraft/net/minecraft/item/ItemStack.java
++++ ../src-work/minecraft/net/minecraft/item/ItemStack.java
 @@ -2,14 +2,18 @@
  
  import com.google.common.collect.HashMultimap;
@@ -73,11 +73,11 @@
  
 +    public static void sizeCheck(ItemStack stack)
 +    {
-+    	if(stack.stackSize < -1)
-+    	{
-+    		//stack.field_151002_e = Items.flint;
-+    		stack.stackSize = 0;
-+    	}
++        if(stack.stackSize < -1)
++        {
++            //stack.field_151002_e = Items.flint;
++            stack.stackSize = 0;
++        }
 +    }
      public static ItemStack loadItemStackFromNBT(NBTTagCompound p_77949_0_)
      {
@@ -107,7 +107,7 @@
  
      public ItemStack useItemRightClick(World p_77957_1_, EntityPlayer p_77957_2_)
      {
-+    	sizeCheck(this);
++        sizeCheck(this);
          return this.getItem().onItemRightClick(this, p_77957_1_, p_77957_2_);
      }
  
@@ -117,7 +117,7 @@
      {
 -        p_77955_1_.setShort("id", (short)Item.getIdFromItem(this.field_151002_e));
 +        sizeCheck(this);
-+    	p_77955_1_.setShort("id", (short)Item.getIdFromItem(this.field_151002_e));
++        p_77955_1_.setShort("id", (short)Item.getIdFromItem(this.field_151002_e));
          p_77955_1_.setByte("Count", (byte)this.stackSize);
          p_77955_1_.setShort("Damage", (short)this.itemDamage);
  
@@ -134,7 +134,7 @@
  
      public int getMaxStackSize()
      {
-+    	sizeCheck(this);
++        sizeCheck(this);
          return this.getItem().getItemStackLimit(this);
      }
  
@@ -222,8 +222,8 @@
  
      public ItemStack copy()
      {
-+    	sizeCheck(this);
-+    	
++        sizeCheck(this);
++        
          ItemStack itemstack = new ItemStack(this.field_151002_e, this.stackSize, this.itemDamage);
  
          if (this.stackTagCompound != null)
@@ -248,4 +248,3 @@
 +    }
 +    // Spigot end
  }
-\ No newline at end of file

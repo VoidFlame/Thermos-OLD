@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/Effect.java	2019-01-11 20:13:53.293272800 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/Effect.java	2019-01-11 20:13:27.456961700 -0500
+--- ../src-base/minecraft/org/bukkit/Effect.java
++++ ../src-work/minecraft/org/bukkit/Effect.java
 @@ -5,6 +5,7 @@
  import com.google.common.collect.Maps;
  
@@ -177,8 +177,8 @@
          this.type = type;
          this.data = data;
 +        particleName = null;
-+    }
-+
+     }
+ 
 +    private Effect(String particleName, Type type, Class<?> data) {
 +        this.particleName = particleName;
 +        this.type = type;
@@ -191,8 +191,8 @@
 +        this.type = type;
 +        id = 0;
 +        this.data = null;
-     }
- 
++    }
++
      /**
       * Gets the ID for this effect.
       *
@@ -235,10 +235,10 @@
 +            if (effect.type != Type.PARTICLE) {
 +                BY_ID.put(effect.id, effect);
 +            }
-+        }
-+    }
-+
-+    /**
+         }
+     }
+ 
+     /**
 +     * Gets the Effect associated with the given name.
 +     *
 +     * @param name name of the Effect to return
@@ -253,13 +253,12 @@
 +            if (effect.type == Type.PARTICLE) {
 +                BY_NAME.put(effect.particleName, effect);
 +            }
-         }
-     }
- 
-     /**
++        }
++    }
++
++    /**
       * Represents the type of an effect.
       */
 -    public enum Type {SOUND, VISUAL}
 +    public enum Type {SOUND, VISUAL, PARTICLE}
  }
-\ No newline at end of file

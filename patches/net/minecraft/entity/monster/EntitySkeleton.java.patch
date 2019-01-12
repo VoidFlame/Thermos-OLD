@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/monster/EntitySkeleton.java	2019-01-11 20:13:50.741139700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/monster/EntitySkeleton.java	2019-01-11 20:13:22.478979000 -0500
+--- ../src-base/minecraft/net/minecraft/entity/monster/EntitySkeleton.java
++++ ../src-work/minecraft/net/minecraft/entity/monster/EntitySkeleton.java
 @@ -36,6 +36,8 @@
  import net.minecraft.world.World;
  import net.minecraft.world.WorldProviderHell;

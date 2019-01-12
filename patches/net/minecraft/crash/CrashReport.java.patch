@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/crash/CrashReport.java	2019-01-11 20:13:53.147856100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/crash/CrashReport.java	2019-01-11 20:13:26.942649900 -0500
+--- ../src-base/minecraft/net/minecraft/crash/CrashReport.java
++++ ../src-work/minecraft/net/minecraft/crash/CrashReport.java
 @@ -15,12 +15,18 @@
  import java.util.Iterator;
  import java.util.List;

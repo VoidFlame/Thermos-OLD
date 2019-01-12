@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockNetherrack.java	2019-01-11 20:13:52.231408600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockNetherrack.java	2019-01-11 20:13:26.418206400 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockNetherrack.java
++++ ../src-work/minecraft/net/minecraft/block/BlockNetherrack.java
 @@ -4,6 +4,11 @@
  import net.minecraft.block.material.Material;
  import net.minecraft.creativetab.CreativeTabs;
@@ -30,4 +30,3 @@
 +    }
 +    // CraftBukkit end
  }
-\ No newline at end of file

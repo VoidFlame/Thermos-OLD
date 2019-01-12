@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/EntityAgeable.java	2019-01-11 20:13:51.331758200 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/EntityAgeable.java	2019-01-11 20:13:23.347121700 -0500
+--- ../src-base/minecraft/net/minecraft/entity/EntityAgeable.java
++++ ../src-work/minecraft/net/minecraft/entity/EntityAgeable.java
 @@ -10,6 +10,36 @@
  {
      private float field_98056_d = -1.0F;

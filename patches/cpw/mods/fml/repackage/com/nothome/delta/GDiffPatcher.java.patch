@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/GDiffPatcher.java	2019-01-11 20:13:52.832435300 -0500
-+++ eclipse/Cauldron/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/GDiffPatcher.java	2019-01-11 20:13:26.775457100 -0500
-@@ -242,4 +242,4 @@
-             System.err.println("error while patching: " + ioe);
-         }
-     }
--}
-+}
-\ No newline at end of file

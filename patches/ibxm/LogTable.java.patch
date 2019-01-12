@@ -1,9 +1,0 @@
---- eclipse/Clean/src/main/java/ibxm/LogTable.java	2019-01-11 20:13:53.249189300 -0500
-+++ eclipse/Cauldron/src/main/java/ibxm/LogTable.java	2019-01-11 20:13:27.360852800 -0500
-@@ -87,4 +87,4 @@
- 		y = ( m * table_frac >> INTERP_SHIFT ) + c;
- 		return y >> 15 - IBXM.FP_SHIFT;
- 	}
--}
-+}
-\ No newline at end of file

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraftforge/event/entity/living/LivingSpawnEvent.java	2019-01-11 20:13:49.334905700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraftforge/event/entity/living/LivingSpawnEvent.java	2019-01-11 20:13:22.409924800 -0500
+--- ../src-base/minecraft/net/minecraftforge/event/entity/living/LivingSpawnEvent.java
++++ ../src-work/minecraft/net/minecraftforge/event/entity/living/LivingSpawnEvent.java
 @@ -48,6 +48,7 @@
          public CheckSpawn(EntityLiving entity, World world, float x, float y, float z)
          {

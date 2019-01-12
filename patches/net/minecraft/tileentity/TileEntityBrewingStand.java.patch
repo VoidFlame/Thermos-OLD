@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/tileentity/TileEntityBrewingStand.java	2019-01-11 20:13:52.982927900 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/tileentity/TileEntityBrewingStand.java	2019-01-11 20:13:26.867522700 -0500
+--- ../src-base/minecraft/net/minecraft/tileentity/TileEntityBrewingStand.java
++++ ../src-work/minecraft/net/minecraft/tileentity/TileEntityBrewingStand.java
 @@ -13,17 +13,55 @@
  import net.minecraft.nbt.NBTTagList;
  import net.minecraft.potion.PotionHelper;

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/SpawnerAnimals.java	2019-01-11 20:13:52.953890000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/SpawnerAnimals.java	2019-01-11 20:13:26.839502900 -0500
+--- ../src-base/minecraft/net/minecraft/world/SpawnerAnimals.java
++++ ../src-work/minecraft/net/minecraft/world/SpawnerAnimals.java
 @@ -22,9 +22,15 @@
  import cpw.mods.fml.common.eventhandler.Event.Result;
  import net.minecraftforge.event.ForgeEventFactory;
@@ -58,9 +58,10 @@
                  EnumCreatureType enumcreaturetype = aenumcreaturetype[k3];
 +                // CraftBukkit start - Use per-world spawn limits
 +                int limit = enumcreaturetype.getMaxNumberOfCreature();
-+
+ 
+-                if ((!enumcreaturetype.getPeacefulCreature() || p_77192_3_) && (enumcreaturetype.getPeacefulCreature() || p_77192_2_) && (!enumcreaturetype.getAnimal() || p_77192_4_) && p_77192_1_.countEntities(enumcreaturetype, true) <= enumcreaturetype.getMaxNumberOfCreature() * this.eligibleChunksForSpawning.size() / 256)
 +                switch (enumcreaturetype)
-+                {
+                 {
 +                    case monster:
 +                        limit = p_77192_1_.getWorld().getMonsterSpawnLimit();
 +                        break;
@@ -81,10 +82,9 @@
 +                }
 +
 +                // CraftBukkit end
- 
--                if ((!enumcreaturetype.getPeacefulCreature() || p_77192_3_) && (enumcreaturetype.getPeacefulCreature() || p_77192_2_) && (!enumcreaturetype.getAnimal() || p_77192_4_) && p_77192_1_.countEntities(enumcreaturetype, true) <= enumcreaturetype.getMaxNumberOfCreature() * this.eligibleChunksForSpawning.size() / 256)
++
 +                if ((!enumcreaturetype.getPeacefulCreature() || p_77192_3_) && (enumcreaturetype.getPeacefulCreature() || p_77192_2_) && (!enumcreaturetype.getAnimal() || p_77192_4_) && p_77192_1_.countEntities(enumcreaturetype.getCreatureClass()) <= limit * eligibleChunksForSpawning.size() / 256)   // CraftBukkit - use per-world limits
-                 {
++                {
                      Iterator iterator = this.eligibleChunksForSpawning.keySet().iterator();
 -                    ArrayList<ChunkCoordIntPair> tmp = new ArrayList(eligibleChunksForSpawning.keySet());
 -                    Collections.shuffle(tmp);

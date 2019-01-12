@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/crafting/RecipeFireworks.java	2019-01-11 20:13:50.730075500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/crafting/RecipeFireworks.java	2019-01-11 20:13:22.475976900 -0500
+--- ../src-base/minecraft/net/minecraft/item/crafting/RecipeFireworks.java
++++ ../src-work/minecraft/net/minecraft/item/crafting/RecipeFireworks.java
 @@ -9,11 +9,18 @@
  import net.minecraft.nbt.NBTTagList;
  import net.minecraft.world.World;

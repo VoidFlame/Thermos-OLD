@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/DataWatcher.java	2019-01-11 20:13:52.877729400 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/DataWatcher.java	2019-01-11 20:13:26.793470700 -0500
+--- ../src-base/minecraft/net/minecraft/entity/DataWatcher.java
++++ ../src-work/minecraft/net/minecraft/entity/DataWatcher.java
 @@ -22,12 +22,22 @@
  {
      private final Entity field_151511_a;
@@ -114,7 +114,7 @@
  
          this.lock.readLock().unlock();
          return arraylist;
-@@ -231,8 +242,23 @@
+@@ -231,9 +242,24 @@
      {
          int i = (p_151510_1_.getObjectType() << 5 | p_151510_1_.getDataValueId() & 31) & 255;
          p_151510_0_.writeByte(i);
@@ -132,24 +132,25 @@
 +        else if(object instanceof ItemStack) rt = 5;
 +        else if(object instanceof ChunkCoordinates) rt = 6;
 +        if(rt != -1 && type != rt)
-+        {
-+        	System.out.println("[Thermos] Watchable object type is incorrect! Appying correct type! ( " +type+" -> " +rt+")");
-+        	type = rt;
+         {
++            System.out.println("[Thermos] Watchable object type is incorrect! Appying correct type! ( " +type+" -> " +rt+")");
++            type = rt;
 +        }
 +        switch (type)
-         {
++        {
              case 0:
                  p_151510_0_.writeByte(((Byte)p_151510_1_.getObject()).byteValue());
+                 break;
 @@ -247,7 +273,11 @@
                  p_151510_0_.writeFloat(((Float)p_151510_1_.getObject()).floatValue());
                  break;
              case 4:
 -                p_151510_0_.writeStringToBuffer((String)p_151510_1_.getObject());
-+            	String str = (String)p_151510_1_.getObject();
-+            	if(str.getBytes().length < 32767) 
-+            		p_151510_0_.writeStringToBuffer((String)p_151510_1_.getObject());
-+            	else
-+            		System.out.println("[Thermos] Warning! Skipped data watcher string larger than 32767 bytes ( "+str.getBytes().length+")!");
++                String str = (String)p_151510_1_.getObject();
++                if(str.getBytes().length < 32767) 
++                    p_151510_0_.writeStringToBuffer((String)p_151510_1_.getObject());
++                else
++                    System.out.println("[Thermos] Warning! Skipped data watcher string larger than 32767 bytes ( "+str.getBytes().length+")!");
                  break;
              case 5:
                  ItemStack itemstack = (ItemStack)p_151510_1_.getObject();

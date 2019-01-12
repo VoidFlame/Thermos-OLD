@@ -1,11 +1,11 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/NextTickListEntry.java	2019-01-11 20:13:52.488878000 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/NextTickListEntry.java	2019-01-11 20:13:26.580319300 -0500
+--- ../src-base/minecraft/net/minecraft/world/NextTickListEntry.java
++++ ../src-work/minecraft/net/minecraft/world/NextTickListEntry.java
 @@ -38,7 +38,7 @@
  
      public int hashCode()
      {
 -        return (this.xCoord * 1024 * 1024 + this.zCoord * 1024 + this.yCoord) * 256;
-+    	return ((yCoord * 31 + xCoord) * 31 + zCoord) * 17 + yCoord;
++        return ((yCoord * 31 + xCoord) * 31 + zCoord) * 17 + yCoord;
      }
  
      public NextTickListEntry setScheduledTime(long p_77176_1_)

@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/event/entity/EntityDamageEvent.java	2019-01-11 20:13:52.676439300 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/event/entity/EntityDamageEvent.java	2019-01-11 20:13:26.725423200 -0500
+--- ../src-base/minecraft/org/bukkit/event/entity/EntityDamageEvent.java
++++ ../src-work/minecraft/org/bukkit/event/entity/EntityDamageEvent.java
 @@ -10,6 +10,8 @@
  import org.bukkit.event.HandlerList;
  import org.bukkit.util.NumberConversions;

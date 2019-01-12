@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/passive/EntitySheep.java	2019-01-11 20:13:51.924740700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/passive/EntitySheep.java	2019-01-11 20:13:26.323137800 -0500
+--- ../src-base/minecraft/net/minecraft/entity/passive/EntitySheep.java
++++ ../src-work/minecraft/net/minecraft/entity/passive/EntitySheep.java
 @@ -32,6 +32,12 @@
  import net.minecraft.world.World;
  import net.minecraftforge.common.IShearable;
@@ -21,7 +21,7 @@
      }
  
      protected boolean isAIEnabled()
-@@ -231,7 +238,16 @@
+@@ -231,8 +238,17 @@
  
      public void eatGrassBonus()
      {
@@ -29,13 +29,14 @@
 +        // CraftBukkit start
 +        SheepRegrowWoolEvent event = new SheepRegrowWoolEvent((org.bukkit.entity.Sheep) this.getBukkitEntity());
 +        this.worldObj.getServer().getPluginManager().callEvent(event);
-+
+ 
 +        if (!event.isCancelled())
 +        {
 +            this.setSheared(false);
 +        }
 +
 +        // CraftBukkit end
- 
++
          if (this.isChild())
          {
+             this.addGrowth(60);

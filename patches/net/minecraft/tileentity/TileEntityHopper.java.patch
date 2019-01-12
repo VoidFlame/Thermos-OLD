@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/tileentity/TileEntityHopper.java	2019-01-11 20:13:50.463905100 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/tileentity/TileEntityHopper.java	2019-01-11 20:13:22.423935300 -0500
+--- ../src-base/minecraft/net/minecraft/tileentity/TileEntityHopper.java
++++ ../src-work/minecraft/net/minecraft/tileentity/TileEntityHopper.java
 @@ -18,11 +18,52 @@
  import net.minecraft.util.MathHelper;
  import net.minecraft.world.World;
@@ -157,7 +157,7 @@
 +            // CraftBukkit start - Call event on collection of items from inventories into the hopper
 +            CraftItemStack oitemstack = CraftItemStack.asCraftMirror(p_145892_1_.decrStackSize(p_145892_2_, 1));
 +            Inventory sourceInventory = null;
-+
+ 
 +            // Have to special case large chests as they work oddly
 +            if (p_145892_1_ instanceof InventoryLargeChest)
 +            {
@@ -206,7 +206,7 @@
 +            }
 +
 +            ItemStack itemstack2 = func_145889_a(p_145892_0_, CraftItemStack.asNMSCopy(event.getItem()), -1);
- 
++
              if (itemstack2 == null || itemstack2.stackSize == 0)
              {
 -                p_145892_1_.markDirty();

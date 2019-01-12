@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/crafting/RecipesArmorDyes.java	2019-01-11 20:13:50.629518700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/crafting/RecipesArmorDyes.java	2019-01-11 20:13:22.457959300 -0500
+--- ../src-base/minecraft/net/minecraft/item/crafting/RecipesArmorDyes.java
++++ ../src-work/minecraft/net/minecraft/item/crafting/RecipesArmorDyes.java
 @@ -9,10 +9,17 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.world.World;

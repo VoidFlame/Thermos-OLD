@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/world/gen/FlatLayerInfo.java	2019-01-11 20:13:53.184102600 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/world/gen/FlatLayerInfo.java	2019-01-11 20:13:26.959661400 -0500
+--- ../src-base/minecraft/net/minecraft/world/gen/FlatLayerInfo.java
++++ ../src-work/minecraft/net/minecraft/world/gen/FlatLayerInfo.java
 @@ -12,7 +12,6 @@
  
      public FlatLayerInfo(int p_i45467_1_, Block p_i45467_2_)

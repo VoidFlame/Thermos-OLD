@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockJukebox.java	2019-01-11 20:13:52.381622700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockJukebox.java	2019-01-11 20:13:26.513272700 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockJukebox.java
++++ ../src-work/minecraft/net/minecraft/block/BlockJukebox.java
 @@ -163,8 +163,23 @@
  
              public void func_145857_a(ItemStack p_145857_1_)
@@ -24,4 +24,3 @@
 +            // Cauldron end
          }
  }
-\ No newline at end of file

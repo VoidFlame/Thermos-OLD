@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/server/dedicated/DedicatedServer.java	2019-01-11 20:13:52.496886500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/server/dedicated/DedicatedServer.java	2019-01-11 20:13:26.583321400 -0500
+--- ../src-base/minecraft/net/minecraft/server/dedicated/DedicatedServer.java
++++ ../src-work/minecraft/net/minecraft/server/dedicated/DedicatedServer.java
 @@ -34,9 +34,19 @@
  import net.minecraft.world.World;
  import net.minecraft.world.WorldSettings;
@@ -67,10 +67,10 @@
 +                    return;
 +                }
 +                // CraftBukkit end
-+
+ 
 +                jline.console.ConsoleReader bufferedreader = this.server.reader; // CraftBukkit
 +                String s;
- 
++
                  try
                  {
 -                    while (!DedicatedServer.this.isServerStopped() && DedicatedServer.this.isServerRunning() && (s4 = bufferedreader.readLine()) != null)
@@ -168,25 +168,26 @@
              {
                  field_155771_h.warn("**** FAILED TO BIND TO PORT!");
                  field_155771_h.warn("The exception was: {}", new Object[] {ioexception.toString()});
-@@ -196,9 +267,16 @@
+@@ -196,10 +267,17 @@
                  field_155771_h.warn("To change this, set \"online-mode\" to \"true\" in the server.properties file.");
              }
  
 -            if (this.func_152368_aE())
 +            try
-+            {
+             {
+-                this.func_152358_ax().func_152658_c();
 +                if (this.func_152368_aE())
 +                {
 +                    this.func_152358_ax().func_152658_c();
 +                }
-+            }
-+            catch (IOException e)
-             {
--                this.func_152358_ax().func_152658_c();
-+                e.printStackTrace();
              }
++            catch (IOException e)
++            {
++                e.printStackTrace();
++            }
  
              if (!PreYggdrasilConverter.func_152714_a(this.settings))
+             {
 @@ -208,7 +286,8 @@
              else
              {

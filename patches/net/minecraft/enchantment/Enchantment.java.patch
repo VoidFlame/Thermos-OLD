@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/enchantment/Enchantment.java	2019-01-11 20:13:52.212373500 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/enchantment/Enchantment.java	2019-01-11 20:13:26.408199100 -0500
+--- ../src-base/minecraft/net/minecraft/enchantment/Enchantment.java
++++ ../src-work/minecraft/net/minecraft/enchantment/Enchantment.java
 @@ -56,6 +56,8 @@
          {
              enchantmentsList[p_i1926_1_] = this;

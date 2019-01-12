@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockSnow.java	2019-01-11 20:13:51.936745400 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockSnow.java	2019-01-11 20:13:26.333144900 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockSnow.java
++++ ../src-work/minecraft/net/minecraft/block/BlockSnow.java
 @@ -114,6 +114,14 @@
      {
          if (p_149674_1_.getSavedLightValue(EnumSkyBlock.Block, p_149674_2_, p_149674_3_, p_149674_4_) > 11)

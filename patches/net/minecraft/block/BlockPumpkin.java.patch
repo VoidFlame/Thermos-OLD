@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockPumpkin.java	2019-01-11 20:13:52.242432400 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockPumpkin.java	2019-01-11 20:13:26.426210900 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockPumpkin.java
++++ ../src-work/minecraft/net/minecraft/block/BlockPumpkin.java
 @@ -14,6 +14,12 @@
  import net.minecraft.util.MathHelper;
  import net.minecraft.world.World;
@@ -45,8 +45,8 @@
 +                    // Check if everything is still there for dat snowman
 +                    if (p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.snow && p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.snow)
 +                    {
-+                    	entitysnowman.isDead = true;
-+                    	p_149726_1_.removeEntity(entitysnowman);
++                        entitysnowman.isDead = true;
++                        p_149726_1_.removeEntity(entitysnowman);
 +                    }
 +                }
 +                
@@ -60,7 +60,7 @@
 +        // Check below middle pumpkin for 2 iron blocks
          else if (p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.iron_block && p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.iron_block)
          {
-+        	//Check in the X direction for iron block left and right 1 block below pumpkin
++            //Check in the X direction for iron block left and right 1 block below pumpkin
              boolean flag = p_149726_1_.getBlock(p_149726_2_ - 1, p_149726_3_ - 1, p_149726_4_) == Blocks.iron_block && p_149726_1_.getBlock(p_149726_2_ + 1, p_149726_3_ - 1, p_149726_4_) == Blocks.iron_block;
 +            //Check in the Z direction for iron block left and right 1 block below pumpkin
              boolean flag1 = p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_ - 1) == Blocks.iron_block && p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_ + 1) == Blocks.iron_block;
@@ -104,40 +104,39 @@
                  {
 -                    p_149726_1_.spawnParticle("snowballpoof", (double)p_149726_2_ + p_149726_1_.rand.nextDouble(), (double)(p_149726_3_ - 2) + p_149726_1_.rand.nextDouble() * 3.9D, (double)p_149726_4_ + p_149726_1_.rand.nextDouble(), 0.0D, 0.0D, 0.0D);
 -                }
--
--                p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_, p_149726_4_, getBlockById(0));
--                p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_ - 1, p_149726_4_, getBlockById(0));
--                p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_ - 2, p_149726_4_, getBlockById(0));
 +                    for (int i1 = 0; i1 < 120; ++i1)
 +                    {
 +                        p_149726_1_.spawnParticle("snowballpoof", (double) p_149726_2_ + p_149726_1_.rand.nextDouble(), (double)(p_149726_3_ - 2) + p_149726_1_.rand.nextDouble() * 3.9D, (double) p_149726_4_ + p_149726_1_.rand.nextDouble(), 0.0D, 0.0D, 0.0D);
 +                    }
-+
+ 
+-                p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_, p_149726_4_, getBlockById(0));
+-                p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_ - 1, p_149726_4_, getBlockById(0));
+-                p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_ - 2, p_149726_4_, getBlockById(0));
 +                    blockList.updateList();
 +                    //Recheck if the stuff is still there and the iron golem failed to delete its blocks - then delete the golem quickly
 +                    if (p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.iron_block && p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.iron_block)
 +                    {
-+                    	//Check in the X direction for iron block left and right 1 block below pumpkin
++                        //Check in the X direction for iron block left and right 1 block below pumpkin
 +                        boolean xdir = p_149726_1_.getBlock(p_149726_2_ - 1, p_149726_3_ - 1, p_149726_4_) == Blocks.iron_block && p_149726_1_.getBlock(p_149726_2_ + 1, p_149726_3_ - 1, p_149726_4_) == Blocks.iron_block;
 +                        //Check in the Z direction for iron block left and right 1 block below pumpkin
 +                        boolean zdir = p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_ - 1) == Blocks.iron_block && p_149726_1_.getBlock(p_149726_2_, p_149726_3_ - 1, p_149726_4_ + 1) == Blocks.iron_block;
 +                        if (xdir || zdir)
 +                        {
-+                        	entityirongolem.isDead = true;
-+                        	p_149726_1_.removeEntity(entityirongolem);
++                            entityirongolem.isDead = true;
++                            p_149726_1_.removeEntity(entityirongolem);
  
 -                if (flag)
 -                {
 -                    p_149726_1_.notifyBlockChange(p_149726_2_ - 1, p_149726_3_ - 1, p_149726_4_, getBlockById(0));
 -                    p_149726_1_.notifyBlockChange(p_149726_2_ + 1, p_149726_3_ - 1, p_149726_4_, getBlockById(0));
--                }
++                        }
++                    }
+                 }
 -                else
 -                {
 -                    p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_ - 1, p_149726_4_ - 1, getBlockById(0));
 -                    p_149726_1_.notifyBlockChange(p_149726_2_, p_149726_3_ - 1, p_149726_4_ + 1, getBlockById(0));
-+                        }
-+                    }
-                 }
+-                }
 +
 +                // CraftBukkit end
              }

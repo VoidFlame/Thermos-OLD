@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/item/crafting/RecipesMapCloning.java	2019-01-11 20:13:51.875533800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/item/crafting/RecipesMapCloning.java	2019-01-11 20:13:26.309128500 -0500
+--- ../src-base/minecraft/net/minecraft/item/crafting/RecipesMapCloning.java
++++ ../src-work/minecraft/net/minecraft/item/crafting/RecipesMapCloning.java
 @@ -5,10 +5,17 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.world.World;

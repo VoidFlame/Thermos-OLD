@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/org/bukkit/event/entity/EntityDamageByEntityEvent.java	2019-01-11 20:13:53.284266200 -0500
-+++ eclipse/Cauldron/src/main/java/org/bukkit/event/entity/EntityDamageByEntityEvent.java	2019-01-11 20:13:27.446952900 -0500
+--- ../src-base/minecraft/org/bukkit/event/entity/EntityDamageByEntityEvent.java
++++ ../src-work/minecraft/org/bukkit/event/entity/EntityDamageByEntityEvent.java
 @@ -2,6 +2,7 @@
  
  import java.util.Map;

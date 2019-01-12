@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/entity/passive/EntityOcelot.java	2019-01-11 20:13:53.211116800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/entity/passive/EntityOcelot.java	2019-01-11 20:13:27.091178500 -0500
+--- ../src-base/minecraft/net/minecraft/entity/passive/EntityOcelot.java
++++ ../src-work/minecraft/net/minecraft/entity/passive/EntityOcelot.java
 @@ -89,7 +89,7 @@
  
      protected boolean canDespawn()

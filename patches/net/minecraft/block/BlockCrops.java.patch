@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockCrops.java	2019-01-11 20:13:50.729074200 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockCrops.java	2019-01-11 20:13:22.475976900 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockCrops.java
++++ ../src-work/minecraft/net/minecraft/block/BlockCrops.java
 @@ -49,10 +49,9 @@
              {
                  float f = this.func_149864_n(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_);

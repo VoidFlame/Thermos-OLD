@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/inventory/InventoryLargeChest.java	2019-01-11 20:13:52.627238700 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/InventoryLargeChest.java	2019-01-11 20:13:26.691398600 -0500
+--- ../src-base/minecraft/net/minecraft/inventory/InventoryLargeChest.java
++++ ../src-work/minecraft/net/minecraft/inventory/InventoryLargeChest.java
 @@ -3,11 +3,62 @@
  import net.minecraft.entity.player.EntityPlayer;
  import net.minecraft.item.ItemStack;

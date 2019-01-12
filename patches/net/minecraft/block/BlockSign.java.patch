@@ -1,5 +1,5 @@
---- eclipse/Clean/src/main/java/net/minecraft/block/BlockSign.java	2019-01-11 20:13:53.275228800 -0500
-+++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockSign.java	2019-01-11 20:13:27.437947100 -0500
+--- ../src-base/minecraft/net/minecraft/block/BlockSign.java
++++ ../src-work/minecraft/net/minecraft/block/BlockSign.java
 @@ -14,6 +14,8 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;
