@@ -1691,14 +1691,14 @@ public final class CraftServer implements Server {
         String token = event.getLastToken();
         for (Player p : getOnlinePlayers()) {
             if (player.canSee(p) && StringUtil.startsWithIgnoreCase(p.getName(), token)) {
-            	if (event.isPinging())
-            	{
-            		StringBuilder sb = new StringBuilder(1 + p.getName().length());
-            		sb.append('@'); sb.append(p.getName());
-            		completions.add(sb.toString());
-            	}
-            	else
-            		completions.add(p.getName());
+                if (event.isPinging())
+                {
+                    StringBuilder sb = new StringBuilder(1 + p.getName().length());
+                    sb.append('@'); sb.append(p.getName());
+                    completions.add(sb.toString());
+                }
+                else
+                    completions.add(p.getName());
             }
         }
         pluginManager.callEvent(event);

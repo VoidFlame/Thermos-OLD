@@ -158,7 +158,7 @@
 +        Collection<NextTickListEntry> list = p_75820_2_.getPendingBlockUpdates(p_75820_1_, false);
 +        if(list == null)
          {
-+        	return;
++            return;
 +        }
              long k = p_75820_2_.getTotalWorldTime();
              NBTTagList nbttaglist1 = new NBTTagList();

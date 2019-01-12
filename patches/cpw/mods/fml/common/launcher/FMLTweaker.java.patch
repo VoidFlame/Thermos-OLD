@@ -5,8 +5,8 @@
          try
          {
 -            System.setSecurityManager(new FMLSecurityManager());
-+        	FMLSecurityManager sm = new FMLSecurityManager();
-+        	sm.defman = System.getSecurityManager();
++            FMLSecurityManager sm = new FMLSecurityManager();
++            sm.defman = System.getSecurityManager();
 +            System.setSecurityManager(sm);
          }
          catch (SecurityException se)

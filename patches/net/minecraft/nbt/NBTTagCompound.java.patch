@@ -10,15 +10,15 @@
  
 +    public NBTTagCompound()
 +    {
-+    	this (false);
++        this (false);
 +    }
 +    
 +    public NBTTagCompound(boolean _copy)
 +    {
-+    	if (!_copy)
-+    	{
-+    		tagMap = new HashMap<String, NBTBase>();
-+    	}
++        if (!_copy)
++        {
++            tagMap = new HashMap<String, NBTBase>();
++        }
 +    }
 +    
      void write(DataOutput p_74734_1_) throws IOException

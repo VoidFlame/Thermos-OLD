@@ -93,12 +93,12 @@
      }
  
 +    private final class pXYZ { 
-+    	private int x, z;
-+    	private byte y; 
-+    	public pXYZ(int x, int y, int z){ this.x = x; this.y = (byte) (y - 128); this.z = z; }
++        private int x, z;
++        private byte y; 
++        public pXYZ(int x, int y, int z){ this.x = x; this.y = (byte) (y - 128); this.z = z; }
 +        public int hashCode()
 +        {
-+        	return ((y * 31 + x) * 31 + z) * 17 + y;
++            return ((y * 31 + x) * 31 + z) * 17 + y;
 +        }
 +    }
 +    private static WeakHashMap<World,HashMap<pXYZ,Long>> failures = new WeakHashMap<World, HashMap<pXYZ,Long>>();
@@ -110,20 +110,20 @@
 +        
 +        if (!p_149841_1_.getGameRules().getGameRuleBooleanValue("doFireTick"))
          {
-+        	return; // Thermos don't let things catch fire if doFireTick is off
++            return; // Thermos don't let things catch fire if doFireTick is off
 +        }
 +        else if (p_149841_6_.nextInt(p_149841_5_) < j1)
 +        {
-+        	HashMap<pXYZ,Long> lavie = failures.get(p_149841_1_);
-+        	if (lavie == null) { lavie = new HashMap<pXYZ,Long>(); failures.put(p_149841_1_, lavie); }
-+        	pXYZ lapoint = new pXYZ(p_149841_2_, p_149841_3_, p_149841_4_);
-+        	Long last = lavie.get(lapoint);
-+        	long now = System.currentTimeMillis();
-+        	if (last != null && now - last < 1000)
-+        	{
-+        		return; //Thermos premature ending
-+        	}
-+        	
++            HashMap<pXYZ,Long> lavie = failures.get(p_149841_1_);
++            if (lavie == null) { lavie = new HashMap<pXYZ,Long>(); failures.put(p_149841_1_, lavie); }
++            pXYZ lapoint = new pXYZ(p_149841_2_, p_149841_3_, p_149841_4_);
++            Long last = lavie.get(lapoint);
++            long now = System.currentTimeMillis();
++            if (last != null && now - last < 1000)
++            {
++                return; //Thermos premature ending
++            }
++            
              boolean flag = p_149841_1_.getBlock(p_149841_2_, p_149841_3_, p_149841_4_) == Blocks.tnt;
 +            // CraftBukkit start
 +            org.bukkit.block.Block theBlock = p_149841_1_.getWorld().getBlockAt(p_149841_2_, p_149841_3_, p_149841_4_);
@@ -132,7 +132,7 @@
  
 +            if (event.isCancelled())
 +            {
-+            	lavie.put(lapoint, System.currentTimeMillis());
++                lavie.put(lapoint, System.currentTimeMillis());
 +                return;
 +            }
 +
@@ -167,7 +167,7 @@
      public int getChanceToEncourageFire(IBlockAccess world, int x, int y, int z, int oldChance, ForgeDirection face)
      {
 -        int newChance = world.getBlock(x, y, z).getFireSpreadSpeed(world, x, y, z, face);
-+    	Block block = world.getBlock(x, y, z);
++        Block block = world.getBlock(x, y, z);
 +        int newChance = block != null ? getFireSpreadSpeed(world, x, y, z, face) : 0;
          return (newChance > oldChance ? newChance : oldChance);
      }

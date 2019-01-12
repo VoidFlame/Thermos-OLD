@@ -52,7 +52,7 @@
 +            {
 +                ce = new org.bukkit.craftbukkit.entity.CraftTNTPrimed(server, new EntityTNTPrimed(world, explosion.explosionX, explosion.explosionY, explosion.explosionZ, (EntityLivingBase) explosion.exploder ));
 +            }
-+	    if(ce == null)
++        if(ce == null)
 +            {
 +                ce = new org.bukkit.craftbukkit.entity.CraftTNTPrimed(server, new EntityTNTPrimed(world, explosion.explosionX, explosion.explosionY, explosion.explosionZ, exploder_fake ));
 +            }
@@ -62,7 +62,7 @@
 +        @Override
 +        public boolean isCanceled()
 +        {
-+	Entity p_72885_1_ = explosion.exploder;
++    Entity p_72885_1_ = explosion.exploder;
 +            return super.isCanceled() || this.event.isCancelled();
 +        }
 +        @Override

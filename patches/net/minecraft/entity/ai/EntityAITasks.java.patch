@@ -6,9 +6,9 @@
              entityaitaskentry = (EntityAITasks.EntityAITaskEntry)iterator.next();
 -            this.theProfiler.startSection(entityaitaskentry.action.getClass().getSimpleName());
 +            if (this.theProfiler.profilingEnabled) //Unnecessary lag...do it only if profiling is on
-+            	this.theProfiler.startSection(entityaitaskentry.action.getClass().getSimpleName());
++                this.theProfiler.startSection(entityaitaskentry.action.getClass().getSimpleName());
 +            else
-+            	this.theProfiler.startSection("EntityAITaskEntry.EntityAIBase");
++                this.theProfiler.startSection("EntityAITaskEntry.EntityAIBase");
              entityaitaskentry.action.startExecuting();
              this.theProfiler.endSection();
          }

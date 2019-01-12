@@ -130,10 +130,10 @@
  
 +    public boolean isAddedToChunk()
 +    {
-+    	int chunkX = MathHelper.floor_double(posX / 16.0D);
-+    	int chunkY = MathHelper.floor_double(posY / 16.0D);
-+    	int chunkZ = MathHelper.floor_double(posZ / 16.0D);
-+    	return this.chunkCoordX == chunkX && this.chunkCoordY == chunkY && this.chunkCoordZ == chunkZ;    	
++        int chunkX = MathHelper.floor_double(posX / 16.0D);
++        int chunkY = MathHelper.floor_double(posY / 16.0D);
++        int chunkZ = MathHelper.floor_double(posZ / 16.0D);
++        return this.chunkCoordX == chunkX && this.chunkCoordY == chunkY && this.chunkCoordZ == chunkZ;        
 +    }
 +    
      public DataWatcher getDataWatcher()
@@ -760,8 +760,8 @@
 +            // Thermos silently remove the entity so it can be magically transported to another world :D    
 +            if (!(this instanceof EntityLivingBase) && this.addedToChunk && this.worldObj.chunkExists(this.chunkCoordX, this.chunkCoordZ))
 +            {
-+            	this.worldObj.getChunkFromChunkCoords(this.chunkCoordX, this.chunkCoordZ).removeEntity(this);
-+            	this.worldObj.loadedEntityList.remove(this);
++                this.worldObj.getChunkFromChunkCoords(this.chunkCoordX, this.chunkCoordZ).removeEntity(this);
++                this.worldObj.loadedEntityList.remove(this);
 +            }
 +                
              this.isDead = false;

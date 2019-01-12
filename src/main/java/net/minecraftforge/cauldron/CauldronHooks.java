@@ -292,7 +292,7 @@ public class CauldronHooks
         
         int cX = net.minecraft.util.MathHelper.floor_double( entity.posX ) >> 4, cZ = net.minecraft.util.MathHelper.floor_double( entity.posZ ) >> 4;
         int iX = net.minecraft.util.MathHelper.floor_double( entity.posX ), iZ = net.minecraft.util.MathHelper.floor_double( entity.posZ );
-        	SushchestvoCache seCache = sushchestvoCache.get(entity.getClass());
+            SushchestvoCache seCache = sushchestvoCache.get(entity.getClass());
             if (seCache == null)
             {
                 String seConfigPath = entity.getClass().getName().replace(".", "-");
@@ -303,7 +303,7 @@ public class CauldronHooks
 
             if(seCache.neverEverTick)
             {
-            	return -1;
+                return -1;
             }
     
             // Skip tick interval
@@ -318,22 +318,22 @@ public class CauldronHooks
                 return 1;
             }
 
-        	if(world.chunkProvider instanceof ChunkProviderServer) // Thermos - allow the server to tick entities that are in chunks trying to unload
-        	{
-        		ChunkProviderServer cps = ((ChunkProviderServer)world.chunkProvider);
-        		if(cps.chunksToUnload.contains(cX, cZ))
-        		{
-        			Chunk c = cps.getChunkIfLoaded(cX, cZ);
-        			if(c != null)
-        			{
-        				if(c.lastAccessedTick < 2L)
-        				{
-        					return 1;
-        				}
-        			}
-        		}
-        	}
-        	
+            if(world.chunkProvider instanceof ChunkProviderServer) // Thermos - allow the server to tick entities that are in chunks trying to unload
+            {
+                ChunkProviderServer cps = ((ChunkProviderServer)world.chunkProvider);
+                if(cps.chunksToUnload.contains(cX, cZ))
+                {
+                    Chunk c = cps.getChunkIfLoaded(cX, cZ);
+                    if(c != null)
+                    {
+                        if(c.lastAccessedTick < 2L)
+                        {
+                            return 1;
+                        }
+                    }
+                }
+            }
+            
             return -1;
     }
     
@@ -363,22 +363,22 @@ public class CauldronHooks
                 return true;
             }
             
-        	if(world.chunkProvider instanceof ChunkProviderServer) // Thermos - allow the server to tick tiles that are trying to unload
-        	{
-        		ChunkProviderServer cps = ((ChunkProviderServer)world.chunkProvider);
-        		if(cps.chunksToUnload.contains(tileEntity.xCoord >> 4, tileEntity.zCoord >> 4))
-        		{
-        			Chunk c = cps.getChunkIfLoaded(tileEntity.xCoord >> 4, tileEntity.zCoord >> 4);
-        			if(c != null)
-        			{
-        				if(c.lastAccessedTick < 2L)
-        				{
-        					return true;
-        				}
-        			}
-        		}
-        	}
-        	
+            if(world.chunkProvider instanceof ChunkProviderServer) // Thermos - allow the server to tick tiles that are trying to unload
+            {
+                ChunkProviderServer cps = ((ChunkProviderServer)world.chunkProvider);
+                if(cps.chunksToUnload.contains(tileEntity.xCoord >> 4, tileEntity.zCoord >> 4))
+                {
+                    Chunk c = cps.getChunkIfLoaded(tileEntity.xCoord >> 4, tileEntity.zCoord >> 4);
+                    if(c != null)
+                    {
+                        if(c.lastAccessedTick < 2L)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            
             return false;
         }
         return true;

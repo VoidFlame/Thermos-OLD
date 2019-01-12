@@ -399,8 +399,8 @@
 +
 +    private EntityDamageEvent calculateDebuffsAndCallCB(final DamageSource damagesource, float f)
 +    {
-+    	final boolean human = this instanceof EntityPlayer;
-+    	final float originalDamage = f;
++        final boolean human = this instanceof EntityPlayer;
++        final float originalDamage = f;
 +        // Calculates the damage debuff that occurs when an entity has something on his/her head
 +        Function<Double, Double> hardHat = new Function<Double, Double>() {
 +            @Override
@@ -409,7 +409,7 @@
 +                if ((damagesource == DamageSource.anvil || damagesource == DamageSource.fallingBlock)
 +                        && EntityLivingBase.this.getEquipmentInSlot(4) != null)
 +                {
-+                	// Saves you from 1/4 damage
++                    // Saves you from 1/4 damage
 +                    return -(f * 0.25F);
 +                }
 +                return -0.0;
@@ -427,7 +427,7 @@
 +                {
 +                    if (!damagesource.isUnblockable() && ((EntityPlayer) EntityLivingBase.this).isBlocking() && f > 0.0F)
 +                    {
-+                    	//Reduce by a bit more than half
++                        //Reduce by a bit more than half
 +                        return -(f - ((1.0F + f) * 0.5F));
 +                    }
 +                }
@@ -504,7 +504,7 @@
 +    // CraftBukkit start
 +    protected boolean damageEntity_CB(final DamageSource damagesource, float f)
 +    { // void -> boolean, add final
-+    	
++        
 +        /*if (!this.isEntityInvulnerable())
 +        {
 +            f = ForgeHooks.onLivingHurt(this, damagesource, f);
@@ -523,8 +523,8 @@
 +                this.setAbsorptionAmount(this.getAbsorptionAmount() - f);
 +            }
 +        }*/
-+    	
-+    	
++        
++        
          if (!this.isEntityInvulnerable())
          {
 -            p_70665_2_ = ForgeHooks.onLivingHurt(this, p_70665_1_, p_70665_2_);
@@ -534,7 +534,7 @@
 -            float f1 = p_70665_2_;
 -            p_70665_2_ = Math.max(p_70665_2_ - this.getAbsorptionAmount(), 0.0F);
 -            this.setAbsorptionAmount(this.getAbsorptionAmount() - (f1 - p_70665_2_));
-+        	// Check if entity is a "human" aka player
++            // Check if entity is a "human" aka player
 +            final boolean human = this instanceof EntityPlayer;
 +            final float originalDamage = f;
 +            // Cauldron start - apply forge damage hook
@@ -551,7 +551,7 @@
 +            
 +            if (ede.isCancelled())
              {
-+            	return false;
++                return false;
 +            }
 +            f = (float) ede.getFinalDamage();
 +            /*if (event.isCancelled())

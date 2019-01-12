@@ -207,7 +207,7 @@
 +                
 +                if (itemstack.stackSize <= 0 )
                  {
-+                	this.inventory.setInventorySlotContents(i, null);
++                    this.inventory.setInventorySlotContents(i, null);
 +                }
 +                
 +                if (itemstack.getItem().isMap())
@@ -353,7 +353,7 @@
 +            capturedDrops.clear();
  
 -        Collection collection = this.worldObj.getScoreboard().func_96520_a(IScoreObjectiveCriteria.deathCount);
-+        	this.keptInventory = true;
++            this.keptInventory = true;
 +        }
 +        this.closeScreen();
 +        // CraftBukkit end

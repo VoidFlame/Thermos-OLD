@@ -16,25 +16,25 @@
 +    private int pathFindFailures = 0;
      public boolean tryMoveToEntityLiving(Entity p_75497_1_, double p_75497_2_)
      {
-+    	if (this.pathFindFailures > 10 && this.currentPath == null && MinecraftServer.currentTick < this.lastFailure + 40) 
-+    	{
-+    		return false;
-+    	}
-+    	
++        if (this.pathFindFailures > 10 && this.currentPath == null && MinecraftServer.currentTick < this.lastFailure + 40) 
++        {
++            return false;
++        }
++        
          PathEntity pathentity = this.getPathToEntityLiving(p_75497_1_);
 -        return pathentity != null ? this.setPath(pathentity, p_75497_2_) : false;
 +        //return pathentity != null ? this.setPath(pathentity, p_75497_2_) : false;
 +        if (pathentity != null && this.setPath(pathentity, p_75497_2_))
 +        {
-+        	this.lastFailure = 0;
-+        	this.pathFindFailures = 0;
-+        	return true;
++            this.lastFailure = 0;
++            this.pathFindFailures = 0;
++            return true;
 +        }
 +        else
 +        {
-+        	this.lastFailure = MinecraftServer.currentTick;
-+        	this.pathFindFailures = 0;
-+        	return false;
++            this.lastFailure = MinecraftServer.currentTick;
++            this.pathFindFailures = 0;
++            return false;
 +        }
      }
  
@@ -43,8 +43,8 @@
  
      public void clearPathEntity()
      {
-+    	this.pathFindFailures = 0;
-+    	this.lastFailure = 0;
++        this.pathFindFailures = 0;
++        this.lastFailure = 0;
          this.currentPath = null;
      }
  

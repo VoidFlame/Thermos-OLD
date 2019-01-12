@@ -97,8 +97,8 @@
                              {
 -                                entityplayer = (EntityPlayer)iterator.next();
 -                                entityplayer.triggerAchievement(AchievementList.field_150963_I);
-+                            	entitywither.isDead = true;
-+                            	p_149965_1_.removeEntity(entitywither);
++                                entitywither.isDead = true;
++                                p_149965_1_.removeEntity(entitywither);
                              }
                          }
 -
@@ -182,8 +182,8 @@
                              {
 -                                entityplayer = (EntityPlayer)iterator.next();
 -                                entityplayer.triggerAchievement(AchievementList.field_150963_I);
-+                            	entitywither.isDead = true;
-+                            	p_149965_1_.removeEntity(entitywither);
++                                entitywither.isDead = true;
++                                p_149965_1_.removeEntity(entitywither);
                              }
                          }
 -

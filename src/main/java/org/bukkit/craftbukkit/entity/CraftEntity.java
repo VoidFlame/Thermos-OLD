@@ -175,7 +175,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
         else if (entity instanceof net.minecraft.entity.Entity) {
             if (entity instanceof net.minecraft.entity.IProjectile) return new thermos.entity.CustomProjectileEntity(server, entity); // Thermos
             return new CraftCustomEntity(server, (net.minecraft.entity.Entity) entity); }
-	else { return null; }
+    else { return null; }
         //throw new AssertionError("Unknown entity " + entity == null ? null : entity.getClass() + ": " + entity); // Cauldron - show the entity that caused exception
     }
 
@@ -423,7 +423,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
         }
         // Spigot end
         entity.setPositionAndRotation(location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch());
-	//entity.worldObj.entityJoinedWorld(entity, false); // PaperSpigot - Prevent Server from thinking a player teleporting within the world has joined the world
+    //entity.worldObj.entityJoinedWorld(entity, false); // PaperSpigot - Prevent Server from thinking a player teleporting within the world has joined the world
         // entity.setLocation() throws no event, and so cannot be cancelled
         return true;
     }

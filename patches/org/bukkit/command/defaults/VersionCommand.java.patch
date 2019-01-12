@@ -44,7 +44,7 @@
      }
  
      private void describeToSender(Plugin plugin, CommandSender sender) {
-+	sender.sendMessage("Author: Fracica");
++    sender.sendMessage("Author: Fracica");
 +/*
          PluginDescriptionFile desc = plugin.getDescription();
          sender.sendMessage(ChatColor.GREEN + desc.getName() + ChatColor.WHITE + " version " + ChatColor.GREEN + desc.getVersion());
@@ -81,7 +81,7 @@
 -
 -        if (args.length == 1) {
              List<String> completions = new ArrayList<String>();
-+  		completions.add("None");return completions;
++          completions.add("None");return completions;
 +
 +/*        if (args.length == 1) {
              String toComplete = args[0].toLowerCase();

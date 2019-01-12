@@ -37,8 +37,8 @@
                  if (datainputstream.readLong() != this.initializationTime)
                  {
 -                    throw new MinecraftException("The save is being accessed from another location, aborting");
-+                	// Thermos - disable Cauldron feature that can cause problems for some mods
-+                	// throw new MinecraftException("The save folder for world " + this.worldDirectory + " is being accessed from another location, aborting"); // Cauldron
++                    // Thermos - disable Cauldron feature that can cause problems for some mods
++                    // throw new MinecraftException("The save folder for world " + this.worldDirectory + " is being accessed from another location, aborting"); // Cauldron
                  }
              }
              finally

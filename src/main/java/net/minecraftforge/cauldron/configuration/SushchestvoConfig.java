@@ -35,7 +35,7 @@ public class SushchestvoConfig extends ConfigBase
 
     public void init()
     {
-    	settings.put(skipEntityTicks.path, skipEntityTicks);
+        settings.put(skipEntityTicks.path, skipEntityTicks);
         settings.put(enableECanUpdateWarning.path, enableECanUpdateWarning);
         settings.put(preventInvalidEntityUpdates.path, preventInvalidEntityUpdates);
         load();

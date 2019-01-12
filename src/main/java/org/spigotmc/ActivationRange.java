@@ -326,7 +326,7 @@ public class ActivationRange
         
         if(entity instanceof EntityFireworkRocket || !entity.isAddedToChunk()) // Force continued activation for teleporting entities
         {
-        	isActive = true;
+            isActive = true;
         }
         SpigotTimings.checkIfActiveTimer.stopTiming();
         return isActive;

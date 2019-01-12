@@ -150,7 +150,7 @@
          }
 +        else
 +        {
-+        	org.bukkit.event.player.PlayerInteractEvent cbEvent = CraftEventFactory.callPlayerInteractEvent(this.thisPlayerMP, Action.LEFT_CLICK_BLOCK, p_73074_1_, p_73074_2_, p_73074_3_, p_73074_4_, this.thisPlayerMP.inventory.getCurrentItem());
++            org.bukkit.event.player.PlayerInteractEvent cbEvent = CraftEventFactory.callPlayerInteractEvent(this.thisPlayerMP, Action.LEFT_CLICK_BLOCK, p_73074_1_, p_73074_2_, p_73074_3_, p_73074_4_, this.thisPlayerMP.inventory.getCurrentItem());
 +        }
      }
  
@@ -297,7 +297,7 @@
 +                if (p_73078_3_.stackSize <= 0)
 +                {
 +                    ForgeEventFactory.onPlayerDestroyItem(this.thisPlayerMP, p_73078_3_);
-+                }            	
++                }                
              }
 -        }
  

@@ -4,9 +4,9 @@
   *
   */
  public class FMLSecurityManager extends SecurityManager {
-+	
-+	public SecurityManager defman;
-+	
++    
++    public SecurityManager defman;
++    
      @Override
      public void checkPermission(Permission perm)
      {
@@ -16,7 +16,7 @@
          }
 +        else if ("register".equals(permName))// Allow the default security policy to be taken into consideration for "register"-ing
 +        {
-+        	defman.checkPermission(perm);
++            defman.checkPermission(perm);
 +        }
          return;
      }

@@ -91,28 +91,28 @@ public class CauldronConfig extends ConfigBase
 
     public void init()
     {
-    	for(Field f : this.getClass().getFields())
-    	{
-    		if(Modifier.isFinal(f.getModifiers()) && Modifier.isPublic(f.getModifiers()) && !Modifier.isStatic(f.getModifiers()))
-    		{
-    			try
-    			{
-    				Setting setting = (Setting) f.get(this);
-    				if(setting == null) continue;
-        			settings.put(setting.path, setting);    				
-    			}
-    			catch (ClassCastException e) 
-    			{
-    				
-    			}
-    			catch(Throwable t)
-    			{
-    				System.out.println("[Thermos] Failed to initialize a CauldronConfig setting.");
-    				t.printStackTrace();
-    			}
+        for(Field f : this.getClass().getFields())
+        {
+            if(Modifier.isFinal(f.getModifiers()) && Modifier.isPublic(f.getModifiers()) && !Modifier.isStatic(f.getModifiers()))
+            {
+                try
+                {
+                    Setting setting = (Setting) f.get(this);
+                    if(setting == null) continue;
+                    settings.put(setting.path, setting);                    
+                }
+                catch (ClassCastException e) 
+                {
+                    
+                }
+                catch(Throwable t)
+                {
+                    System.out.println("[Thermos] Failed to initialize a CauldronConfig setting.");
+                    t.printStackTrace();
+                }
 
-    		}
-    	}
+            }
+        }
         load();
     }
 

@@ -13,16 +13,16 @@
  
      int serverInitiateHandshake()
      {
-+    	// Thermos wait until the player object was assigned by the fml:packet_handler in serverToClientHandshake()
-+    	for(int i = 0; this.manager.channel().pipeline().get("fml:packet_handler") == null; i++)
-+    	{
-+    		try {Thread.sleep(10L);} catch(Exception e){}
-+    		if(i == 20) // We waited 200ms, no dice
-+    		{
-+    			return -100000;
-+    		}
-+    	}
-+    	
++        // Thermos wait until the player object was assigned by the fml:packet_handler in serverToClientHandshake()
++        for(int i = 0; this.manager.channel().pipeline().get("fml:packet_handler") == null; i++)
++        {
++            try {Thread.sleep(10L);} catch(Exception e){}
++            if(i == 20) // We waited 200ms, no dice
++            {
++                return -100000;
++            }
++        }
++        
          // Send mod salutation to the client
          // This will be ignored by vanilla clients
          this.state = ConnectionState.AWAITING_HANDSHAKE;

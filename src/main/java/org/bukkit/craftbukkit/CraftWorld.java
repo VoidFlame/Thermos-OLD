@@ -1409,7 +1409,7 @@ public class CraftWorld implements World {
 
             // Add unload request
             cps.unloadChunksIfNotNearSpawn(chunk.xPosition, chunk.zPosition);
-            continue;        	
+            continue;            
         }
     }
 
@@ -1476,6 +1476,6 @@ public class CraftWorld implements World {
     // Spigot end
     public WorldServer getWorldServer()
     {
-    	return this.world;
+        return this.world;
     }    
 }

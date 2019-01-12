@@ -83,7 +83,7 @@
 -        {
 -            return null;
 -        }
-+    	return (p_70463_1_ >= 0 && p_70463_1_ < this.inventoryWidth) ?  this.getStackInSlot(p_70463_1_ + p_70463_2_ * this.inventoryWidth) : null;
++        return (p_70463_1_ >= 0 && p_70463_1_ < this.inventoryWidth) ?  this.getStackInSlot(p_70463_1_ + p_70463_2_ * this.inventoryWidth) : null;
      }
  
      public String getInventoryName()

@@ -82,7 +82,7 @@
 +            // Cauldron end
 +            
 +            if(!world.captureTreeGeneration)
-+            	world.captureItemDrops = true; // Thermos real og right here, prevent sugar cane dupe glitch amongst other issues
++                world.captureItemDrops = true; // Thermos real og right here, prevent sugar cane dupe glitch amongst other issues
 +            
          }
  
@@ -93,7 +93,7 @@
 -
 -        if (flag)
 +        if(!world.captureTreeGeneration) // Thermos stop capturing item drops to the world
-+        	world.captureItemDrops = false;
++            world.captureItemDrops = false;
 +        // Cauldron start
 +        if (flag && world.captureTreeGeneration && world.capturedBlockSnapshots.size() > 0)
          {
@@ -192,7 +192,7 @@
 +                }
 +                else if (blockSnapshots.size() == 1)
 +                {
-+                	// Call both Bukkit's BlockPlaceEvent and Forge's
++                    // Call both Bukkit's BlockPlaceEvent and Forge's
 +                    placeEvent = ForgeEventFactory.onPlayerBlockPlace(player, blockSnapshots.get(0),
 +                            net.minecraftforge.common.util.ForgeDirection.getOrientation(side));
 +                }
@@ -252,7 +252,7 @@
 +                    
 +                    for (EntityItem eitm : world.itemStackSpawnQueue) // Thermos load em into the world, mission is a go!
 +                    {
-+                    	world.addEntity(eitm, SpawnReason.DEFAULT); // Same as world.spawnEntity()
++                        world.addEntity(eitm, SpawnReason.DEFAULT); // Same as world.spawnEntity()
 +                    }
 +                    world.itemStackSpawnQueue.clear();
 +                    player.addStat(StatList.objectUseStats[Item.getIdFromItem(itemstack.getItem())], 1);

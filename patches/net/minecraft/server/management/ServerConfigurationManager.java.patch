@@ -480,12 +480,12 @@
 +    // Cauldron start - refactor entire method for sanity.
 +    public EntityPlayerMP respawnPlayer(EntityPlayerMP par1EntityPlayerMP, int par2)
 +    {
-+    	return this.respawnPlayer(par1EntityPlayerMP, par2, false, null, false);
++        return this.respawnPlayer(par1EntityPlayerMP, par2, false, null, false);
 +    }
 +
 +    public EntityPlayerMP respawnPlayer(EntityPlayerMP par1EntityPlayerMP, int targetDimension, boolean returnFromEnd, Location location, boolean isdeath)
 +    {
-+    	EntityPlayerMP p_72368_1_ = par1EntityPlayerMP; // Thermos - keep the Forge name for later use
++        EntityPlayerMP p_72368_1_ = par1EntityPlayerMP; // Thermos - keep the Forge name for later use
 +        // Phase 1 - check if the player is allowed to respawn in same dimension
 +        World world = mcServer.worldServerForDimension(targetDimension);
 +        org.bukkit.World fromWorld = par1EntityPlayerMP.getBukkitEntity().getWorld();
@@ -544,7 +544,7 @@
 +        }
 +        else
 +        {
-+            object = new ItemInWorldManager(this.mcServer.worldServerForDimension(par1EntityPlayerMP.dimension));        	
++            object = new ItemInWorldManager(this.mcServer.worldServerForDimension(par1EntityPlayerMP.dimension));            
 +        }
 +        
 +        EntityPlayerMP entityplayermp1 =  new EntityPlayerMP(this.mcServer, this.mcServer.worldServerForDimension(p_72368_1_.dimension), p_72368_1_.getGameProfile(), (ItemInWorldManager)object);
@@ -684,14 +684,14 @@
 +
 +        if(!isdeath) // Thermos move data - cloning down here so properties are retained correctly
 +        {
-+        	entityplayermp1.clonePlayer(par1EntityPlayerMP, true);
-+        	entityplayermp1.activePotionsMap.clear();
-+        	entityplayermp1.activePotionsMap.putAll(par1EntityPlayerMP.activePotionsMap);        	
-+        	//Let Forge do the heavy lifting...
-+        	/*entityplayermp1.inventory.copyInventory(par1EntityPlayerMP.inventory);
-+        	entityplayermp1.experienceLevel = par1EntityPlayerMP.experienceLevel;
-+        	entityplayermp1.experienceTotal = par1EntityPlayerMP.experienceTotal;
-+        	entityplayermp1.experience = par1EntityPlayerMP.experience;
++            entityplayermp1.clonePlayer(par1EntityPlayerMP, true);
++            entityplayermp1.activePotionsMap.clear();
++            entityplayermp1.activePotionsMap.putAll(par1EntityPlayerMP.activePotionsMap);            
++            //Let Forge do the heavy lifting...
++            /*entityplayermp1.inventory.copyInventory(par1EntityPlayerMP.inventory);
++            entityplayermp1.experienceLevel = par1EntityPlayerMP.experienceLevel;
++            entityplayermp1.experienceTotal = par1EntityPlayerMP.experienceTotal;
++            entityplayermp1.experience = par1EntityPlayerMP.experience;
 +            entityplayermp1.setHealth(par1EntityPlayerMP.getHealth());
 +            entityplayermp1.foodStats = par1EntityPlayerMP.foodStats;
 +            entityplayermp1.setScore(par1EntityPlayerMP.getScore());
@@ -701,15 +701,15 @@
 +            for (net.minecraftforge.common.IExtendedEntityProperties p : par1EntityPlayerMP.extendedProperties.values())
 +                p.init(this, this.worldObj);
 +            
-+        	entityplayermp1.activePotionsMap.clear();
-+        	entityplayermp1.activePotionsMap.putAll(par1EntityPlayerMP.activePotionsMap);
-+        	entityplayermp1.setScore(par1EntityPlayerMP.getScore());*/        	
++            entityplayermp1.activePotionsMap.clear();
++            entityplayermp1.activePotionsMap.putAll(par1EntityPlayerMP.activePotionsMap);
++            entityplayermp1.setScore(par1EntityPlayerMP.getScore());*/            
 +        }
 +        else entityplayermp1.clonePlayer(par1EntityPlayerMP, returnFromEnd);        
 +        
 +        if(cp != null){
-+        	try { cp.enderChest.inventory = entityplayermp1.getInventoryEnderChest(); } catch(Exception e) {cp.enderChest = new CraftInventory(entityplayermp1.getInventoryEnderChest());}
-+        	try { cp.inventory.inventory = entityplayermp1.inventory; } catch(Exception e) {cp.inventory = new CraftInventoryPlayer(entityplayermp1.inventory); }
++            try { cp.enderChest.inventory = entityplayermp1.getInventoryEnderChest(); } catch(Exception e) {cp.enderChest = new CraftInventory(entityplayermp1.getInventoryEnderChest());}
++            try { cp.inventory.inventory = entityplayermp1.inventory; } catch(Exception e) {cp.inventory = new CraftInventoryPlayer(entityplayermp1.inventory); }
 +        }
 +        
 +        // CraftBukkit end
@@ -729,18 +729,18 @@
 +      {
 +        switch(entityplayermp1.theItemInWorldManager.getGameType())
 +        {
-+        	case ADVENTURE:
-+        		cp.setGameMode(GameMode.ADVENTURE);
-+        		break;
-+        	case CREATIVE:
-+        		cp.setGameMode(GameMode.CREATIVE);
-+        		break;
-+        	case SURVIVAL:
-+        		cp.setGameMode(GameMode.SURVIVAL);
-+        		break;
-+        	case NOT_SET:
-+        		cp.setGameMode(GameMode.NOT_SET);
-+        		break;
++            case ADVENTURE:
++                cp.setGameMode(GameMode.ADVENTURE);
++                break;
++            case CREATIVE:
++                cp.setGameMode(GameMode.CREATIVE);
++                break;
++            case SURVIVAL:
++                cp.setGameMode(GameMode.SURVIVAL);
++                break;
++            case NOT_SET:
++                cp.setGameMode(GameMode.NOT_SET);
++                break;
 +        }
 +      }
 +

@@ -62,7 +62,7 @@ public class ThermosCommand extends Command {
     }
 
     @SuppressWarnings("unchecked")
-	@Override
+    @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (!testPermission(sender))
             return true;

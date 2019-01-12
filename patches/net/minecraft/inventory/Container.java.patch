@@ -125,8 +125,8 @@
          for (int i = 0; i < this.inventorySlots.size(); ++i)
          {
 -            ItemStack itemstack = ((Slot)this.inventorySlots.get(i)).getStack();
-+        	Slot slotty = (Slot)this.inventorySlots.get(i);
-+        	slotty.slotNumber = i; // Thermos ensure correct indexing
++            Slot slotty = (Slot)this.inventorySlots.get(i);
++            slotty.slotNumber = i; // Thermos ensure correct indexing
 +            ItemStack itemstack = (slotty).getStack();
              ItemStack itemstack1 = (ItemStack)this.inventoryItemStacks.get(i);
  

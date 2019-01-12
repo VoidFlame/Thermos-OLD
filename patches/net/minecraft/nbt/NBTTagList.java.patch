@@ -17,7 +17,7 @@
 -
 -        while (iterator.hasNext())
 +        if ( nbttaglist.tagList instanceof ArrayList ) // Thermos, ensure we dont create arrays to then delete them
-+        	((ArrayList<NBTBase>)nbttaglist.tagList).ensureCapacity(this.tagList.size());
++            ((ArrayList<NBTBase>)nbttaglist.tagList).ensureCapacity(this.tagList.size());
 +        
 +        for(NBTBase nbtbase : this.tagList)
          {

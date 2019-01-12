@@ -421,7 +421,7 @@
                      }
 +                    if (worldserver.sushchestvoConfig != null)
 +                    {
-+                    	worldserver.sushchestvoConfig.save();
++                        worldserver.sushchestvoConfig.save();
 +                    }
 +                    // Cauldron end
                  }
@@ -491,14 +491,14 @@
 +                AffinityLock al = null;
 +                if(CauldronConfig.instance.affinity.getValue())
 +                {
-+                	al = AffinityLock.acquireCore();
-+                	if(al.isAllocated())
-+                		logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] We're locked in! " + AffinityLock.dumpLocks());
-+                	else logger.log(org.apache.logging.log4j.Level.WARN, "[Thermos] Couldn't bind to a CPU core!");
++                    al = AffinityLock.acquireCore();
++                    if(al.isAllocated())
++                        logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] We're locked in! " + AffinityLock.dumpLocks());
++                    else logger.log(org.apache.logging.log4j.Level.WARN, "[Thermos] Couldn't bind to a CPU core!");
 +                }
 +                else
 +                {
-+                	logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] Refusing to lock affinity, disabled in cauldron.yml");
++                    logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] Refusing to lock affinity, disabled in cauldron.yml");
 +                }
 +                try {
                  while (this.serverRunning)
@@ -607,7 +607,7 @@
  
 +        if (!file1.isFile())
 +        {
-+        	System.out.println("Hey, you don't have a server icon! Try out one of Thermos' Icon Generators at https://github.com/CyberdyneCC/ThermosIconGenerators !");
++            System.out.println("Hey, you don't have a server icon! Try out one of Thermos' Icon Generators at https://github.com/CyberdyneCC/ThermosIconGenerators !");
 +        }
 +
          if (file1.isFile())

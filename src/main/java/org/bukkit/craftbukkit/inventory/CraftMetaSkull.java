@@ -103,15 +103,15 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
             profile = null;
         } else {
             // PaperSpigot - Check usercache if the player is online
-	    EntityPlayer player = null;
-	    for(Object o : MinecraftServer.getServer().getConfigurationManager().playerEntityList)
-	    {
-		if(!(o instanceof EntityPlayer)) { continue; }
+        EntityPlayer player = null;
+        for(Object o : MinecraftServer.getServer().getConfigurationManager().playerEntityList)
+        {
+        if(!(o instanceof EntityPlayer)) { continue; }
                 EntityPlayer ep = (EntityPlayer)o;
-		if(ep.getCommandSenderName().equals(name)) { player = ep; break; }
+        if(ep.getCommandSenderName().equals(name)) { player = ep; break; }
             }
             profile = player != null ? player.getGameProfile() : new GameProfile(null, name);
-	    // PaperSpigot end
+        // PaperSpigot end
         }
 
         return true;

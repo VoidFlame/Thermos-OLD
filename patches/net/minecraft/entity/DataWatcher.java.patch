@@ -133,8 +133,8 @@
 +        else if(object instanceof ChunkCoordinates) rt = 6;
 +        if(rt != -1 && type != rt)
          {
-+        	System.out.println("[Thermos] Watchable object type is incorrect! Appying correct type! ( " +type+" -> " +rt+")");
-+        	type = rt;
++            System.out.println("[Thermos] Watchable object type is incorrect! Appying correct type! ( " +type+" -> " +rt+")");
++            type = rt;
 +        }
 +        switch (type)
 +        {
@@ -146,11 +146,11 @@
                  break;
              case 4:
 -                p_151510_0_.writeStringToBuffer((String)p_151510_1_.getObject());
-+            	String str = (String)p_151510_1_.getObject();
-+            	if(str.getBytes().length < 32767) 
-+            		p_151510_0_.writeStringToBuffer((String)p_151510_1_.getObject());
-+            	else
-+            		System.out.println("[Thermos] Warning! Skipped data watcher string larger than 32767 bytes ( "+str.getBytes().length+")!");
++                String str = (String)p_151510_1_.getObject();
++                if(str.getBytes().length < 32767) 
++                    p_151510_0_.writeStringToBuffer((String)p_151510_1_.getObject());
++                else
++                    System.out.println("[Thermos] Warning! Skipped data watcher string larger than 32767 bytes ( "+str.getBytes().length+")!");
                  break;
              case 5:
                  ItemStack itemstack = (ItemStack)p_151510_1_.getObject();

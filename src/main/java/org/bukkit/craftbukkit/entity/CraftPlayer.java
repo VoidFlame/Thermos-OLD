@@ -111,9 +111,9 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
     public boolean isOnline() {
         if (this.getHandle() instanceof net.minecraftforge.common.util.FakePlayer)
-	{
-	    return true;
-	}
+    {
+        return true;
+    }
         for (Object obj : server.getHandle().playerEntityList) {
             net.minecraft.entity.player.EntityPlayerMP player = (net.minecraft.entity.player.EntityPlayerMP) obj;
             if (player != null && (this.getHandle() == player || player.getBukkitEntity() == this || this.getHandle().getGameProfile().getId().equals(player.getGameProfile().getId())))
@@ -513,13 +513,13 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         if (fromWorld == toWorld) {
             entity.playerNetServerHandler.teleport(to);
         } else {
-        	//Thermos....transfer them correctly?!
+            //Thermos....transfer them correctly?!
             this.getHandle().mountEntity(null);
-        	thermos.thermite.ThermiteTeleportationHandler.transferPlayerToDimension(this.getHandle(), toWorld.dimension, this.getHandle().mcServer.getConfigurationManager(), to.getWorld().getEnvironment()); 
-        	 //this.getHandle().playerNetServerHandler.teleport(to);
-        	 this.getHandle().playerNetServerHandler.teleport(to);
-        	 //this.getHandle().playerNetServerHandler.setPlayerLocation(to.getX(), to.getY(), to.getZ(), this.getHandle().rotationYaw, this.getHandle().rotationPitch);
-        	//server.getHandle().respawnPlayer(entity, toWorld.dimension, false, to, false); // Cauldron
+            thermos.thermite.ThermiteTeleportationHandler.transferPlayerToDimension(this.getHandle(), toWorld.dimension, this.getHandle().mcServer.getConfigurationManager(), to.getWorld().getEnvironment()); 
+             //this.getHandle().playerNetServerHandler.teleport(to);
+             this.getHandle().playerNetServerHandler.teleport(to);
+             //this.getHandle().playerNetServerHandler.setPlayerLocation(to.getX(), to.getY(), to.getZ(), this.getHandle().rotationYaw, this.getHandle().rotationPitch);
+            //server.getHandle().respawnPlayer(entity, toWorld.dimension, false, to, false); // Cauldron
         }
         return true;
     }

@@ -12,18 +12,18 @@ public class StringArraySetting extends ArraySetting<String>
     
     @Override
     public void initArr(String values)
-    {    	
-    	String[] vals = values.split(",");
-    	
-    	this.value_array = new ArrayList<String>(vals.length);
-    	this.value_set = new HashSet<String>(vals.length);
-    	
-    	for(String val : vals)
-    	{
-    		if(val.length() == 0)
-    			continue;
-    		this.value_array.add(val);
-    	}
-    	this.value_set.addAll(this.value_array);
+    {        
+        String[] vals = values.split(",");
+        
+        this.value_array = new ArrayList<String>(vals.length);
+        this.value_set = new HashSet<String>(vals.length);
+        
+        for(String val : vals)
+        {
+            if(val.length() == 0)
+                continue;
+            this.value_array.add(val);
+        }
+        this.value_set.addAll(this.value_array);
     }
 }

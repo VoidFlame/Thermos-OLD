@@ -6,7 +6,7 @@
              int overrideDim = dispatcher.serverInitiateHandshake();
 +            if(overrideDim == -100000)
 +            {
-+            	return ERROR;
++                return ERROR;
 +            }
              ctx.writeAndFlush(FMLHandshakeMessage.makeCustomChannelRegistration(NetworkRegistry.INSTANCE.channelNamesFor(Side.SERVER))).addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
              ctx.writeAndFlush(new FMLHandshakeMessage.ServerHello(overrideDim)).addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);

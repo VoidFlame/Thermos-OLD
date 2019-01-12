@@ -155,16 +155,16 @@ public class CraftContainer extends net.minecraft.inventory.Container {
             setupHopper(top, bottom);
             break;
         default: // Thermos handle setup for custom inventories
-        	if(openContainer.length > 0)
-        		setupCustomInventory(top, bottom, openContainer[0]);
-        	break;
+            if(openContainer.length > 0)
+                setupCustomInventory(top, bottom, openContainer[0]);
+            break;
         }
     }
 
     private void setupCustomInventory(net.minecraft.inventory.IInventory top, net.minecraft.inventory.IInventory bottom, Container openContainer) {
         for (Slot s : openContainer.inventorySlots)
         {
-        	this.addSlotToContainer(s);
+            this.addSlotToContainer(s);
         }
     }
     
