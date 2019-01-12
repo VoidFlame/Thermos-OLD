@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockDoor.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockDoor.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockDoor.java	2019-01-11 20:13:51.249707600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockDoor.java	2019-01-11 20:13:22.974578700 -0500
 @@ -16,6 +16,8 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;
@@ -25,22 +25,22 @@
 +                org.bukkit.block.Block blockTop = bworld.getBlockAt(p_149695_2_, p_149695_3_ + 1, p_149695_4_);
 +                int power = bukkitBlock.getBlockPower();
 +                int powerTop = blockTop.getBlockPower();
++
++                if (powerTop > power)
++                {
++                    power = powerTop;
++                }
  
 -                if ((flag1 || p_149695_5_.canProvidePower()) && p_149695_5_ != this)
-+                if (powerTop > power)
-                 {
--                    this.func_150014_a(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, flag1);
-+                    power = powerTop;
-                 }
-+
 +                int oldPower = (p_149695_1_.getBlockMetadata(p_149695_2_, p_149695_3_, p_149695_4_) & 4) > 0 ? 15 : 0;
 +
 +                if (oldPower == 0 ^ power == 0)
-+                {
+                 {
+-                    this.func_150014_a(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, flag1);
 +                    BlockRedstoneEvent eventRedstone = new BlockRedstoneEvent(bukkitBlock, oldPower, power);
 +                    p_149695_1_.getServer().getPluginManager().callEvent(eventRedstone);
 +                    this.func_150014_a(p_149695_1_, p_149695_2_, p_149695_3_, p_149695_4_, eventRedstone.getNewCurrent() > 0);
-+                }
+                 }
 +
 +                // CraftBukkit end
              }

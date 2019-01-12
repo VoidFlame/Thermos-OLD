@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/util/WeightedRandomFishable.java
-+++ ../src-work/minecraft/net/minecraft/util/WeightedRandomFishable.java
+--- eclipse/Clean/src/main/java/net/minecraft/util/WeightedRandomFishable.java	2019-01-11 20:13:52.982927900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/util/WeightedRandomFishable.java	2019-01-11 20:13:26.868531200 -0500
 @@ -6,9 +6,11 @@
  
  public class WeightedRandomFishable extends WeightedRandom.Item

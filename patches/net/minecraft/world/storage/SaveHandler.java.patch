@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/storage/SaveHandler.java
-+++ ../src-work/minecraft/net/minecraft/world/storage/SaveHandler.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/storage/SaveHandler.java	2019-01-11 20:13:51.892732300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/storage/SaveHandler.java	2019-01-11 20:13:26.311130200 -0500
 @@ -21,6 +21,13 @@
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
@@ -37,8 +37,8 @@
                  if (datainputstream.readLong() != this.initializationTime)
                  {
 -                    throw new MinecraftException("The save is being accessed from another location, aborting");
-+                    // Thermos - disable Cauldron feature that can cause problems for some mods
-+                    // throw new MinecraftException("The save folder for world " + this.worldDirectory + " is being accessed from another location, aborting"); // Cauldron
++                	// Thermos - disable Cauldron feature that can cause problems for some mods
++                	// throw new MinecraftException("The save folder for world " + this.worldDirectory + " is being accessed from another location, aborting"); // Cauldron
                  }
              }
              finally

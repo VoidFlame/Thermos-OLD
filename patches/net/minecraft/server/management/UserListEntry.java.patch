@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/server/management/UserListEntry.java
-+++ ../src-work/minecraft/net/minecraft/server/management/UserListEntry.java
+--- eclipse/Clean/src/main/java/net/minecraft/server/management/UserListEntry.java	2019-01-11 20:13:52.383624200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/server/management/UserListEntry.java	2019-01-11 20:13:26.516275100 -0500
 @@ -17,7 +17,7 @@
          this.field_152642_a = p_i1147_1_;
      }

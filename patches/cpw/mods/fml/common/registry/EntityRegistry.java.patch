@@ -1,5 +1,5 @@
---- ../src-base/minecraft/cpw/mods/fml/common/registry/EntityRegistry.java
-+++ ../src-work/minecraft/cpw/mods/fml/common/registry/EntityRegistry.java
+--- eclipse/Clean/src/main/java/cpw/mods/fml/common/registry/EntityRegistry.java	2019-01-11 20:13:53.274228100 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/registry/EntityRegistry.java	2019-01-11 20:13:27.436946700 -0500
 @@ -41,6 +41,12 @@
  import cpw.mods.fml.common.ModContainer;
  import cpw.mods.fml.common.network.internal.FMLMessage.EntitySpawnMessage;
@@ -38,13 +38,13 @@
      }
  
      private int validateAndClaimId(int id)
-@@ -249,8 +259,38 @@
+@@ -249,7 +259,37 @@
          }
          instance().validateAndClaimId(id);
          EntityList.addMapping(entityClass, entityName, id, backgroundEggColour, foregroundEggColour);
 +        registerBukkitType(entityClass, entityName); // Cauldron - register EntityType for Bukkit
-     }
- 
++    }
++
 +    // Cauldron start
 +    private static void registerBukkitType(Class <? extends Entity > entityClass, String entityName)
 +    {
@@ -71,9 +71,8 @@
 +    public static String getCustomEntityTypeName(Class <? extends Entity > entityClass)
 +    {
 +        return entityTypeMap.get(entityClass);
-+    }
+     }
 +    // Cauldron end
-+
+ 
      public static void addSpawn(Class <? extends EntityLiving > entityClass, int weightedProb, int min, int max, EnumCreatureType typeOfCreature, BiomeGenBase... biomes)
      {
-         for (BiomeGenBase biome : biomes)

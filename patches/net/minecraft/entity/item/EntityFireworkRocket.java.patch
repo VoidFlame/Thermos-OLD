@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/item/EntityFireworkRocket.java
-+++ ../src-work/minecraft/net/minecraft/entity/item/EntityFireworkRocket.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityFireworkRocket.java	2019-01-11 20:13:52.907847000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityFireworkRocket.java	2019-01-11 20:13:26.812483300 -0500
 @@ -11,7 +11,7 @@
  public class EntityFireworkRocket extends Entity
  {
@@ -21,3 +21,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

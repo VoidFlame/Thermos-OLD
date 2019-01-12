@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/village/Village.java
-+++ ../src-work/minecraft/net/minecraft/village/Village.java
+--- eclipse/Clean/src/main/java/net/minecraft/village/Village.java	2019-01-11 20:13:50.623511000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/village/Village.java	2019-01-11 20:13:22.456958000 -0500
 @@ -71,7 +71,7 @@
              {
                  EntityIronGolem entityirongolem = new EntityIronGolem(this.worldObj);

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/EntityCreature.java
-+++ ../src-work/minecraft/net/minecraft/entity/EntityCreature.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/EntityCreature.java	2019-01-11 20:13:51.980847000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/EntityCreature.java	2019-01-11 20:13:26.352158300 -0500
 @@ -13,12 +13,18 @@
  import net.minecraft.util.Vec3;
  import net.minecraft.world.World;
@@ -21,14 +21,14 @@
      protected boolean hasAttacked;
      protected int fleeingTick;
      private ChunkCoordinates homePosition = new ChunkCoordinates(0, 0, 0);
-@@ -52,8 +58,29 @@
+@@ -52,7 +58,28 @@
  
          if (this.entityToAttack == null)
          {
 -            this.entityToAttack = this.findPlayerToAttack();
 +            // CraftBukkit start
 +            Entity target = this.findPlayerToAttack();
- 
++
 +            if (target != null)
 +            {
 +                EntityTargetEvent event = new EntityTargetEvent(this.getBukkitEntity(), target.getBukkitEntity(), EntityTargetEvent.TargetReason.CLOSEST_PLAYER);
@@ -48,10 +48,9 @@
 +            }
 +
 +            // CraftBukkit end
-+
+ 
              if (this.entityToAttack != null)
              {
-                 this.pathToEntity = this.worldObj.getPathEntityToEntity(this, this.entityToAttack, f4, true, false, false, true);
 @@ -70,7 +97,23 @@
          }
          else

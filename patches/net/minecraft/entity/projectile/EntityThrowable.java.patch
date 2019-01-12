@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/projectile/EntityThrowable.java
-+++ ../src-work/minecraft/net/minecraft/entity/projectile/EntityThrowable.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/projectile/EntityThrowable.java	2019-01-11 20:13:52.586086000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/projectile/EntityThrowable.java	2019-01-11 20:13:26.668390900 -0500
 @@ -24,8 +24,8 @@
      private Block field_145785_f;
      protected boolean inGround;

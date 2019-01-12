@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/dispenser/BehaviorProjectileDispense.java
-+++ ../src-work/minecraft/net/minecraft/dispenser/BehaviorProjectileDispense.java
+--- eclipse/Clean/src/main/java/net/minecraft/dispenser/BehaviorProjectileDispense.java	2019-01-11 20:13:52.663429800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/dispenser/BehaviorProjectileDispense.java	2019-01-11 20:13:26.714414600 -0500
 @@ -7,6 +7,12 @@
  import net.minecraft.util.EnumFacing;
  import net.minecraft.world.World;

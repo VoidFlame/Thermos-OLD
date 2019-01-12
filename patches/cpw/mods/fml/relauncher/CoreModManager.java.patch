@@ -1,5 +1,5 @@
---- ../src-base/minecraft/cpw/mods/fml/relauncher/CoreModManager.java
-+++ ../src-work/minecraft/cpw/mods/fml/relauncher/CoreModManager.java
+--- eclipse/Clean/src/main/java/cpw/mods/fml/relauncher/CoreModManager.java	2019-01-11 20:13:51.326754900 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/relauncher/CoreModManager.java	2019-01-11 20:13:23.334112800 -0500
 @@ -60,7 +60,7 @@
      private static final Attributes.Name COREMODCONTAINSFMLMOD = new Attributes.Name("FMLCorePluginContainsFMLMod");
      private static final Attributes.Name MODTYPE = new Attributes.Name("ModType");

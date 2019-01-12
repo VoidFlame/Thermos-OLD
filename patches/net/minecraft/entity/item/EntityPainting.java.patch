@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/item/EntityPainting.java
-+++ ../src-work/minecraft/net/minecraft/entity/item/EntityPainting.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityPainting.java	2019-01-11 20:13:51.265732000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityPainting.java	2019-01-11 20:13:23.204856000 -0500
 @@ -2,7 +2,9 @@
  
  import cpw.mods.fml.relauncher.Side;
@@ -30,3 +30,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

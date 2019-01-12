@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/ItemWritableBook.java
-+++ ../src-work/minecraft/net/minecraft/item/ItemWritableBook.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/ItemWritableBook.java	2019-01-11 20:13:53.096775000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemWritableBook.java	2019-01-11 20:13:26.917631100 -0500
 @@ -3,6 +3,7 @@
  import net.minecraft.entity.player.EntityPlayer;
  import net.minecraft.nbt.NBTTagCompound;
@@ -58,20 +58,17 @@
      public static boolean func_150930_a(NBTTagCompound p_150930_0_)
      {
          if (p_150930_0_ == null)
-@@ -43,15 +87,10 @@
+@@ -43,12 +87,7 @@
              {
                  String s = nbttaglist.getStringTagAt(i);
  
 -                if (s == null)
+-                {
+-                    return false;
+-                }
+-
+-                if (s.length() > 256)
 +                if (s == null || s.length() > 256)
                  {
                      return false;
                  }
--
--                if (s.length() > 256)
--                {
--                    return false;
--                }
-             }
- 
-             return true;

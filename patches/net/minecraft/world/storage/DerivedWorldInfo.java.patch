@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/storage/DerivedWorldInfo.java
-+++ ../src-work/minecraft/net/minecraft/world/storage/DerivedWorldInfo.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/storage/DerivedWorldInfo.java	2019-01-11 20:13:50.819192600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/storage/DerivedWorldInfo.java	2019-01-11 20:13:22.690662200 -0500
 @@ -75,7 +75,8 @@
  
      public String getWorldName()
@@ -37,3 +37,4 @@
 +        theWorldInfo.tick();
 +    }
  }
+\ No newline at end of file

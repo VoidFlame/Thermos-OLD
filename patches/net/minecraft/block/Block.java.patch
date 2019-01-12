@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/Block.java
-+++ ../src-work/minecraft/net/minecraft/block/Block.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/Block.java	2019-01-11 20:13:51.982848400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/Block.java	2019-01-11 20:13:26.354159500 -0500
 @@ -27,6 +27,7 @@
  import net.minecraft.init.Blocks;
  import net.minecraft.item.Item;
@@ -28,8 +28,8 @@
  
      public static Block getBlockById(int p_149729_0_)
      {
-+        if(p_149729_0_ == 0) return Blocks.air;
-+        
++    	if(p_149729_0_ == 0) return Blocks.air;
++    	
          Block ret = (Block)blockRegistry.getObjectById(p_149729_0_);
          return ret == null ? Blocks.air : ret;
      }
@@ -37,10 +37,10 @@
  
      public void addCollisionBoxesToList(World p_149743_1_, int p_149743_2_, int p_149743_3_, int p_149743_4_, AxisAlignedBB p_149743_5_, List p_149743_6_, Entity p_149743_7_)
      {
-+        if(p_149743_6_ instanceof ArrayList)
-+        {
-+            ((ArrayList)p_149743_6_).ensureCapacity(30); // Thermos - force ArrayList minimum size
-+        }
++    	if(p_149743_6_ instanceof ArrayList)
++    	{
++    		((ArrayList)p_149743_6_).ensureCapacity(30); // Thermos - force ArrayList minimum size
++    	}
          AxisAlignedBB axisalignedbb1 = this.getCollisionBoundingBoxFromPool(p_149743_1_, p_149743_2_, p_149743_3_, p_149743_4_);
  
          if (axisalignedbb1 != null && p_149743_5_.intersectsWith(axisalignedbb1))
@@ -60,7 +60,7 @@
 +                if (itemstack != null)
 +                {
 +                    items.add(itemstack);
-+                }                
++                }            	
              }
  
 +

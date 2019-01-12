@@ -1,5 +1,5 @@
---- ../src-base/minecraft/org/bukkit/command/SimpleCommandMap.java
-+++ ../src-work/minecraft/org/bukkit/command/SimpleCommandMap.java
+--- eclipse/Clean/src/main/java/org/bukkit/command/SimpleCommandMap.java	2019-01-11 20:13:52.278476100 -0500
++++ eclipse/Cauldron/src/main/java/org/bukkit/command/SimpleCommandMap.java	2019-01-11 20:13:26.449227200 -0500
 @@ -167,7 +167,7 @@
          if (args.length == 0) {
              return false;

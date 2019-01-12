@@ -1,6 +1,6 @@
---- ../src-base/minecraft/net/minecraftforge/common/util/EnumHelper.java
-+++ ../src-work/minecraft/net/minecraftforge/common/util/EnumHelper.java
-@@ -21,7 +21,23 @@
+--- eclipse/Clean/src/main/java/net/minecraftforge/common/util/EnumHelper.java	2019-01-11 20:13:52.552987700 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/util/EnumHelper.java	2019-01-11 20:13:26.649369200 -0500
+@@ -21,6 +21,22 @@
  import net.minecraft.world.EnumSkyBlock;
  import net.minecraft.world.gen.structure.StructureStrongholdPieces.Stronghold.Door;
  import net.minecraftforge.classloading.FMLForgePlugin;
@@ -9,7 +9,7 @@
 +import net.minecraft.inventory.IInventory;
 +import net.minecraft.server.MinecraftServer;
 +import net.minecraft.tileentity.TileEntity;
- 
++
 +import org.apache.logging.log4j.Level;
 +import org.apache.logging.log4j.LogManager;
 +import org.apache.logging.log4j.Logger;
@@ -20,10 +20,9 @@
 +import org.bukkit.entity.EntityType;
 +import org.bukkit.event.inventory.InventoryType;
 +// Cauldron end
-+
+ 
  public class EnumHelper
  {
-     private static Object reflectionFactory      = null;
 @@ -30,6 +46,7 @@
      private static Method newFieldAccessor       = null;
      private static Method fieldAccessorSet       = null;

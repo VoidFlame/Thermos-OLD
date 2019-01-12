@@ -1,0 +1,9 @@
+--- eclipse/Clean/src/main/java/ibxm/Envelope.java	2019-01-11 20:13:53.211116800 -0500
++++ eclipse/Cauldron/src/main/java/ibxm/Envelope.java	2019-01-11 20:13:27.092179500 -0500
+@@ -107,4 +107,4 @@
+ 			System.out.print( calculate_ampl( tick ) + ", " );
+ 		}
+ 	}
+-}
++}
+\ No newline at end of file

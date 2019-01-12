@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/server/network/NetHandlerStatusServer.java
-+++ ../src-work/minecraft/net/minecraft/server/network/NetHandlerStatusServer.java
+--- eclipse/Clean/src/main/java/net/minecraft/server/network/NetHandlerStatusServer.java	2019-01-11 20:13:50.821195400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/server/network/NetHandlerStatusServer.java	2019-01-11 20:13:22.692671900 -0500
 @@ -1,5 +1,7 @@
  package net.minecraft.server.network;
  
@@ -93,3 +93,4 @@
 +        this.field_147313_b.scheduleOutboundPacket(new S01PacketPong(p_147311_1_.func_149289_c()), ChannelFutureListener.CLOSE);
      }
  }
+\ No newline at end of file

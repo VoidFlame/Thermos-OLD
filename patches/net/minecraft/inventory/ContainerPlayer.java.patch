@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerPlayer.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerPlayer.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerPlayer.java	2019-01-11 20:13:52.466769800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerPlayer.java	2019-01-11 20:13:26.564307900 -0500
 @@ -12,18 +12,33 @@
  import net.minecraft.item.crafting.CraftingManager;
  import net.minecraft.util.IIcon;
@@ -80,3 +80,4 @@
 +    }
 +    // CraftBukkit end
  }
+\ No newline at end of file

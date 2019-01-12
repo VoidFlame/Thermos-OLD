@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/projectile/EntityEgg.java
-+++ ../src-work/minecraft/net/minecraft/entity/projectile/EntityEgg.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/projectile/EntityEgg.java	2019-01-11 20:13:51.646365900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/projectile/EntityEgg.java	2019-01-11 20:13:26.058950900 -0500
 @@ -6,6 +6,17 @@
  import net.minecraft.util.MovingObjectPosition;
  import net.minecraft.world.World;
@@ -85,3 +85,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

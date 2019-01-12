@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraftforge/event/entity/player/PlayerInteractEvent.java
-+++ ../src-work/minecraft/net/minecraftforge/event/entity/player/PlayerInteractEvent.java
+--- eclipse/Clean/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java	2019-01-11 20:13:52.595092400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java	2019-01-11 20:13:26.676387100 -0500
 @@ -47,7 +47,7 @@
      public final int z;
      public final int face;

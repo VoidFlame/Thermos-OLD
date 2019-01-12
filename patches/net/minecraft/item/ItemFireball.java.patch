@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/ItemFireball.java
-+++ ../src-work/minecraft/net/minecraft/item/ItemFireball.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/ItemFireball.java	2019-01-11 20:13:51.784144700 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemFireball.java	2019-01-11 20:13:26.276104600 -0500
 @@ -61,6 +61,18 @@
              {
                  if (p_77648_3_.getBlock(p_77648_4_, p_77648_5_, p_77648_6_).getMaterial() == Material.air)

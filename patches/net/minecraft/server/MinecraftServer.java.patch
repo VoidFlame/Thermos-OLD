@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/server/MinecraftServer.java
-+++ ../src-work/minecraft/net/minecraft/server/MinecraftServer.java
+--- eclipse/Clean/src/main/java/net/minecraft/server/MinecraftServer.java	2019-01-11 20:13:51.630315800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/server/MinecraftServer.java	2019-01-11 20:13:26.036937000 -0500
 @@ -1,5 +1,6 @@
  package net.minecraft.server;
  
@@ -47,7 +47,7 @@
  import net.minecraftforge.common.MinecraftForge;
  import net.minecraftforge.event.world.WorldEvent;
 +import net.openhft.affinity.AffinityLock;
- 
++
 +// CraftBukkit start
 +import java.io.IOException;
 +
@@ -84,7 +84,7 @@
 +import org.bukkit.craftbukkit.CraftServer;
 +import org.bukkit.craftbukkit.block.CraftBlock;
 +// Cauldron end
-+
+ 
  public abstract class MinecraftServer implements ICommandSender, Runnable, IPlayerUsage
  {
      private static final Logger logger = LogManager.getLogger();
@@ -145,7 +145,7 @@
      public MinecraftServer(File p_i45281_1_, Proxy p_i45281_2_)
      {
          this.field_152366_X = new PlayerProfileCache(this, field_152367_a);
-@@ -149,10 +227,74 @@
+@@ -149,9 +227,73 @@
          this.field_152364_T = new YggdrasilAuthenticationService(p_i45281_2_, UUID.randomUUID().toString());
          this.field_147143_S = this.field_152364_T.createMinecraftSessionService();
          this.field_152365_W = this.field_152364_T.createProfileRepository();
@@ -186,7 +186,7 @@
 +            System.setProperty("jline.terminal", "jline.UnsupportedTerminal");
 +            this.useJline = false; // Cauldron
 +        }
- 
++
 +        try
 +        {
 +            this.reader = new ConsoleReader(System.in, System.out);
@@ -217,10 +217,9 @@
 +    // CraftBukkit end
 +
 +    protected abstract boolean startServer() throws java.net.UnknownHostException; // CraftBukkit - throws UnknownHostException
-+
+ 
      protected void convertMapIfNeeded(String p_71237_1_)
      {
-         if (this.getActiveAnvilConverter().isOldMapFormat(p_71237_1_))
 @@ -172,6 +314,7 @@
                          MinecraftServer.logger.info("Converting... " + p_73718_1_ + "%");
                      }
@@ -254,13 +253,13 @@
              worldsettings.enableBonusChest();
          }
 +        // */
- 
--        WorldServer overWorld = (isDemo() ? new DemoWorldServer(this, isavehandler, p_71247_2_, 0, theProfiler) : new WorldServer(this, isavehandler, p_71247_2_, 0, worldsettings, theProfiler));
--        for (int dim : DimensionManager.getStaticDimensionIDs())
++
 +        WorldSettings worldsettings = new WorldSettings(p_71247_3_, this.getGameType(), this.canStructuresSpawn(), this.isHardcore(), p_71247_5_);
 +        worldsettings.func_82750_a(p_71247_6_);
 +        WorldServer world;
-+
+ 
+-        WorldServer overWorld = (isDemo() ? new DemoWorldServer(this, isavehandler, p_71247_2_, 0, theProfiler) : new WorldServer(this, isavehandler, p_71247_2_, 0, worldsettings, theProfiler));
+-        for (int dim : DimensionManager.getStaticDimensionIDs())
 +        // Cauldron - overworld generator is handled in World after plugins load
 +        WorldServer overWorld = (isDemo() ? new DemoWorldServer(this, new AnvilSaveHandler(server.getWorldContainer(), p_71247_2_, true), p_71247_2_, 0, theProfiler) : new WorldServer(this, new AnvilSaveHandler(server.getWorldContainer(), p_71247_2_, true), p_71247_2_, 0, worldsettings, theProfiler, Environment.getEnvironment(0), null));
 +
@@ -421,7 +420,7 @@
                      }
 +                    if (worldserver.sushchestvoConfig != null)
 +                    {
-+                        worldserver.sushchestvoConfig.save();
++                    	worldserver.sushchestvoConfig.save();
 +                    }
 +                    // Cauldron end
                  }
@@ -491,14 +490,14 @@
 +                AffinityLock al = null;
 +                if(CauldronConfig.instance.affinity.getValue())
 +                {
-+                    al = AffinityLock.acquireCore();
-+                    if(al.isAllocated())
-+                        logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] We're locked in! " + AffinityLock.dumpLocks());
-+                    else logger.log(org.apache.logging.log4j.Level.WARN, "[Thermos] Couldn't bind to a CPU core!");
++                	al = AffinityLock.acquireCore();
++                	if(al.isAllocated())
++                		logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] We're locked in! " + AffinityLock.dumpLocks());
++                	else logger.log(org.apache.logging.log4j.Level.WARN, "[Thermos] Couldn't bind to a CPU core!");
 +                }
 +                else
 +                {
-+                    logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] Refusing to lock affinity, disabled in cauldron.yml");
++                	logger.log(org.apache.logging.log4j.Level.INFO, "[Thermos] Refusing to lock affinity, disabled in cauldron.yml");
 +                }
 +                try {
                  while (this.serverRunning)
@@ -535,11 +534,7 @@
                      {
 -                        this.tick();
 -                        l = 0L;
-+                        currentTps = 1E9 / (curTime - lastTick);
-+                        recentTps[0] = calcTps(recentTps[0], 0.92, currentTps);   // 1/exp(5sec/1min)
-+                        recentTps[1] = calcTps(recentTps[1], 0.9835, currentTps);   // 1/exp(5sec/5min)
-+                        recentTps[2] = calcTps(recentTps[2], 0.9945, currentTps);   // 1/exp(5sec/15min)
-                     }
+-                    }
 -                    else
 -                    {
 -                        while (l > 50L)
@@ -547,7 +542,11 @@
 -                            l -= 50L;
 -                            this.tick();
 -                        }
--                    }
++                        currentTps = 1E9 / (curTime - lastTick);
++                        recentTps[0] = calcTps(recentTps[0], 0.92, currentTps);   // 1/exp(5sec/1min)
++                        recentTps[1] = calcTps(recentTps[1], 0.9835, currentTps);   // 1/exp(5sec/5min)
++                        recentTps[2] = calcTps(recentTps[2], 0.9945, currentTps);   // 1/exp(5sec/15min)
+                     }
  
 -                    Thread.sleep(Math.max(1L, 50L - l));
 +                    lastTick = curTime;
@@ -607,7 +606,7 @@
  
 +        if (!file1.isFile())
 +        {
-+            System.out.println("Hey, you don't have a server icon! Try out one of Thermos' Icon Generators at https://github.com/CyberdyneCC/ThermosIconGenerators !");
++        	System.out.println("Hey, you don't have a server icon! Try out one of Thermos' Icon Generators at https://github.com/CyberdyneCC/ThermosIconGenerators !");
 +        }
 +
          if (file1.isFile())
@@ -881,11 +880,11 @@
 -            String s1 = astring[astring.length - 1];
 -            String[] astring1 = this.serverConfigManager.getAllUsernames();
 -            int i = astring1.length;
- 
+-
 -            for (int j = 0; j < i; ++j)
 -            {
 -                String s2 = astring1[j];
--
+ 
 -                if (CommandBase.doesStringStartWith(s1, s2))
 -                {
 -                    arraylist.add(s2);
@@ -1263,3 +1262,4 @@
 +    }
 +    // CraftBukkit end
  }
+\ No newline at end of file

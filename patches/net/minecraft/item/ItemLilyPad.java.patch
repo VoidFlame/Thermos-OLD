@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/ItemLilyPad.java
-+++ ../src-work/minecraft/net/minecraft/item/ItemLilyPad.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/ItemLilyPad.java	2019-01-11 20:13:51.344767900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemLilyPad.java	2019-01-11 20:13:23.368136300 -0500
 @@ -48,7 +48,17 @@
                  {
                      // special case for handling block placement with water lilies

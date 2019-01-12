@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/server/management/UserListOps.java
-+++ ../src-work/minecraft/net/minecraft/server/management/UserListOps.java
+--- eclipse/Clean/src/main/java/net/minecraft/server/management/UserListOps.java	2019-01-11 20:13:53.090769400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/server/management/UserListOps.java	2019-01-11 20:13:26.914629000 -0500
 @@ -35,6 +35,7 @@
  
      protected String func_152699_b(GameProfile p_152699_1_)

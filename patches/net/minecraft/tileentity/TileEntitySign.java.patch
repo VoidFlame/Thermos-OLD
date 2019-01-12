@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/tileentity/TileEntitySign.java
-+++ ../src-work/minecraft/net/minecraft/tileentity/TileEntitySign.java
+--- eclipse/Clean/src/main/java/net/minecraft/tileentity/TileEntitySign.java	2019-01-11 20:13:51.404888500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/tileentity/TileEntitySign.java	2019-01-11 20:13:23.487295700 -0500
 @@ -11,7 +11,7 @@
  {
      public String[] signText = new String[] {"", "", "", ""};
@@ -57,3 +57,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

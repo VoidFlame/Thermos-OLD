@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/ai/EntityLookHelper.java
-+++ ../src-work/minecraft/net/minecraft/entity/ai/EntityLookHelper.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/ai/EntityLookHelper.java	2019-01-11 20:13:53.188079400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/ai/EntityLookHelper.java	2019-01-11 20:13:26.962663800 -0500
 @@ -5,6 +5,8 @@
  import net.minecraft.entity.EntityLivingBase;
  import net.minecraft.util.MathHelper;

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraftforge/common/ForgeHooks.java
-+++ ../src-work/minecraft/net/minecraftforge/common/ForgeHooks.java
+--- eclipse/Clean/src/main/java/net/minecraftforge/common/ForgeHooks.java	2019-01-11 20:13:51.387798600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/ForgeHooks.java	2019-01-11 20:13:23.454196800 -0500
 @@ -63,6 +63,17 @@
  import net.minecraftforge.event.world.BlockEvent;
  import net.minecraftforge.event.world.NoteBlockEvent;
@@ -82,7 +82,7 @@
 +            // Cauldron end
 +            
 +            if(!world.captureTreeGeneration)
-+                world.captureItemDrops = true; // Thermos real og right here, prevent sugar cane dupe glitch amongst other issues
++            	world.captureItemDrops = true; // Thermos real og right here, prevent sugar cane dupe glitch amongst other issues
 +            
          }
  
@@ -90,24 +90,24 @@
          boolean flag = itemstack.getItem().onItemUse(itemstack, player, world, x, y, z, side, hitX, hitY, hitZ);
 +        ItemStack.currentPlayer = null; // Cauldron
          world.captureBlockSnapshots = false;
--
--        if (flag)
 +        if(!world.captureTreeGeneration) // Thermos stop capturing item drops to the world
-+            world.captureItemDrops = false;
++        	world.captureItemDrops = false;
 +        // Cauldron start
 +        if (flag && world.captureTreeGeneration && world.capturedBlockSnapshots.size() > 0)
-         {
--            // save new item data
--            int newMeta = itemstack.getItemDamage();
--            int newSize = itemstack.stackSize;
--            NBTTagCompound newNBT = null;
--            if (itemstack.getTagCompound() != null)
++        {
 +            world.captureTreeGeneration = false;
 +            Location loc = new Location(world.getWorld(), (double) x, (double) y, (double) z);
 +            TreeType type = net.minecraft.block.BlockSapling.treeType;
 +            net.minecraft.block.BlockSapling.treeType = null;
 +            List<BlockState> states = new ArrayList();
-+
+ 
+-        if (flag)
+-        {
+-            // save new item data
+-            int newMeta = itemstack.getItemDamage();
+-            int newSize = itemstack.stackSize;
+-            NBTTagCompound newNBT = null;
+-            if (itemstack.getTagCompound() != null)
 +            for (net.minecraftforge.common.util.BlockSnapshot snapshot : (List<net.minecraftforge.common.util.BlockSnapshot>) world.capturedBlockSnapshots.clone())
              {
 -                newNBT = (NBTTagCompound)itemstack.getTagCompound().copy();
@@ -121,22 +121,22 @@
 -            itemstack.setItemDamage(meta);
 -            itemstack.stackSize = size;
 -            if (nbt != null)
-+            world.capturedBlockSnapshots.clear();
-+            StructureGrowEvent event = null;
-+            if (type != null)
-             {
+-            {
 -                itemstack.setTagCompound(nbt);
-+                event = new StructureGrowEvent(loc, type, false, (Player) player.getBukkitEntity(), states);
-+                Bukkit.getPluginManager().callEvent(event);
-             }
+-            }
 -            if (blockSnapshots.size() > 1)
 -            {
 -                placeEvent = ForgeEventFactory.onPlayerMultiBlockPlace(player, blockSnapshots, net.minecraftforge.common.util.ForgeDirection.getOrientation(side));
 -            }
 -            else if (blockSnapshots.size() == 1)
--            {
++            world.capturedBlockSnapshots.clear();
++            StructureGrowEvent event = null;
++            if (type != null)
+             {
 -                placeEvent = ForgeEventFactory.onPlayerBlockPlace(player, blockSnapshots.get(0), net.minecraftforge.common.util.ForgeDirection.getOrientation(side));
--            }
++                event = new StructureGrowEvent(loc, type, false, (Player) player.getBukkitEntity(), states);
++                Bukkit.getPluginManager().callEvent(event);
+             }
  
 -            if (placeEvent != null && (placeEvent.isCanceled()))
 +            if (event == null || !event.isCancelled())
@@ -184,7 +184,7 @@
                  {
 -                    itemstack.setTagCompound(newNBT);
 +                    itemstack.setTagCompound(nbt);
-                 }
++                }
 +                if (blockSnapshots.size() > 1)
 +                {
 +                    placeEvent = ForgeEventFactory.onPlayerMultiBlockPlace(player, blockSnapshots,
@@ -192,13 +192,25 @@
 +                }
 +                else if (blockSnapshots.size() == 1)
 +                {
-+                    // Call both Bukkit's BlockPlaceEvent and Forge's
++                	// Call both Bukkit's BlockPlaceEvent and Forge's
 +                    placeEvent = ForgeEventFactory.onPlayerBlockPlace(player, blockSnapshots.get(0),
 +                            net.minecraftforge.common.util.ForgeDirection.getOrientation(side));
-+                }
+                 }
  
 -                for (net.minecraftforge.common.util.BlockSnapshot blocksnapshot : blockSnapshots)
 +                if (placeEvent != null && (placeEvent.isCanceled()))
++                {
++                    flag = false; // cancel placement
++                    // revert back all captured blocks
++                    for (net.minecraftforge.common.util.BlockSnapshot blocksnapshot : blockSnapshots)
++                    {
++                        world.restoringBlockSnapshots = true;
++                        blocksnapshot.restore(true, false);
++                        world.restoringBlockSnapshots = false;
++                    }
++                    world.itemStackSpawnQueue.clear(); // Thermos clear the potential drops because the event was cancelled
++                }
++                else
                  {
 -                    int blockX = blocksnapshot.x;
 -                    int blockY = blocksnapshot.y;
@@ -208,26 +220,14 @@
 -                    Block oldBlock = blocksnapshot.replacedBlock;
 -                    Block newBlock = world.getBlock(blockX, blockY, blockZ);
 -                    if (newBlock != null && !(newBlock.hasTileEntity(metadata))) // Containers get placed automatically
-+                    flag = false; // cancel placement
-+                    // revert back all captured blocks
-+                    for (net.minecraftforge.common.util.BlockSnapshot blocksnapshot : blockSnapshots)
-                     {
--                        newBlock.onBlockAdded(world, blockX, blockY, blockZ);
-+                        world.restoringBlockSnapshots = true;
-+                        blocksnapshot.restore(true, false);
-+                        world.restoringBlockSnapshots = false;
-                     }
-+                    world.itemStackSpawnQueue.clear(); // Thermos clear the potential drops because the event was cancelled
-+                }
-+                else
-+                {
 +                    // Change the stack to its new content
 +                    itemstack.setItemDamage(newMeta);
 +                    itemstack.stackSize = newSize;
 +                    if (nbt != null)
-+                    {
+                     {
+-                        newBlock.onBlockAdded(world, blockX, blockY, blockZ);
 +                        itemstack.setTagCompound(newNBT);
-+                    }
+                     }
  
 -                    world.markAndNotifyBlock(blockX, blockY, blockZ, null, oldBlock, newBlock, updateFlag);
 +                    for (net.minecraftforge.common.util.BlockSnapshot blocksnapshot : blockSnapshots)
@@ -252,7 +252,7 @@
 +                    
 +                    for (EntityItem eitm : world.itemStackSpawnQueue) // Thermos load em into the world, mission is a go!
 +                    {
-+                        world.addEntity(eitm, SpawnReason.DEFAULT); // Same as world.spawnEntity()
++                    	world.addEntity(eitm, SpawnReason.DEFAULT); // Same as world.spawnEntity()
 +                    }
 +                    world.itemStackSpawnQueue.clear();
 +                    player.addStat(StatList.objectUseStats[Item.getIdFromItem(itemstack.getItem())], 1);

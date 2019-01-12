@@ -1,5 +1,5 @@
---- ../src-base/minecraft/org/bukkit/Server.java
-+++ ../src-work/minecraft/org/bukkit/Server.java
+--- eclipse/Clean/src/main/java/org/bukkit/Server.java	2019-01-11 20:13:52.278476100 -0500
++++ eclipse/Cauldron/src/main/java/org/bukkit/Server.java	2019-01-11 20:13:26.448226200 -0500
 @@ -12,11 +12,13 @@
  import java.util.UUID;
  import java.util.logging.Logger;
@@ -35,3 +35,4 @@
 +        }
 +    }
  }
+\ No newline at end of file

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/init/Bootstrap.java
-+++ ../src-work/minecraft/net/minecraft/init/Bootstrap.java
+--- eclipse/Clean/src/main/java/net/minecraft/init/Bootstrap.java	2019-01-11 20:13:52.915853200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/init/Bootstrap.java	2019-01-11 20:13:26.817486500 -0500
 @@ -1,6 +1,7 @@
  package net.minecraft.init;
  
@@ -31,7 +31,7 @@
 +                org.bukkit.block.Block block = world.getWorld().getBlockAt(p_82487_1_.getXInt(), p_82487_1_.getYInt(), p_82487_1_.getZInt());
 +                CraftItemStack craftItem = CraftItemStack.asCraftMirror(itemstack1);
 +                BlockDispenseEvent event = new BlockDispenseEvent(block, craftItem.clone(), new org.bukkit.util.Vector(d0, d1, d2));
- 
++
 +                if (!BlockDispenser.eventFired)
 +                {
 +                    world.getServer().getPluginManager().callEvent(event);
@@ -59,7 +59,7 @@
 +
 +                itemstack1 = CraftItemStack.asNMSCopy(event.getItem());
 +                Entity entity = ItemMonsterPlacer.spawnCreature(p_82487_1_.getWorld(), p_82487_2_.getItemDamage(), event.getVelocity().getX(), event.getVelocity().getY(), event.getVelocity().getZ());
-+
+ 
                  if (entity instanceof EntityLivingBase && p_82487_2_.hasDisplayName())
                  {
 -                    ((EntityLiving)entity).setCustomNameTag(p_82487_2_.getDisplayName());
@@ -222,7 +222,7 @@
 +                int x = i + enumfacing.getFrontOffsetX();
 +                int y = j + enumfacing.getFrontOffsetY();
 +                int z = k + enumfacing.getFrontOffsetZ();
- 
++
 +                if (world.isAirBlock(x, y, z) || !world.getBlock(x, y, z).getMaterial().isSolid())
 +                {
 +                    org.bukkit.block.Block block = world.getWorld().getBlockAt(i, j, k);
@@ -256,7 +256,7 @@
 +                }
 +
 +                // CraftBukkit end
-+
+ 
                  if (itembucket.tryPlaceContainedLiquid(p_82487_1_.getWorld(), i + enumfacing.getFrontOffsetX(), j + enumfacing.getFrontOffsetY(), k + enumfacing.getFrontOffsetZ()))
                  {
 -                    p_82487_2_.func_150996_a(Items.bucket);
@@ -330,13 +330,13 @@
 -                    world.setBlock(i, j, k, Blocks.fire);
 +                    world.getServer().getPluginManager().callEvent(event);
 +                }
- 
--                    if (p_82487_2_.attemptDamageItem(1, world.rand))
++
 +                if (event.isCancelled())
 +                {
 +                    return p_82487_2_;
 +                }
-+
+ 
+-                    if (p_82487_2_.attemptDamageItem(1, world.rand))
 +                if (!event.getItem().equals(craftItem))
 +                {
 +                    // Chain to handler for new item
@@ -371,7 +371,7 @@
                  else if (world.getBlock(i, j, k) == Blocks.tnt)
                  {
                      Blocks.tnt.onBlockDestroyedByPlayer(world, i, j, k, 1);
-@@ -339,7 +595,36 @@
+@@ -339,6 +595,35 @@
                      int i = p_82487_1_.getXInt() + enumfacing.getFrontOffsetX();
                      int j = p_82487_1_.getYInt() + enumfacing.getFrontOffsetY();
                      int k = p_82487_1_.getZInt() + enumfacing.getFrontOffsetZ();
@@ -379,7 +379,7 @@
 +                    org.bukkit.block.Block block = world.getWorld().getBlockAt(p_82487_1_.getXInt(), p_82487_1_.getYInt(), p_82487_1_.getZInt());
 +                    CraftItemStack craftItem = CraftItemStack.asNewCraftStack(p_82487_2_.getItem());
 +                    BlockDispenseEvent event = new BlockDispenseEvent(block, craftItem.clone(), new org.bukkit.util.Vector(0, 0, 0));
- 
++
 +                    if (!BlockDispenser.eventFired)
 +                    {
 +                        world.getServer().getPluginManager().callEvent(event);
@@ -404,10 +404,9 @@
 +                    }
 +
 +                    // CraftBukkit end
-+
+ 
                      if (ItemDye.func_150919_a(p_82487_2_, world, i, j, k))
                      {
-                         if (!world.isRemote)
 @@ -381,9 +666,41 @@
                  int i = p_82487_1_.getXInt() + enumfacing.getFrontOffsetX();
                  int j = p_82487_1_.getYInt() + enumfacing.getFrontOffsetY();

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraftforge/common/network/ForgeNetworkHandler.java
-+++ ../src-work/minecraft/net/minecraftforge/common/network/ForgeNetworkHandler.java
+--- eclipse/Clean/src/main/java/net/minecraftforge/common/network/ForgeNetworkHandler.java	2019-01-11 20:13:49.337899300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/network/ForgeNetworkHandler.java	2019-01-11 20:13:22.412926900 -0500
 @@ -35,4 +35,9 @@
          clientChannel.pipeline().addAfter(handlerName, "DimensionHandler", new DimensionMessageHandler());
          clientChannel.pipeline().addAfter(handlerName, "FluidIdRegistryHandler", new FluidIdRegistryMessageHandler());
@@ -10,3 +10,4 @@
 +        return channelPair.get(Side.SERVER);
 +    }
  }
+\ No newline at end of file

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/scoreboard/ServerScoreboard.java
-+++ ../src-work/minecraft/net/minecraft/scoreboard/ServerScoreboard.java
+--- eclipse/Clean/src/main/java/net/minecraft/scoreboard/ServerScoreboard.java	2019-01-11 20:13:52.591089800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/scoreboard/ServerScoreboard.java	2019-01-11 20:13:26.671384200 -0500
 @@ -32,7 +32,7 @@
  
          if (this.field_96553_b.contains(p_96536_1_.func_96645_d()))
@@ -136,3 +136,4 @@
 +    }
 +    // CraftBukkit end
  }
+\ No newline at end of file

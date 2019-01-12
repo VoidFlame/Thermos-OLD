@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerEnchantment.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerEnchantment.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerEnchantment.java	2019-01-11 20:13:52.906846800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerEnchantment.java	2019-01-11 20:13:26.810482200 -0500
 @@ -4,6 +4,8 @@
  import cpw.mods.fml.relauncher.SideOnly;
  import java.util.List;
@@ -163,14 +163,14 @@
 +                        {
 +                            /* Just swallow invalid enchantments */
 +                        }
-                     }
- 
++                    }
++
 +                    // Only down level if we've applied the enchantments
 +                    if (applied)
 +                    {
 +                        p_75140_1_.addExperienceLevel(-level);
-+                    }
-+
+                     }
+ 
 +                    // CraftBukkit end
                      this.onCraftMatrixChanged(this.tableInventory);
                  }
@@ -206,3 +206,4 @@
 +    }
 +    // CraftBukkit end
  }
+\ No newline at end of file

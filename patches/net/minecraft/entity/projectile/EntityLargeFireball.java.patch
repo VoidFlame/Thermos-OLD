@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/projectile/EntityLargeFireball.java
-+++ ../src-work/minecraft/net/minecraft/entity/projectile/EntityLargeFireball.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/projectile/EntityLargeFireball.java	2019-01-11 20:13:50.460903800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/projectile/EntityLargeFireball.java	2019-01-11 20:13:22.419932400 -0500
 @@ -9,6 +9,8 @@
  import net.minecraft.util.MovingObjectPosition;
  import net.minecraft.world.World;
@@ -38,3 +38,4 @@
          }
      }
  }
+\ No newline at end of file

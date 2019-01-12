@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/chunk/EmptyChunk.java
-+++ ../src-work/minecraft/net/minecraft/world/chunk/EmptyChunk.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/chunk/EmptyChunk.java	2019-01-11 20:13:52.388628500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/chunk/EmptyChunk.java	2019-01-11 20:13:26.519276400 -0500
 @@ -113,7 +113,7 @@
  
      public Random getRandomWithSeed(long p_76617_1_)

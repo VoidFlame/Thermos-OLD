@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/storage/WorldInfo.java
-+++ ../src-work/minecraft/net/minecraft/world/storage/WorldInfo.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/storage/WorldInfo.java	2019-01-11 20:13:52.504889600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/storage/WorldInfo.java	2019-01-11 20:13:26.596330600 -0500
 @@ -117,6 +117,7 @@
          this.thunderTime = p_i2157_1_.getInteger("thunderTime");
          this.thundering = p_i2157_1_.getBoolean("thundering");
@@ -55,3 +55,4 @@
 +        totalTime++;
 +    }
  }
+\ No newline at end of file

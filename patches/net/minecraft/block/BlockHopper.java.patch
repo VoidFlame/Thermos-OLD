@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockHopper.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockHopper.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockHopper.java	2019-01-11 20:13:51.822392900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockHopper.java	2019-01-11 20:13:26.292115600 -0500
 @@ -22,6 +22,7 @@
  import net.minecraft.util.IIcon;
  import net.minecraft.world.IBlockAccess;

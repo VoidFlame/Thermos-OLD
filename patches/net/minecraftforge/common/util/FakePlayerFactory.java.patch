@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraftforge/common/util/FakePlayerFactory.java
-+++ ../src-work/minecraft/net/minecraftforge/common/util/FakePlayerFactory.java
+--- eclipse/Clean/src/main/java/net/minecraftforge/common/util/FakePlayerFactory.java	2019-01-11 20:13:49.361916200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/common/util/FakePlayerFactory.java	2019-01-11 20:13:22.416930300 -0500
 @@ -16,7 +16,7 @@
  {
      private static GameProfile MINECRAFT = new GameProfile(UUID.fromString("41C82C87-7AfB-4024-BA57-13D2C99CAE77"), "[Minecraft]");

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/util/IntHashMap.java
-+++ ../src-work/minecraft/net/minecraft/util/IntHashMap.java
+--- eclipse/Clean/src/main/java/net/minecraft/util/IntHashMap.java	2019-01-11 20:13:53.285267200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/util/IntHashMap.java	2019-01-11 20:13:27.447955900 -0500
 @@ -10,7 +10,7 @@
      private int threshold = 12;
      private final float growFactor = 0.75F;

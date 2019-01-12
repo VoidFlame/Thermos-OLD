@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/dispenser/BehaviorDefaultDispenseItem.java
-+++ ../src-work/minecraft/net/minecraft/dispenser/BehaviorDefaultDispenseItem.java
+--- eclipse/Clean/src/main/java/net/minecraft/dispenser/BehaviorDefaultDispenseItem.java	2019-01-11 20:13:53.258195900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/dispenser/BehaviorDefaultDispenseItem.java	2019-01-11 20:13:27.373862600 -0500
 @@ -6,6 +6,11 @@
  import net.minecraft.util.EnumFacing;
  import net.minecraft.world.World;
@@ -31,12 +31,12 @@
      public static void doDispense(World p_82486_0_, ItemStack p_82486_1_, int p_82486_2_, EnumFacing p_82486_3_, IPosition p_82486_4_)
      {
          double d0 = p_82486_4_.getX();
-@@ -42,7 +54,67 @@
+@@ -42,6 +54,66 @@
          entityitem.motionZ += p_82486_0_.rand.nextGaussian() * 0.007499999832361937D * (double)p_82486_2_;
          p_82486_0_.spawnEntityInWorld(entityitem);
      }
 +    // Cauldron end
- 
++
 +    // CraftBukkit start - void -> boolean return, IPosition -> ISourceBlock last argument
 +    public static boolean doDispense(World world, ItemStack itemstack, int i, EnumFacing enumfacing, IBlockSource iblocksource)
 +    {
@@ -95,7 +95,6 @@
 +        return true;
 +        // CraftBukkit end
 +    }
-+
+ 
      protected void playDispenseSound(IBlockSource p_82485_1_)
      {
-         p_82485_1_.getWorld().playAuxSFX(1000, p_82485_1_.getXInt(), p_82485_1_.getYInt(), p_82485_1_.getZInt(), 0);

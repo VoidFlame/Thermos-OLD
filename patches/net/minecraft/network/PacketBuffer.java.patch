@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/network/PacketBuffer.java
-+++ ../src-work/minecraft/net/minecraft/network/PacketBuffer.java
+--- eclipse/Clean/src/main/java/net/minecraft/network/PacketBuffer.java	2019-01-11 20:13:50.644525600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/network/PacketBuffer.java	2019-01-11 20:13:22.460966300 -0500
 @@ -98,7 +98,7 @@
  
      public void writeItemStackToBuffer(ItemStack p_150788_1_) throws IOException

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/item/EntityItemFrame.java
-+++ ../src-work/minecraft/net/minecraft/entity/item/EntityItemFrame.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/item/EntityItemFrame.java	2019-01-11 20:13:51.304739900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/item/EntityItemFrame.java	2019-01-11 20:13:23.245987600 -0500
 @@ -45,6 +45,13 @@
          {
              if (!this.worldObj.isRemote)
@@ -35,3 +35,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

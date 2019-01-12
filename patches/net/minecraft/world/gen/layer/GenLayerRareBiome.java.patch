@@ -1,33 +1,33 @@
---- ../src-base/minecraft/net/minecraft/world/gen/layer/GenLayerRareBiome.java
-+++ ../src-work/minecraft/net/minecraft/world/gen/layer/GenLayerRareBiome.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/gen/layer/GenLayerRareBiome.java	2019-01-11 20:13:52.706571100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/gen/layer/GenLayerRareBiome.java	2019-01-11 20:13:26.739432200 -0500
 @@ -14,7 +14,30 @@
  
      public int[] getInts(int p_75904_1_, int p_75904_2_, int p_75904_3_, int p_75904_4_)
      {
 -        int[] aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
-+        
++    	
 +        int[] aint = null;
 +        try
 +        {
-+            aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
++        	aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
 +        }
 +        catch(Exception e2)
 +        {
-+            try
-+            {
-+                aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
-+            }
-+            catch(Exception e1)
-+            {
-+                try
-+                {
-+                    aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
-+                }
-+                catch(Exception e)
-+                {
-+                    throw new RuntimeException("[Thermos] GenLayerRareBiome.parent.getInts(): " + e.getMessage());
-+                }
-+            }
++        	try
++        	{
++        		aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
++        	}
++        	catch(Exception e1)
++        	{
++        		try
++        		{
++        			aint = this.parent.getInts(p_75904_1_ - 1, p_75904_2_ - 1, p_75904_3_ + 2, p_75904_4_ + 2);
++        		}
++        		catch(Exception e)
++        		{
++        			throw new RuntimeException("[Thermos] GenLayerRareBiome.parent.getInts(): " + e.getMessage());
++        		}
++        	}
 +        }
          int[] aint1 = IntCache.getIntCache(p_75904_3_ * p_75904_4_);
  

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/cpw/mods/fml/common/registry/GameData.java
-+++ ../src-work/minecraft/cpw/mods/fml/common/registry/GameData.java
+--- eclipse/Clean/src/main/java/cpw/mods/fml/common/registry/GameData.java	2019-01-11 20:13:51.609167600 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/registry/GameData.java	2019-01-12 11:15:42.443198400 -0500
 @@ -14,7 +14,9 @@
  
  import java.io.File;
@@ -36,7 +36,7 @@
 +            org.bukkit.Material material = org.bukkit.Material.addMaterial(id, itemRegistry.getNameForObject(item), false);
 +            if (material != null)
 +            {
-+                FMLLog.info("Injected new Forge item material %s with ID %d.", material.name(), material.getId());
++                FMLLog.fine("Injected new Forge item material %s with ID %d.", material.name(), material.getId());
 +            }
 +        }
 +    }
@@ -61,9 +61,10 @@
 +            org.bukkit.Material material = org.bukkit.Material.addMaterial(id, blockRegistry.getNameForObject(block), true);
 +            if (material != null)
 +            {
-+                FMLLog.info("Injected new Forge block material %s with ID %d.", material.name(), material.getId());
++                FMLLog.fine("Injected new Forge block material %s with ID %d.", material.name(), material.getId());
 +            }
 +        }
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerHopper.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerHopper.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerHopper.java	2019-01-11 20:13:52.907847000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerHopper.java	2019-01-11 20:13:26.812483300 -0500
 @@ -4,13 +4,36 @@
  import net.minecraft.entity.player.InventoryPlayer;
  import net.minecraft.item.ItemStack;

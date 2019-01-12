@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockStem.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockStem.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockStem.java	2019-01-11 20:13:52.268450200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockStem.java	2019-01-11 20:13:26.446225100 -0500
 @@ -17,6 +17,8 @@
  import net.minecraft.world.World;
  import static net.minecraftforge.common.util.ForgeDirection.*;

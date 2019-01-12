@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/util/FoodStats.java
-+++ ../src-work/minecraft/net/minecraft/util/FoodStats.java
+--- eclipse/Clean/src/main/java/net/minecraft/util/FoodStats.java	2019-01-11 20:13:51.982848400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/util/FoodStats.java	2019-01-11 20:13:26.354159500 -0500
 @@ -7,16 +7,34 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.nbt.NBTTagCompound;

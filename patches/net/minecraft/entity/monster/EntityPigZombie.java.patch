@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/monster/EntityPigZombie.java
-+++ ../src-work/minecraft/net/minecraft/entity/monster/EntityPigZombie.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/monster/EntityPigZombie.java	2019-01-11 20:13:52.427676900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/monster/EntityPigZombie.java	2019-01-11 20:13:26.551298700 -0500
 @@ -15,11 +15,13 @@
  import net.minecraft.world.EnumDifficulty;
  import net.minecraft.world.World;

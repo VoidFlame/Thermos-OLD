@@ -1,11 +1,11 @@
---- ../src-base/minecraft/net/minecraft/tileentity/TileEntityFurnace.java
-+++ ../src-work/minecraft/net/minecraft/tileentity/TileEntityFurnace.java
-@@ -19,7 +19,17 @@
+--- eclipse/Clean/src/main/java/net/minecraft/tileentity/TileEntityFurnace.java	2019-01-11 20:13:51.329757300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/tileentity/TileEntityFurnace.java	2019-01-11 20:13:23.345120300 -0500
+@@ -19,6 +19,16 @@
  import net.minecraft.item.crafting.FurnaceRecipes;
  import net.minecraft.nbt.NBTTagCompound;
  import net.minecraft.nbt.NBTTagList;
 +import net.minecraft.server.MinecraftServer;
- 
++
 +// CraftBukkit start
 +import java.util.List;
 +import org.bukkit.craftbukkit.inventory.CraftItemStack;
@@ -14,10 +14,9 @@
 +import org.bukkit.event.inventory.FurnaceSmeltEvent;
 +import org.bukkit.craftbukkit.entity.CraftHumanEntity;
 +// CraftBukkit end
-+
+ 
  public class TileEntityFurnace extends TileEntity implements ISidedInventory
  {
-     private static final int[] slotsTop = new int[] {0};
 @@ -30,6 +40,37 @@
      public int currentItemBurnTime;
      public int furnaceCookTime;
@@ -72,7 +71,7 @@
 +        // CraftBukkit start - Use wall time instead of ticks for cooking
 +        int elapsedTicks = MinecraftServer.currentTick - this.lastTick;
 +        this.lastTick = MinecraftServer.currentTick;
- 
++
 +        // CraftBukkit - moved from below
 +        if (this.isBurning() && this.canSmelt())
 +        {
@@ -91,7 +90,7 @@
 +        }
 +
 +        // CraftBukkit end
-+
+ 
          if (this.furnaceBurnTime > 0)
          {
 -            --this.furnaceBurnTime;
@@ -114,11 +113,11 @@
 -                    this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.furnaceItemStacks[1]);
 +                    return;
 +                }
- 
--                    if (this.furnaceBurnTime > 0)
++
 +                this.currentItemBurnTime = furnaceBurnEvent.getBurnTime();
 +                this.furnaceBurnTime += this.currentItemBurnTime;
-+
+ 
+-                    if (this.furnaceBurnTime > 0)
 +                if (this.furnaceBurnTime > 0 && furnaceBurnEvent.isBurning())
 +                {
 +                    // CraftBukkit end

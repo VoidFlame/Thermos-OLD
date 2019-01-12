@@ -1,18 +1,18 @@
---- ../src-base/minecraft/org/bukkit/event/player/PlayerTeleportEvent.java
-+++ ../src-work/minecraft/org/bukkit/event/player/PlayerTeleportEvent.java
+--- eclipse/Clean/src/main/java/org/bukkit/event/player/PlayerTeleportEvent.java	2019-01-11 20:13:52.903844700 -0500
++++ eclipse/Cauldron/src/main/java/org/bukkit/event/player/PlayerTeleportEvent.java	2019-01-11 20:13:26.807479800 -0500
 @@ -55,11 +55,28 @@
           * portal
           */
          END_PORTAL,
 +        // Cauldron start - added cause for mods
-         /**
++        /**
 +         * Indicates the teleportation was caused by a player entering a
 +         * Mod portal
 +         */
 +        MOD,
 +        // Cauldron end
 +        DEATH, // KCauldron
-+        /**
+         /**
           * Indicates the teleportation was caused by an event not covered by
           * this enum
           */

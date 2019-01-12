@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/ai/EntityAITarget.java
-+++ ../src-work/minecraft/net/minecraft/entity/ai/EntityAITarget.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/ai/EntityAITarget.java	2019-01-11 20:13:51.779160300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/ai/EntityAITarget.java	2019-01-11 20:13:26.268101200 -0500
 @@ -12,6 +12,11 @@
  import net.minecraft.util.MathHelper;
  import org.apache.commons.lang3.StringUtils;

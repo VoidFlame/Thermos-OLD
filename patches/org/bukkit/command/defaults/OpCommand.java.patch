@@ -1,5 +1,5 @@
---- ../src-base/minecraft/org/bukkit/command/defaults/OpCommand.java
-+++ ../src-work/minecraft/org/bukkit/command/defaults/OpCommand.java
+--- eclipse/Clean/src/main/java/org/bukkit/command/defaults/OpCommand.java	2019-01-11 20:13:53.298276400 -0500
++++ eclipse/Cauldron/src/main/java/org/bukkit/command/defaults/OpCommand.java	2019-01-11 20:13:27.463967200 -0500
 @@ -12,6 +12,8 @@
  import org.bukkit.command.CommandSender;
  import org.bukkit.entity.Player;

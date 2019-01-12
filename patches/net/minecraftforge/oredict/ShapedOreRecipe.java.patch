@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraftforge/oredict/ShapedOreRecipe.java
-+++ ../src-work/minecraft/net/minecraftforge/oredict/ShapedOreRecipe.java
+--- eclipse/Clean/src/main/java/net/minecraftforge/oredict/ShapedOreRecipe.java	2019-01-11 20:13:52.260444500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/oredict/ShapedOreRecipe.java	2019-01-11 20:13:26.442223100 -0500
 @@ -6,6 +6,10 @@
  import java.util.Map;
  import java.util.Map.Entry;
@@ -49,3 +49,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

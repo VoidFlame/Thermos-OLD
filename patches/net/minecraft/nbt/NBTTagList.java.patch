@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/nbt/NBTTagList.java
-+++ ../src-work/minecraft/net/minecraft/nbt/NBTTagList.java
+--- eclipse/Clean/src/main/java/net/minecraft/nbt/NBTTagList.java	2019-01-11 20:13:51.417910200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/nbt/NBTTagList.java	2019-01-11 20:13:23.544563800 -0500
 @@ -9,7 +9,7 @@
  
  public class NBTTagList extends NBTBase
@@ -17,7 +17,7 @@
 -
 -        while (iterator.hasNext())
 +        if ( nbttaglist.tagList instanceof ArrayList ) // Thermos, ensure we dont create arrays to then delete them
-+            ((ArrayList<NBTBase>)nbttaglist.tagList).ensureCapacity(this.tagList.size());
++        	((ArrayList<NBTBase>)nbttaglist.tagList).ensureCapacity(this.tagList.size());
 +        
 +        for(NBTBase nbtbase : this.tagList)
          {

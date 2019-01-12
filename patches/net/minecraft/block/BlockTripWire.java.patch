@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockTripWire.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockTripWire.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockTripWire.java	2019-01-11 20:13:52.884734600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockTripWire.java	2019-01-11 20:13:26.799476100 -0500
 @@ -16,6 +16,8 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;

@@ -1,0 +1,9 @@
+--- eclipse/Clean/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/GDiffWriter.java	2019-01-11 20:13:50.622514000 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/repackage/com/nothome/delta/GDiffWriter.java	2019-01-11 20:13:22.455957900 -0500
+@@ -174,4 +174,4 @@
+         output.close();
+     }
+ 
+-}
++}
+\ No newline at end of file

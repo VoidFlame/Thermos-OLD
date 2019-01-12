@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/World.java
-+++ ../src-work/minecraft/net/minecraft/world/World.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/World.java	2019-01-11 20:13:51.353774300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/World.java	2019-01-11 20:13:23.387151100 -0500
 @@ -2,9 +2,11 @@
  
  import cpw.mods.fml.relauncher.Side;
@@ -370,8 +370,8 @@
 +        // Cauldron end
 +        this.chunkProvider = this.createChunkProvider();
 +        // Thermos start
-+    try {
-+    if(this.chunkProvider != null)
++	try {
++	if(this.chunkProvider != null)
 +            this.isModded = !this.chunkProvider.getClass().getPackage().getName().startsWith("net.minecraft"); } catch(Exception e) { this.isModded = false; }
 +        // Thermos end
 +        
@@ -492,8 +492,8 @@
          this.chunkProvider = this.createChunkProvider();
 -
 +        // Thermos start
-+    try {
-+    if(this.chunkProvider != null)
++	try {
++	if(this.chunkProvider != null)
 +            this.isModded = !this.chunkProvider.getClass().getPackage().getName().startsWith("net.minecraft"); } catch(Exception e) { this.isModded = false; }
 +        // Thermos end
 +        
@@ -539,57 +539,7 @@
 -            p_72904_3_ >>= 4;
 -            p_72904_4_ >>= 4;
 -            p_72904_6_ >>= 4;
-+    public boolean checkChunksExist(int p_72904_1_, int p_72904_2_, int p_72904_3_, int p_72904_4_, int p_72904_5_, int p_72904_6_)
-+    {
-+        if (p_72904_5_ >= 0 && p_72904_2_ < 256)
-+        {
-+            if (!(this.chunkProvider instanceof ChunkProviderServer))
-+            {
-+                p_72904_1_ >>= 4;
-+                p_72904_3_ >>= 4;
-+                p_72904_4_ >>= 4;
-+                p_72904_6_ >>= 4;
-+    
-+                for (int k1 = p_72904_1_; k1 <= p_72904_4_; ++k1)
-+                {
-+                    for (int l1 = p_72904_3_; l1 <= p_72904_6_; ++l1)
-+                    {
-+                        if (!this.chunkExists(k1, l1))
-+                        {
-+                            return false;
-+                        }
-+                    }
-+                }
-+    
-+                return true;
-+            }
-+            else
-+            {
-+                p_72904_1_ >>= 4;
-+                p_72904_3_ >>= 4;
-+                p_72904_4_ >>= 4;
-+                p_72904_6_ >>= 4;
-+    
-+                ArrayList<int[]> st = new ArrayList<int[]>();
-+                st.ensureCapacity((p_72904_4_ - p_72904_1_+1) * (p_72904_6_ - p_72904_3_ + 1));
-+    
-+                for (int k1 = p_72904_1_; k1 <= p_72904_4_; ++k1)
-+                {
-+                    for (int l1 = p_72904_3_; l1 <= p_72904_6_; ++l1)
-+                    {
-+                        st.add(new int[] { k1, l1} );
-+                    }
-+                }
-+                ChunkProviderServer cps = (ChunkProviderServer) this.chunkProvider;
-+                return cps.loadedChunkHashMap_KC.rawThermos().bulkCheck(st);                
-+            }
-+        }
-+        else
-+        {
-+            return false;
-+        }
-+    }
- 
+-
 -            for (int k1 = p_72904_1_; k1 <= p_72904_4_; ++k1)
 -            {
 -                for (int l1 = p_72904_3_; l1 <= p_72904_6_; ++l1)
@@ -608,7 +558,57 @@
 -            return false;
 -        }
 -    }
--
++	public boolean checkChunksExist(int p_72904_1_, int p_72904_2_, int p_72904_3_, int p_72904_4_, int p_72904_5_, int p_72904_6_)
++	{
++		if (p_72904_5_ >= 0 && p_72904_2_ < 256)
++		{
++			if (!(this.chunkProvider instanceof ChunkProviderServer))
++			{
++				p_72904_1_ >>= 4;
++				p_72904_3_ >>= 4;
++				p_72904_4_ >>= 4;
++				p_72904_6_ >>= 4;
++	
++				for (int k1 = p_72904_1_; k1 <= p_72904_4_; ++k1)
++				{
++					for (int l1 = p_72904_3_; l1 <= p_72904_6_; ++l1)
++					{
++						if (!this.chunkExists(k1, l1))
++						{
++							return false;
++						}
++					}
++				}
++	
++				return true;
++			}
++			else
++			{
++				p_72904_1_ >>= 4;
++				p_72904_3_ >>= 4;
++				p_72904_4_ >>= 4;
++				p_72904_6_ >>= 4;
++	
++				ArrayList<int[]> st = new ArrayList<int[]>();
++				st.ensureCapacity((p_72904_4_ - p_72904_1_+1) * (p_72904_6_ - p_72904_3_ + 1));
++	
++				for (int k1 = p_72904_1_; k1 <= p_72904_4_; ++k1)
++				{
++					for (int l1 = p_72904_3_; l1 <= p_72904_6_; ++l1)
++					{
++						st.add(new int[] { k1, l1} );
++					}
++				}
++				ChunkProviderServer cps = (ChunkProviderServer) this.chunkProvider;
++				return cps.loadedChunkHashMap_KC.rawThermos().bulkCheck(st);            	
++			}
++		}
++		else
++		{
++			return false;
++		}
++	}
+ 
 -    protected boolean chunkExists(int p_72916_1_, int p_72916_2_)
 +    public boolean chunkExists(int p_72916_1_, int p_72916_2_) // Cauldron - protected -> public for repackaging
      {
@@ -766,11 +766,11 @@
      public boolean spawnEntityInWorld(Entity p_72838_1_)
      {
 +        // CraftBukkit start - Used for entities other than creatures
-+        if(p_72838_1_ instanceof EntityItem && this.captureItemDrops)
-+        {
-+            itemStackSpawnQueue.add((EntityItem)p_72838_1_);
-+            return true;
-+        }
++    	if(p_72838_1_ instanceof EntityItem && this.captureItemDrops)
++    	{
++    		itemStackSpawnQueue.add((EntityItem)p_72838_1_);
++    		return true;
++    	}
 +        return this.addEntity(p_72838_1_, SpawnReason.DEFAULT); // Set reason as DEFAULT
 +    }
 +
@@ -954,6 +954,10 @@
 +                }
  
 -                        if (k1 >= -30000000 && k1 < 30000000 && l1 >= -30000000 && l1 < 30000000)
+-                        {
+-                            block = this.getBlock(k1, i2, l1);
+-                        }
+-                        else
 +                int cz = chunkz << 4;
 +                Chunk chunk = this.getChunkFromChunkCoords(chunkx, chunkz);
 +                // Compute ranges within chunk
@@ -969,10 +973,6 @@
 +                    {
 +                        for (int y = ystart; y < l; y++)
                          {
--                            block = this.getBlock(k1, i2, l1);
--                        }
--                        else
--                        {
 -                            block = Blocks.stone;
 -                        }
 +                            Block block = chunk.getBlock(x - cx, y, z - cz);
@@ -1097,8 +1097,7 @@
 +            this.field_147483_b.clear();
 +        }
 +        // CraftBukkit end
- 
--            if (!tileentity.isInvalid() && tileentity.hasWorldObj() && this.blockExists(tileentity.xCoord, tileentity.yCoord, tileentity.zCoord))
++
 +        int tilesThisCycle = 0;
 +        for (tileLimiter.initTick(); tilesThisCycle < loadedTileEntityList.size() && (tilesThisCycle % 10 == 0 || tileLimiter.shouldContinue()); tileTickPosition++, tilesThisCycle++) {
 +            tileTickPosition = (tileTickPosition < loadedTileEntityList.size()) ? tileTickPosition : 0;
@@ -1106,7 +1105,7 @@
 +
 +            // Spigot start
 +            if (tileentity == null)
-             {
++            {
 +                getServer().getLogger().severe("Cauldron has detected a null entity and has removed it, preventing a crash");
 +                tilesThisCycle--;
 +                this.loadedTileEntityList.remove(tileTickPosition--);
@@ -1123,9 +1122,10 @@
 +                }
 +                continue;
 +            }
-+
+ 
+-            if (!tileentity.isInvalid() && tileentity.hasWorldObj() && this.blockExists(tileentity.xCoord, tileentity.yCoord, tileentity.zCoord))
 +            if (tileentity.hasWorldObj() && CauldronHooks.canTileEntityTick(tileentity, this) && this.blockExists(tileentity.xCoord, tileentity.yCoord, tileentity.zCoord))
-+            {
+             {
                  try
                  {
 +                    tileentity.tickTimer.startTiming(); // Spigot
@@ -1263,7 +1263,7 @@
 +        {
 +            p_72866_1_.ticksExisted++;
 +            p_72866_1_.inactiveTick();
-+            return;            
++            return;        	
 +        }
 +        // Spigot end
          if (canUpdate)
@@ -1303,14 +1303,14 @@
 +             * linked to a tile. Maybe this can be something for the future but it is unlikely.
 +             *
 +             */
-+            /*if(te instanceof IInventory)
-+            {
-+                IInventory ii = (IInventory)te;
-+                for(HumanEntity e : ii.getViewers())
-+                {
-+                    e.closeInventory();
-+                }
-+            }*/
++        	/*if(te instanceof IInventory)
++        	{
++        		IInventory ii = (IInventory)te;
++        		for(HumanEntity e : ii.getViewers())
++        		{
++        			e.closeInventory();
++        		}
++        	}*/
 +        }
 +        
          if (chunk != null) chunk.removeTileEntity(p_147475_1_ & 15, p_147475_2_, p_147475_3_ & 15);
@@ -1469,7 +1469,7 @@
 +            }
 +            else if(this.chunkProvider == null)
 +            {
-+                this.isModded = false;
++            	this.isModded = false;
 +            }
 +            // Thermos end
 +            
@@ -1743,3 +1743,4 @@
 +        return true;
 +    }
  }
+\ No newline at end of file

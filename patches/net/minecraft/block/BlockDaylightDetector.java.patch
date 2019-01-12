@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockDaylightDetector.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockDaylightDetector.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockDaylightDetector.java	2019-01-11 20:13:52.567072600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockDaylightDetector.java	2019-01-11 20:13:26.657378300 -0500
 @@ -73,6 +73,7 @@
  
              if (l != i1)

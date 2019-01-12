@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/util/ChunkCoordinates.java
-+++ ../src-work/minecraft/net/minecraft/util/ChunkCoordinates.java
+--- eclipse/Clean/src/main/java/net/minecraft/util/ChunkCoordinates.java	2019-01-11 20:13:53.149858700 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/util/ChunkCoordinates.java	2019-01-11 20:13:26.944650700 -0500
 @@ -38,7 +38,7 @@
  
      public int hashCode()

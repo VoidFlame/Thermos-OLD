@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/tileentity/TileEntityPiston.java
-+++ ../src-work/minecraft/net/minecraft/tileentity/TileEntityPiston.java
+--- eclipse/Clean/src/main/java/net/minecraft/tileentity/TileEntityPiston.java	2019-01-11 20:13:52.242432400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/tileentity/TileEntityPiston.java	2019-01-11 20:13:26.425209700 -0500
 @@ -140,6 +140,11 @@
  
      public void updateEntity()

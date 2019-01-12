@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerWorkbench.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerWorkbench.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerWorkbench.java	2019-01-11 20:13:51.294737400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerWorkbench.java	2019-01-11 20:13:23.239982200 -0500
 @@ -7,18 +7,35 @@
  import net.minecraft.item.crafting.CraftingManager;
  import net.minecraft.world.World;
@@ -90,3 +90,4 @@
 +    }
 +    // CraftBukkit end
  }
+\ No newline at end of file

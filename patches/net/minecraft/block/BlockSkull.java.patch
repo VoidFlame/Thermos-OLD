@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockSkull.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockSkull.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockSkull.java	2019-01-11 20:13:52.831433100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockSkull.java	2019-01-11 20:13:26.774456400 -0500
 @@ -27,6 +27,11 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;
@@ -12,21 +12,20 @@
  public class BlockSkull extends BlockContainer
  {
      private static final String __OBFID = "CL_00000307";
-@@ -135,10 +140,12 @@
+@@ -135,9 +140,11 @@
              if ((p_149749_6_ & 8) == 0)
              {
                  ItemStack itemstack = new ItemStack(Items.skull, 1, this.getDamageValue(p_149749_1_, p_149749_2_, p_149749_3_, p_149749_4_));
 -                TileEntitySkull tileentityskull = (TileEntitySkull)p_149749_1_.getTileEntity(p_149749_2_, p_149749_3_, p_149749_4_);
 +                TileEntity tileEntity = p_149749_1_.getTileEntity(p_149749_2_, p_149749_3_, p_149749_4_);
- 
--                if (tileentityskull == null) return ret;
++
 +                if (!(tileEntity instanceof TileEntitySkull)) return ret;
  
+-                if (tileentityskull == null) return ret;
 +                TileEntitySkull tileentityskull = (TileEntitySkull) tileEntity;
-+
+ 
                  if (tileentityskull.func_145904_a() == 3 && tileentityskull.func_152108_a() != null)
                  {
-                     itemstack.setTagCompound(new NBTTagCompound());
 @@ -162,111 +169,122 @@
      {
          if (p_149965_5_.func_145904_a() == 1 && p_149965_3_ >= 2 && p_149965_1_.difficultySetting != EnumDifficulty.PEACEFUL && !p_149965_1_.isRemote)
@@ -82,23 +81,23 @@
 +                            if (!p_149965_1_.isRemote)
 +                            {
 +                                iterator = p_149965_1_.getEntitiesWithinAABB(EntityPlayer.class, entitywither.boundingBox.expand(50.0D, 50.0D, 50.0D)).iterator();
- 
--                            while (iterator.hasNext())
++
 +                                while (iterator.hasNext())
 +                                {
 +                                    entityplayer = (EntityPlayer) iterator.next();
 +                                    entityplayer.triggerAchievement(AchievementList.field_150963_I);
 +                                }
 +                            }
-+
+ 
+-                            while (iterator.hasNext())
 +                            blockList.updateList();
 +                            // Is the wither still hanging around?
 +                            if (p_149965_1_.getBlock(p_149965_2_, p_149965_3_ - 1, p_149965_4_ + iter) == Blocks.soul_sand && p_149965_1_.getBlock(p_149965_2_, p_149965_3_ - 1, p_149965_4_ + iter + 1) == Blocks.soul_sand && p_149965_1_.getBlock(p_149965_2_, p_149965_3_ - 2, p_149965_4_ + iter + 1) == Blocks.soul_sand && p_149965_1_.getBlock(p_149965_2_, p_149965_3_ - 1, p_149965_4_ + iter + 2) == Blocks.soul_sand && this.func_149966_a(p_149965_1_, p_149965_2_, p_149965_3_, p_149965_4_ + iter, 1) && this.func_149966_a(p_149965_1_, p_149965_2_, p_149965_3_, p_149965_4_ + iter + 1, 1) && this.func_149966_a(p_149965_1_, p_149965_2_, p_149965_3_, p_149965_4_ + iter + 2, 1))
                              {
 -                                entityplayer = (EntityPlayer)iterator.next();
 -                                entityplayer.triggerAchievement(AchievementList.field_150963_I);
-+                                entitywither.isDead = true;
-+                                p_149965_1_.removeEntity(entitywither);
++                            	entitywither.isDead = true;
++                            	p_149965_1_.removeEntity(entitywither);
                              }
                          }
 -
@@ -182,8 +181,8 @@
                              {
 -                                entityplayer = (EntityPlayer)iterator.next();
 -                                entityplayer.triggerAchievement(AchievementList.field_150963_I);
-+                                entitywither.isDead = true;
-+                                p_149965_1_.removeEntity(entitywither);
++                            	entitywither.isDead = true;
++                            	p_149965_1_.removeEntity(entitywither);
                              }
                          }
 -

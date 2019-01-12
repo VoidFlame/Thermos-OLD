@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockStaticLiquid.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockStaticLiquid.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockStaticLiquid.java	2019-01-11 20:13:52.861718100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockStaticLiquid.java	2019-01-11 20:13:26.784463500 -0500
 @@ -5,6 +5,8 @@
  import net.minecraft.init.Blocks;
  import net.minecraft.world.World;

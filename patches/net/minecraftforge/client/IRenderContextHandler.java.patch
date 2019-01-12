@@ -1,0 +1,9 @@
+--- eclipse/Clean/src/main/java/net/minecraftforge/client/IRenderContextHandler.java	2019-01-11 20:13:52.707558400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraftforge/client/IRenderContextHandler.java	2019-01-11 20:13:26.741433700 -0500
+@@ -13,4 +13,4 @@
+     /** Run after the specified rendering context.
+      */
+     public void afterRenderContext();
+-}
++}
+\ No newline at end of file

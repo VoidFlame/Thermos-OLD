@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerBeacon.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerBeacon.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerBeacon.java	2019-01-11 20:13:51.927739700 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerBeacon.java	2019-01-11 20:13:26.326140800 -0500
 @@ -8,6 +8,8 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.tileentity.TileEntityBeacon;

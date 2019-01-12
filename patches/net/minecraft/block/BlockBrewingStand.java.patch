@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockBrewingStand.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockBrewingStand.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockBrewingStand.java	2019-01-11 20:13:51.292731400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockBrewingStand.java	2019-01-11 20:13:23.238982400 -0500
 @@ -20,7 +20,7 @@
  import net.minecraft.util.AxisAlignedBB;
  import net.minecraft.util.IIcon;

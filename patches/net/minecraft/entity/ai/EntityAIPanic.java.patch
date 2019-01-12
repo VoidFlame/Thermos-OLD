@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/ai/EntityAIPanic.java
-+++ ../src-work/minecraft/net/minecraft/entity/ai/EntityAIPanic.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/ai/EntityAIPanic.java	2019-01-11 20:13:51.592133600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/ai/EntityAIPanic.java	2019-01-11 20:13:23.917163500 -0500
 @@ -3,6 +3,8 @@
  import net.minecraft.entity.EntityCreature;
  import net.minecraft.util.Vec3;
@@ -24,3 +24,4 @@
          return !this.theEntityCreature.getNavigator().noPath();
      }
  }
+\ No newline at end of file

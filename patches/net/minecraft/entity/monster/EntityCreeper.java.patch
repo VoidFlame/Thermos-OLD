@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/monster/EntityCreeper.java
-+++ ../src-work/minecraft/net/minecraft/entity/monster/EntityCreeper.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/monster/EntityCreeper.java	2019-01-11 20:13:53.308304800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/monster/EntityCreeper.java	2019-01-11 20:13:27.472984400 -0500
 @@ -23,6 +23,11 @@
  import net.minecraft.util.DamageSource;
  import net.minecraft.world.World;
@@ -12,7 +12,7 @@
  public class EntityCreeper extends EntityMob
  {
      private int lastActiveTime;
-@@ -207,9 +212,35 @@
+@@ -207,7 +212,33 @@
      public void onStruckByLightning(EntityLightningBolt p_70077_1_)
      {
          super.onStruckByLightning(p_70077_1_);
@@ -30,8 +30,8 @@
 +        // Cauldron end
 +
 +        this.setPowered(true);
-     }
- 
++    }
++
 +    public void setPowered(boolean powered)
 +    {
 +        if (!powered)
@@ -44,11 +44,9 @@
 +        }
 +
 +        // CraftBukkit end
-+    }
-+
+     }
+ 
      protected boolean interact(EntityPlayer p_70085_1_)
-     {
-         ItemStack itemstack = p_70085_1_.inventory.getCurrentItem();
 @@ -235,17 +266,22 @@
          if (!this.worldObj.isRemote)
          {

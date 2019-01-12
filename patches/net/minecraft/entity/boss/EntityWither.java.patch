@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/boss/EntityWither.java
-+++ ../src-work/minecraft/net/minecraft/entity/boss/EntityWither.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/boss/EntityWither.java	2019-01-11 20:13:53.257197500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/boss/EntityWither.java	2019-01-11 20:13:27.372861800 -0500
 @@ -34,6 +34,11 @@
  import net.minecraft.world.EnumDifficulty;
  import net.minecraft.world.World;

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/InventoryBasic.java
-+++ ../src-work/minecraft/net/minecraft/inventory/InventoryBasic.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/InventoryBasic.java	2019-01-11 20:13:51.934744900 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/InventoryBasic.java	2019-01-11 20:13:26.331145500 -0500
 @@ -2,6 +2,11 @@
  
  import java.util.ArrayList;
@@ -55,3 +55,4 @@
 +    public void setMaxStackSize(int size) {}
 +    // Cauldron end
  }
+\ No newline at end of file

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockPressurePlateWeighted.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockPressurePlateWeighted.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockPressurePlateWeighted.java	2019-01-11 20:13:52.404639000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockPressurePlateWeighted.java	2019-01-11 20:13:26.528282200 -0500
 @@ -5,6 +5,12 @@
  import net.minecraft.util.MathHelper;
  import net.minecraft.world.World;

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/biome/BiomeDecorator.java
-+++ ../src-work/minecraft/net/minecraft/world/biome/BiomeDecorator.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/biome/BiomeDecorator.java	2019-01-11 20:13:53.321314000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/biome/BiomeDecorator.java	2019-01-11 20:13:27.481978500 -0500
 @@ -24,6 +24,14 @@
  import net.minecraftforge.common.*;
  import net.minecraftforge.event.terraingen.*;

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/cpw/mods/fml/common/asm/transformers/TerminalTransformer.java
-+++ ../src-work/minecraft/cpw/mods/fml/common/asm/transformers/TerminalTransformer.java
+--- eclipse/Clean/src/main/java/cpw/mods/fml/common/asm/transformers/TerminalTransformer.java	2019-01-11 20:13:52.965915900 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/asm/transformers/TerminalTransformer.java	2019-01-11 20:13:26.851511400 -0500
 @@ -46,7 +46,8 @@
                                     clsName.equals("net/minecraft/server/dedicated/DedicatedServer") ||
                                     clsName.equals("cpw/mods/fml/common/FMLCommonHandler") ||

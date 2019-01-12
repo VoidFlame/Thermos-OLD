@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/network/play/server/S02PacketChat.java
-+++ ../src-work/minecraft/net/minecraft/network/play/server/S02PacketChat.java
+--- eclipse/Clean/src/main/java/net/minecraft/network/play/server/S02PacketChat.java	2019-01-11 20:13:51.303739800 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/network/play/server/S02PacketChat.java	2019-01-11 20:13:23.244986600 -0500
 @@ -3,6 +3,9 @@
  import cpw.mods.fml.relauncher.Side;
  import cpw.mods.fml.relauncher.SideOnly;

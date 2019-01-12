@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerMerchant.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerMerchant.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerMerchant.java	2019-01-11 20:13:51.325756200 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerMerchant.java	2019-01-11 20:13:23.332110500 -0500
 @@ -8,6 +8,8 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.world.World;

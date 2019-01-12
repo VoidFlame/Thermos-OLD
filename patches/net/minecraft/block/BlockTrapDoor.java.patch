@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockTrapDoor.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockTrapDoor.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockTrapDoor.java	2019-01-11 20:13:51.363781400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockTrapDoor.java	2019-01-11 20:13:23.415168900 -0500
 @@ -13,6 +13,8 @@
  import net.minecraft.world.World;
  import net.minecraftforge.common.util.ForgeDirection;

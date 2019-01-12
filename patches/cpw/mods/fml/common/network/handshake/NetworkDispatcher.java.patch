@@ -1,5 +1,5 @@
---- ../src-base/minecraft/cpw/mods/fml/common/network/handshake/NetworkDispatcher.java
-+++ ../src-work/minecraft/cpw/mods/fml/common/network/handshake/NetworkDispatcher.java
+--- eclipse/Clean/src/main/java/cpw/mods/fml/common/network/handshake/NetworkDispatcher.java	2019-01-11 20:13:52.828444100 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/network/handshake/NetworkDispatcher.java	2019-01-11 20:13:26.771454600 -0500
 @@ -76,7 +76,7 @@
      public static final AttributeKey<Boolean> IS_LOCAL = new AttributeKey<Boolean>("fml:isLocal");
      public final NetworkManager manager;
@@ -13,16 +13,16 @@
  
      int serverInitiateHandshake()
      {
-+        // Thermos wait until the player object was assigned by the fml:packet_handler in serverToClientHandshake()
-+        for(int i = 0; this.manager.channel().pipeline().get("fml:packet_handler") == null; i++)
-+        {
-+            try {Thread.sleep(10L);} catch(Exception e){}
-+            if(i == 20) // We waited 200ms, no dice
-+            {
-+                return -100000;
-+            }
-+        }
-+        
++    	// Thermos wait until the player object was assigned by the fml:packet_handler in serverToClientHandshake()
++    	for(int i = 0; this.manager.channel().pipeline().get("fml:packet_handler") == null; i++)
++    	{
++    		try {Thread.sleep(10L);} catch(Exception e){}
++    		if(i == 20) // We waited 200ms, no dice
++    		{
++    			return -100000;
++    		}
++    	}
++    	
          // Send mod salutation to the client
          // This will be ignored by vanilla clients
          this.state = ConnectionState.AWAITING_HANDSHAKE;

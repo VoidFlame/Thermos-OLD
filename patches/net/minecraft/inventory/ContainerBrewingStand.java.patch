@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/ContainerBrewingStand.java
-+++ ../src-work/minecraft/net/minecraft/inventory/ContainerBrewingStand.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/ContainerBrewingStand.java	2019-01-11 20:13:53.294273600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/ContainerBrewingStand.java	2019-01-11 20:13:27.457964100 -0500
 @@ -10,15 +10,25 @@
  import net.minecraft.stats.AchievementList;
  import net.minecraft.tileentity.TileEntityBrewingStand;

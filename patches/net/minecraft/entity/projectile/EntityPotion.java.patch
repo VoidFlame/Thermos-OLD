@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/projectile/EntityPotion.java
-+++ ../src-work/minecraft/net/minecraft/entity/projectile/EntityPotion.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/projectile/EntityPotion.java	2019-01-11 20:13:52.876729500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/projectile/EntityPotion.java	2019-01-11 20:13:26.793470700 -0500
 @@ -2,8 +2,10 @@
  
  import cpw.mods.fml.relauncher.Side;
@@ -113,3 +113,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

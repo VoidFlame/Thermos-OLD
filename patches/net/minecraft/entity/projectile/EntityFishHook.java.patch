@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/projectile/EntityFishHook.java
-+++ ../src-work/minecraft/net/minecraft/entity/projectile/EntityFishHook.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/projectile/EntityFishHook.java	2019-01-11 20:13:53.326317600 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/projectile/EntityFishHook.java	2019-01-11 20:13:27.487983400 -0500
 @@ -27,6 +27,12 @@
  import net.minecraft.world.World;
  import net.minecraft.world.WorldServer;
@@ -126,3 +126,4 @@
 +    }
 +    // Cauldron end
  }
+\ No newline at end of file

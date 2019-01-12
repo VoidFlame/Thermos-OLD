@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockRailDetector.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockRailDetector.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockRailDetector.java	2019-01-11 20:13:53.156863100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockRailDetector.java	2019-01-11 20:13:26.948653600 -0500
 @@ -16,6 +16,8 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;

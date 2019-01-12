@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/player/PlayerCapabilities.java
-+++ ../src-work/minecraft/net/minecraft/entity/player/PlayerCapabilities.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/player/PlayerCapabilities.java	2019-01-11 20:13:52.626235700 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/player/PlayerCapabilities.java	2019-01-11 20:13:26.691398600 -0500
 @@ -11,8 +11,8 @@
      public boolean allowFlying;
      public boolean isCreativeMode;

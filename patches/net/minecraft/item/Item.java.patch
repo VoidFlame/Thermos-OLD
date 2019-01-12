@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/Item.java
-+++ ../src-work/minecraft/net/minecraft/item/Item.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/Item.java	2019-01-11 20:13:52.610108400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/Item.java	2019-01-11 20:13:26.683392600 -0500
 @@ -54,6 +54,7 @@
  import net.minecraft.util.WeightedRandomChestContent;
  import net.minecraft.world.World;

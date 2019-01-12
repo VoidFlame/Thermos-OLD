@@ -1,0 +1,9 @@
+--- eclipse/Clean/src/main/java/ibxm/Pattern.java	2019-01-11 20:13:51.548008100 -0500
++++ eclipse/Cauldron/src/main/java/ibxm/Pattern.java	2019-01-11 20:13:23.740743100 -0500
+@@ -57,4 +57,4 @@
+ 		}
+ 		return data_offset;
+ 	}
+-}
++}
+\ No newline at end of file

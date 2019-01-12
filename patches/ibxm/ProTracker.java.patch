@@ -1,0 +1,9 @@
+--- eclipse/Clean/src/main/java/ibxm/ProTracker.java	2019-01-11 20:13:52.975924700 -0500
++++ eclipse/Cauldron/src/main/java/ibxm/ProTracker.java	2019-01-11 20:13:26.859517100 -0500
+@@ -230,4 +230,4 @@
+ 		}
+ 		return string;
+ 	}
+-}
++}
+\ No newline at end of file

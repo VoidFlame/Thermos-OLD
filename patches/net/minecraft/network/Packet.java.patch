@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/network/Packet.java
-+++ ../src-work/minecraft/net/minecraft/network/Packet.java
+--- eclipse/Clean/src/main/java/net/minecraft/network/Packet.java	2019-01-11 20:13:53.154861400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/network/Packet.java	2019-01-11 20:13:26.946652200 -0500
 @@ -9,6 +9,7 @@
  public abstract class Packet
  {

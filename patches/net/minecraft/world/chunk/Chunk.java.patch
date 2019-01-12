@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/world/chunk/Chunk.java
-+++ ../src-work/minecraft/net/minecraft/world/chunk/Chunk.java
+--- eclipse/Clean/src/main/java/net/minecraft/world/chunk/Chunk.java	2019-01-11 20:13:53.185077000 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/world/chunk/Chunk.java	2019-01-11 20:13:26.960662100 -0500
 @@ -36,6 +36,17 @@
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
@@ -287,7 +287,7 @@
 +        
 +        if(p_76588_3_ instanceof ArrayList) // Thermos force ArrayList minimum size for faster entity adding
 +        {
-+            ((ArrayList)p_76588_3_).ensureCapacity(30);
++        	((ArrayList)p_76588_3_).ensureCapacity(30);
 +        }
 +        
          for (int k = i; k <= j; ++k)
@@ -409,7 +409,7 @@
 +     * PaperSpigot - Recheck gaps asynchronously.
 +     */
 +    public void recheckGapsAsync(final boolean isStatic) {
-+        if (worldObj.isModded == null) worldObj.isModded = false;
++    	if (worldObj.isModded == null) worldObj.isModded = false;
 +        if (!worldObj.spigotConfig.useAsyncLighting || !worldObj.isModded) {
 +            this.recheckGaps(isStatic);
 +            return;
@@ -423,3 +423,4 @@
 +        });
 +    }
  }
+\ No newline at end of file

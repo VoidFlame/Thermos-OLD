@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockPortal.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockPortal.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockPortal.java	2019-01-11 20:13:52.476816500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockPortal.java	2019-01-11 20:13:26.573314300 -0500
 @@ -14,6 +14,11 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;
@@ -56,6 +56,23 @@
      }
  
      public static class Size
+-        {
+-            private final World field_150867_a;
+-            private final int field_150865_b;
+-            private final int field_150866_c;
+-            private final int field_150863_d;
+-            private int field_150864_e = 0;
+-            private ChunkCoordinates field_150861_f;
+-            private int field_150862_g;
+-            private int field_150868_h;
+-            private static final String __OBFID = "CL_00000285";
+-
+-            public Size(World p_i45415_1_, int p_i45415_2_, int p_i45415_3_, int p_i45415_4_, int p_i45415_5_)
+-            {
+-                this.field_150867_a = p_i45415_1_;
+-                this.field_150865_b = p_i45415_5_;
+-                this.field_150863_d = BlockPortal.field_150001_a[p_i45415_5_][0];
+-                this.field_150866_c = BlockPortal.field_150001_a[p_i45415_5_][1];
 +    {
 +        private final World field_150867_a;
 +        private final int field_150865_b;
@@ -69,39 +86,25 @@
 +        private static final String __OBFID = "CL_00000285";
 +
 +        public Size(World p_i45415_1_, int p_i45415_2_, int p_i45415_3_, int p_i45415_4_, int p_i45415_5_)
-         {
--            private final World field_150867_a;
--            private final int field_150865_b;
--            private final int field_150866_c;
--            private final int field_150863_d;
--            private int field_150864_e = 0;
--            private ChunkCoordinates field_150861_f;
--            private int field_150862_g;
--            private int field_150868_h;
--            private static final String __OBFID = "CL_00000285";
++        {
 +            this.field_150867_a = p_i45415_1_;
 +            this.field_150865_b = p_i45415_5_;
 +            this.field_150863_d = BlockPortal.field_150001_a[p_i45415_5_][0];
 +            this.field_150866_c = BlockPortal.field_150001_a[p_i45415_5_][1];
- 
--            public Size(World p_i45415_1_, int p_i45415_2_, int p_i45415_3_, int p_i45415_4_, int p_i45415_5_)
++
 +            for (int i1 = p_i45415_3_; p_i45415_3_ > i1 - 21 && p_i45415_3_ > 0 && this.func_150857_a(p_i45415_1_.getBlock(p_i45415_2_, p_i45415_3_ - 1, p_i45415_4_)); --p_i45415_3_)
-             {
--                this.field_150867_a = p_i45415_1_;
--                this.field_150865_b = p_i45415_5_;
--                this.field_150863_d = BlockPortal.field_150001_a[p_i45415_5_][0];
--                this.field_150866_c = BlockPortal.field_150001_a[p_i45415_5_][1];
++            {
 +                ;
 +            }
- 
--                for (int i1 = p_i45415_3_; p_i45415_3_ > i1 - 21 && p_i45415_3_ > 0 && this.func_150857_a(p_i45415_1_.getBlock(p_i45415_2_, p_i45415_3_ - 1, p_i45415_4_)); --p_i45415_3_)
++
 +            int j1 = this.func_150853_a(p_i45415_2_, p_i45415_3_, p_i45415_4_, this.field_150863_d) - 1;
 +
 +            if (j1 >= 0)
 +            {
 +                this.field_150861_f = new ChunkCoordinates(p_i45415_2_ + j1 * Direction.offsetX[this.field_150863_d], p_i45415_3_, p_i45415_4_ + j1 * Direction.offsetZ[this.field_150863_d]);
 +                this.field_150868_h = this.func_150853_a(this.field_150861_f.posX, this.field_150861_f.posY, this.field_150861_f.posZ, this.field_150866_c);
-+
+ 
+-                for (int i1 = p_i45415_3_; p_i45415_3_ > i1 - 21 && p_i45415_3_ > 0 && this.func_150857_a(p_i45415_1_.getBlock(p_i45415_2_, p_i45415_3_ - 1, p_i45415_4_)); --p_i45415_3_)
 +                if (this.field_150868_h < 2 || this.field_150868_h > 21)
                  {
 -                    ;
@@ -198,11 +201,11 @@
 +                        ++this.field_150864_e;
                      }
 -                }
- 
+-
 -                block = this.field_150867_a.getBlock(p_150853_1_ + j1 * i1, p_150853_2_, p_150853_3_ + k1 * i1);
 -                return block == Blocks.obsidian ? i1 : 0;
 -            }
--
+ 
 -            protected int func_150858_a()
 -            {
 -                int i;
@@ -275,19 +278,19 @@
 -                    j = this.field_150861_f.posX + i * Direction.offsetX[BlockPortal.field_150001_a[this.field_150865_b][1]];
 -                    k = this.field_150861_f.posY + this.field_150862_g;
 -                    l = this.field_150861_f.posZ + i * Direction.offsetZ[BlockPortal.field_150001_a[this.field_150865_b][1]];
-+            for (i = 0; i < this.field_150868_h; ++i)
-+            {
-+                j = this.field_150861_f.posX + i * Direction.offsetX[BlockPortal.field_150001_a[this.field_150865_b][1]];
-+                k = this.field_150861_f.posY + this.field_150862_g;
-+                l = this.field_150861_f.posZ + i * Direction.offsetZ[BlockPortal.field_150001_a[this.field_150865_b][1]];
- 
+-
 -                    if (this.field_150867_a.getBlock(j, k, l) != Blocks.obsidian)
 -                    {
 -                        this.field_150862_g = 0;
 -                        break;
 -                    }
 -                }
--
++            for (i = 0; i < this.field_150868_h; ++i)
++            {
++                j = this.field_150861_f.posX + i * Direction.offsetX[BlockPortal.field_150001_a[this.field_150865_b][1]];
++                k = this.field_150861_f.posY + this.field_150862_g;
++                l = this.field_150861_f.posZ + i * Direction.offsetZ[BlockPortal.field_150001_a[this.field_150865_b][1]];
+ 
 -                if (this.field_150862_g <= 21 && this.field_150862_g >= 3)
 +                if (this.field_150867_a.getBlock(j, k, l) != Blocks.obsidian)
                  {
@@ -381,3 +384,4 @@
              }
          }
  }
+\ No newline at end of file

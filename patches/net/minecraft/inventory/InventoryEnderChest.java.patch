@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/inventory/InventoryEnderChest.java
-+++ ../src-work/minecraft/net/minecraft/inventory/InventoryEnderChest.java
+--- eclipse/Clean/src/main/java/net/minecraft/inventory/InventoryEnderChest.java	2019-01-11 20:13:51.006417500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/inventory/InventoryEnderChest.java	2019-01-11 20:13:22.708671800 -0500
 @@ -6,9 +6,61 @@
  import net.minecraft.nbt.NBTTagList;
  import net.minecraft.tileentity.TileEntityEnderChest;

@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/network/play/client/C17PacketCustomPayload.java
-+++ ../src-work/minecraft/net/minecraft/network/play/client/C17PacketCustomPayload.java
+--- eclipse/Clean/src/main/java/net/minecraft/network/play/client/C17PacketCustomPayload.java	2019-01-11 20:13:52.691449300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/network/play/client/C17PacketCustomPayload.java	2019-01-11 20:13:26.734428400 -0500
 @@ -12,7 +12,7 @@
  public class C17PacketCustomPayload extends Packet
  {

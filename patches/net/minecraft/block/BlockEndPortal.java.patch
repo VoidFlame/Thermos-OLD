@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockEndPortal.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockEndPortal.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockEndPortal.java	2019-01-11 20:13:52.828444100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockEndPortal.java	2019-01-11 20:13:26.771454600 -0500
 @@ -15,6 +15,8 @@
  import net.minecraft.world.IBlockAccess;
  import net.minecraft.world.World;

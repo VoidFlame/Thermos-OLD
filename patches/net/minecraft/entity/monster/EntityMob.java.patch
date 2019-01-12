@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/entity/monster/EntityMob.java
-+++ ../src-work/minecraft/net/minecraft/entity/monster/EntityMob.java
+--- eclipse/Clean/src/main/java/net/minecraft/entity/monster/EntityMob.java	2019-01-11 20:13:49.337899300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/entity/monster/EntityMob.java	2019-01-11 20:13:22.411926500 -0500
 @@ -1,5 +1,6 @@
  package net.minecraft.entity.monster;
  

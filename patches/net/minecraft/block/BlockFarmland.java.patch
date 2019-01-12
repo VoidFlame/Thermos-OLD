@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockFarmland.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockFarmland.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockFarmland.java	2019-01-11 20:13:52.375619100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockFarmland.java	2019-01-11 20:13:26.508268600 -0500
 @@ -15,6 +15,11 @@
  import net.minecraftforge.common.IPlantable;
  import net.minecraftforge.common.util.ForgeDirection;

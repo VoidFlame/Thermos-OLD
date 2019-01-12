@@ -1,5 +1,5 @@
---- ../src-base/minecraft/cpw/mods/fml/common/network/handshake/ChannelRegistrationHandler.java
-+++ ../src-work/minecraft/cpw/mods/fml/common/network/handshake/ChannelRegistrationHandler.java
+--- eclipse/Clean/src/main/java/cpw/mods/fml/common/network/handshake/ChannelRegistrationHandler.java	2019-01-11 20:13:53.053473800 -0500
++++ eclipse/Cauldron/src/main/java/cpw/mods/fml/common/network/handshake/ChannelRegistrationHandler.java	2019-01-11 20:13:26.898617900 -0500
 @@ -2,6 +2,8 @@
  
  import io.netty.channel.ChannelHandlerContext;

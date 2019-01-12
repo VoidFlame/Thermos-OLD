@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/block/BlockNetherWart.java
-+++ ../src-work/minecraft/net/minecraft/block/BlockNetherWart.java
+--- eclipse/Clean/src/main/java/net/minecraft/block/BlockNetherWart.java	2019-01-11 20:13:51.353774300 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/block/BlockNetherWart.java	2019-01-11 20:13:23.387151100 -0500
 @@ -45,7 +45,7 @@
          if (l < 3 && p_149674_5_.nextInt(10) == 0)
          {

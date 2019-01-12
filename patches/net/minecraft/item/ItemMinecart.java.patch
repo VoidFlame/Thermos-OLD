@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/ItemMinecart.java
-+++ ../src-work/minecraft/net/minecraft/item/ItemMinecart.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/ItemMinecart.java	2019-01-11 20:13:51.845509500 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemMinecart.java	2019-01-11 20:13:26.296120200 -0500
 @@ -79,6 +79,15 @@
          {
              if (!p_77648_3_.isRemote)

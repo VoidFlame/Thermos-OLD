@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/ItemMap.java
-+++ ../src-work/minecraft/net/minecraft/item/ItemMap.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/ItemMap.java	2019-01-11 20:13:52.507891400 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemMap.java	2019-01-11 20:13:26.600333400 -0500
 @@ -19,6 +19,11 @@
  import net.minecraft.world.chunk.Chunk;
  import net.minecraft.world.storage.MapData;

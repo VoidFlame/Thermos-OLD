@@ -1,5 +1,5 @@
---- ../src-base/minecraft/net/minecraft/item/ItemBucket.java
-+++ ../src-work/minecraft/net/minecraft/item/ItemBucket.java
+--- eclipse/Clean/src/main/java/net/minecraft/item/ItemBucket.java	2019-01-11 20:13:53.267223100 -0500
++++ eclipse/Cauldron/src/main/java/net/minecraft/item/ItemBucket.java	2019-01-11 20:13:27.425942400 -0500
 @@ -12,6 +12,13 @@
  import net.minecraftforge.common.MinecraftForge;
  import net.minecraftforge.event.entity.player.FillBucketEvent;
